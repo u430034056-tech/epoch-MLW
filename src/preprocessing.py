@@ -2,12 +2,12 @@ import pandas as pd
 
 
 def load_data(path):
-    df = pd.read_csv(path)
+    df = pd.read_csv('data/raw/train.csv')
     return df
 
 
 def clean_data(df):
-    
+
     df = df.copy()
 
     # Drop useless column
