@@ -1,0 +1,190 @@
+{
+  "train": {
+    "columns": [
+      "PassengerId",
+      "HomePlanet",
+      "CryoSleep",
+      "Cabin",
+      "Destination",
+      "Age",
+      "VIP",
+      "RoomService",
+      "FoodCourt",
+      "ShoppingMall",
+      "Spa",
+      "VRDeck",
+      "Name",
+      "Transported"
+    ],
+    "dtypes": {
+      "PassengerId": "str",
+      "HomePlanet": "str",
+      "CryoSleep": "object",
+      "Cabin": "str",
+      "Destination": "str",
+      "Age": "float64",
+      "VIP": "object",
+      "RoomService": "float64",
+      "FoodCourt": "float64",
+      "ShoppingMall": "float64",
+      "Spa": "float64",
+      "VRDeck": "float64",
+      "Name": "str",
+      "Transported": "bool"
+    },
+    "missing_counts": {
+      "PassengerId": 0,
+      "HomePlanet": 201,
+      "CryoSleep": 217,
+      "Cabin": 199,
+      "Destination": 182,
+      "Age": 179,
+      "VIP": 203,
+      "RoomService": 181,
+      "FoodCourt": 183,
+      "ShoppingMall": 208,
+      "Spa": 183,
+      "VRDeck": 188,
+      "Name": 200,
+      "Transported": 0
+    },
+    "unique_counts": {
+      "PassengerId": 8693,
+      "HomePlanet": 3,
+      "CryoSleep": 2,
+      "Cabin": 6560,
+      "Destination": 3,
+      "Age": 80,
+      "VIP": 2,
+      "RoomService": 1273,
+      "FoodCourt": 1507,
+      "ShoppingMall": 1115,
+      "Spa": 1327,
+      "VRDeck": 1306,
+      "Name": 8473,
+      "Transported": 2
+    },
+    "categorical_columns": [
+      "PassengerId",
+      "HomePlanet",
+      "CryoSleep",
+      "Cabin",
+      "Destination",
+      "VIP",
+      "Name",
+      "Transported"
+    ],
+    "numeric_columns": [
+      "Age",
+      "RoomService",
+      "FoodCourt",
+      "ShoppingMall",
+      "Spa",
+      "VRDeck"
+    ]
+  },
+  "test": {
+    "columns": [
+      "PassengerId",
+      "HomePlanet",
+      "CryoSleep",
+      "Cabin",
+      "Destination",
+      "Age",
+      "VIP",
+      "RoomService",
+      "FoodCourt",
+      "ShoppingMall",
+      "Spa",
+      "VRDeck",
+      "Name"
+    ],
+    "dtypes": {
+      "PassengerId": "str",
+      "HomePlanet": "str",
+      "CryoSleep": "object",
+      "Cabin": "str",
+      "Destination": "str",
+      "Age": "float64",
+      "VIP": "object",
+      "RoomService": "float64",
+      "FoodCourt": "float64",
+      "ShoppingMall": "float64",
+      "Spa": "float64",
+      "VRDeck": "float64",
+      "Name": "str"
+    },
+    "missing_counts": {
+      "PassengerId": 0,
+      "HomePlanet": 87,
+      "CryoSleep": 93,
+      "Cabin": 100,
+      "Destination": 92,
+      "Age": 91,
+      "VIP": 93,
+      "RoomService": 82,
+      "FoodCourt": 106,
+      "ShoppingMall": 98,
+      "Spa": 101,
+      "VRDeck": 80,
+      "Name": 94
+    },
+    "unique_counts": {
+      "PassengerId": 4277,
+      "HomePlanet": 3,
+      "CryoSleep": 2,
+      "Cabin": 3265,
+      "Destination": 3,
+      "Age": 79,
+      "VIP": 2,
+      "RoomService": 842,
+      "FoodCourt": 902,
+      "ShoppingMall": 715,
+      "Spa": 833,
+      "VRDeck": 796,
+      "Name": 4176
+    },
+    "categorical_columns": [
+      "PassengerId",
+      "HomePlanet",
+      "CryoSleep",
+      "Cabin",
+      "Destination",
+      "VIP",
+      "Name"
+    ],
+    "numeric_columns": [
+      "Age",
+      "RoomService",
+      "FoodCourt",
+      "ShoppingMall",
+      "Spa",
+      "VRDeck"
+    ]
+  },
+  "shared_columns": [
+    "Age",
+    "Cabin",
+    "CryoSleep",
+    "Destination",
+    "FoodCourt",
+    "HomePlanet",
+    "Name",
+    "PassengerId",
+    "RoomService",
+    "ShoppingMall",
+    "Spa",
+    "VIP",
+    "VRDeck"
+  ],
+  "train_only_columns": [
+    "Transported"
+  ],
+  "test_only_columns": [],
+  "target": {
+    "name": "Transported",
+    "present_in_train": true,
+    "present_in_test": false,
+    "description": "Binary target sourced from train.csv only and cast to int 0/1 in shared preprocessing."
+  }
+}

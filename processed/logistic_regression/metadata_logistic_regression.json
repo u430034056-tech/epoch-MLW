@@ -1,0 +1,51 @@
+{
+  "model_name": "logistic_regression",
+  "save_path": "D:\\AI\\ML Workshop\\project\\processed\\logistic_regression\\preprocessed_logistic_regression.joblib",
+  "bundle_keys": [
+    "X_test",
+    "X_test_lr",
+    "X_train",
+    "X_train_lr",
+    "dropped_features",
+    "feature_names",
+    "feature_names_lr",
+    "input_validation_passed",
+    "model_name",
+    "notes",
+    "preprocessor",
+    "preprocessor_lr",
+    "save_path",
+    "save_path_lr",
+    "test_ids",
+    "train_ids",
+    "y_train",
+    "y_train_lr"
+  ],
+  "X_train_shape": [
+    8693,
+    107
+  ],
+  "X_test_shape": [
+    4277,
+    107
+  ],
+  "y_train_shape": [
+    8693
+  ],
+  "feature_name_count": 107,
+  "categorical_feature_names": null,
+  "categorical_feature_indices": null,
+  "dropped_features": [
+    "PassengerId",
+    "GroupID",
+    "Name",
+    "Cabin",
+    "Surname"
+  ],
+  "notes": [
+    "Logistic Regression uses standardized numeric inputs plus one-hot encoded categorical columns.",
+    "Spend-related numeric columns use log1p before scaling to reduce long-tail effects.",
+    "Raw audit columns remain in the common table for traceability, but are excluded from model inputs."
+  ],
+  "input_validation_passed": true
+}

@@ -1,0 +1,53 @@
+{
+  "model_name": "knn",
+  "save_path": "D:\\AI\\ML Workshop\\project\\processed\\knn\\preprocessed_knn.joblib",
+  "bundle_keys": [
+    "X_test",
+    "X_test_knn",
+    "X_train",
+    "X_train_knn",
+    "dropped_features",
+    "feature_names",
+    "feature_names_knn",
+    "input_validation_passed",
+    "model_name",
+    "notes",
+    "preprocessor",
+    "preprocessor_knn",
+    "save_path",
+    "save_path_knn",
+    "test_ids",
+    "train_ids",
+    "y_train",
+    "y_train_knn"
+  ],
+  "X_train_shape": [
+    8693,
+    85
+  ],
+  "X_test_shape": [
+    4277,
+    85
+  ],
+  "y_train_shape": [
+    8693
+  ],
+  "feature_name_count": 85,
+  "categorical_feature_names": null,
+  "categorical_feature_indices": null,
+  "dropped_features": [
+    "PassengerId",
+    "GroupID",
+    "Name",
+    "Cabin",
+    "Surname",
+    "HomePlanetDestination"
+  ],
+  "notes": [
+    "KNN uses standardized numeric features and one-hot encoded categorical features.",
+    "KNN is a distance-based model, so the final output is a dense numeric matrix.",
+    "Spend-related numeric columns and TotalSpend use log1p before scaling to reduce long-tail effects.",
+    "KNN uses a compact feature subset and explicitly excludes high-cardinality audit columns and HomePlanetDestination to avoid one-hot dimension inflation."
+  ],
+  "input_validation_passed": true
+}

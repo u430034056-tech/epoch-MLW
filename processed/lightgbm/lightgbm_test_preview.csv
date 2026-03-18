@@ -1,0 +1,101 @@
+Age,RoomService,FoodCourt,ShoppingMall,Spa,VRDeck,TotalSpend,SpendCount,GroupMemberNo,GroupSize,CabinNum,SurnameFreq,LuxurySpend,BasicSpend,LuxuryShare,SpendPerActiveCategory,HasAnyLuxurySpend,AgeWasOutOfRange,IsChild,IsSenior,IsSolo,IsMultiPassengerGroup,GroupMemberIsLeader,AgeMissing,HomePlanetMissing,CryoSleepMissing,CabinMissing,DestinationMissing,VIPMissing,RoomServiceMissing,FoodCourtMissing,ShoppingMallMissing,SpaMissing,VRDeckMissing,NameMissing,IsZeroSpend,HomePlanet,CryoSleep,Destination,VIP,Deck,Side,AgeGroup,CabinNumBin,DeckSide,HomePlanetDestination
+27.0,0.0,0.0,0.0,0.0,0.0,0.0,0,1,1,3,4,0.0,0.0,0.0,0.0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,Earth,True,TRAPPIST-1e,False,G,S,YoungAdult,CabinBin_1,G_S,Earth_TRAPPIST-1e
+19.0,0.0,9.0,0.0,2823.0,0.0,2832.0,2,1,1,4,3,2823.0,9.0,0.9964701729615248,1416.0,1,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,Earth,False,TRAPPIST-1e,False,F,S,YoungAdult,CabinBin_1,F_S,Earth_TRAPPIST-1e
+31.0,0.0,0.0,0.0,0.0,0.0,0.0,0,1,1,0,5,0.0,0.0,0.0,0.0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,Europa,True,55 Cancri e,False,C,S,Adult,CabinBin_1,C_S,Europa_55 Cancri e
+38.0,0.0,6652.0,0.0,181.0,585.0,7418.0,3,1,1,1,1,766.0,6652.0,0.10324841622860224,2472.6666666666665,1,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,Europa,False,TRAPPIST-1e,False,C,S,Adult,CabinBin_1,C_S,Europa_TRAPPIST-1e
+20.0,10.0,0.0,635.0,0.0,0.0,645.0,2,1,1,5,2,0.0,645.0,0.0,322.5,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,Earth,False,TRAPPIST-1e,False,F,S,YoungAdult,CabinBin_1,F_S,Earth_TRAPPIST-1e
+31.0,0.0,1615.0,263.0,113.0,60.0,2051.0,4,1,1,7,5,173.0,1878.0,0.08430799220272904,512.75,1,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,Earth,False,TRAPPIST-1e,False,F,P,Adult,CabinBin_1,F_P,Earth_TRAPPIST-1e
+21.0,0.0,0.0,0.0,0.0,0.0,0.0,0,1,1,2,11,0.0,0.0,0.0,0.0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,1,0,0,0,0,1,Europa,True,55 Cancri e,False,B,P,YoungAdult,CabinBin_1,B_P,Europa_55 Cancri e
+20.0,0.0,0.0,0.0,0.0,0.0,0.0,0,1,2,0,2,0.0,0.0,0.0,0.0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,1,Europa,True,TRAPPIST-1e,False,D,S,YoungAdult,CabinBin_1,D_S,Europa_TRAPPIST-1e
+23.0,0.0,0.0,0.0,0.0,0.0,0.0,0,2,2,0,2,0.0,0.0,0.0,0.0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Europa,True,55 Cancri e,False,D,S,YoungAdult,CabinBin_1,D_S,Europa_55 Cancri e
+24.0,0.0,639.0,0.0,0.0,0.0,639.0,1,1,1,7,6,0.0,639.0,0.0,639.0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,Earth,False,55 Cancri e,False,F,S,YoungAdult,CabinBin_1,F_S,Earth_55 Cancri e
+19.0,339.0,3.0,136.0,237.0,0.0,715.0,4,1,1,9,2,237.0,478.0,0.33100558659217877,178.75,1,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,Earth,False,TRAPPIST-1e,False,F,S,YoungAdult,CabinBin_1,F_S,Earth_TRAPPIST-1e
+45.0,932.0,74.0,0.0,7.0,1010.0,2023.0,4,1,2,2,1,1017.0,1006.0,0.5024703557312253,505.75,1,0,0,0,0,1,1,0,0,0,0,0,0,0,0,1,0,0,0,0,Europa,False,TRAPPIST-1e,False,D,P,MiddleAge,CabinBin_1,D_P,Europa_TRAPPIST-1e
+44.0,0.0,1561.0,0.0,14.0,224.0,1799.0,3,2,2,2,1,238.0,1561.0,0.1322222222222222,599.6666666666666,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,Europa,False,TRAPPIST-1e,False,D,P,Adult,CabinBin_1,D_P,Europa_TRAPPIST-1e
+46.0,0.0,0.0,0.0,0.0,0.0,0.0,0,1,1,0,2,0.0,0.0,0.0,0.0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,Mars,True,TRAPPIST-1e,False,E,P,MiddleAge,CabinBin_1,E_P,Mars_TRAPPIST-1e
+21.0,0.0,0.0,0.0,1687.0,92.0,1779.0,2,1,3,4,10,1779.0,0.0,0.999438202247191,889.5,1,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,Earth,False,TRAPPIST-1e,False,G,P,YoungAdult,CabinBin_1,G_P,Earth_TRAPPIST-1e
+27.0,0.0,0.0,0.0,903.0,6.0,909.0,2,2,3,11,10,909.0,0.0,0.9989010989010989,454.5,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,0,0,Earth,False,TRAPPIST-1e,False,F,P,YoungAdult,CabinBin_1,F_P,Earth_TRAPPIST-1e
+20.0,2.0,12.0,253.0,457.0,690.0,1414.0,5,3,3,11,10,1147.0,267.0,0.8106007067137809,282.8,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,Earth,False,TRAPPIST-1e,False,F,P,YoungAdult,CabinBin_1,F_P,Earth_TRAPPIST-1e
+44.0,0.0,0.0,0.0,0.0,0.0,0.0,0,1,3,0,1,0.0,0.0,0.0,0.0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,1,Europa,True,TRAPPIST-1e,False,B,S,Adult,CabinBin_1,B_S,Europa_TRAPPIST-1e
+29.0,0.0,7708.0,243.0,569.0,343.0,8863.0,4,2,3,-1,1,912.0,7951.0,0.10288808664259928,2215.75,1,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,Europa,False,TRAPPIST-1e,False,Unknown,Unknown,YoungAdult,CabinBin_Missing,Unknown_Unknown,Europa_TRAPPIST-1e
+40.0,26.0,1925.0,8.0,3144.0,63.0,5166.0,5,3,3,0,0,3207.0,1959.0,0.6206696342171473,1033.2,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,Europa,False,TRAPPIST-1e,False,B,S,Adult,CabinBin_1,B_S,Europa_TRAPPIST-1e
+30.0,0.0,878.0,26.0,3.0,0.0,907.0,3,1,1,5,0,3.0,904.0,0.003303964757709251,302.3333333333333,1,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,Earth,False,TRAPPIST-1e,False,G,S,Adult,CabinBin_1,G_S,Earth_TRAPPIST-1e
+14.0,1.0,0.0,0.0,1609.0,0.0,1610.0,2,1,1,1,3,1609.0,1.0,0.9987585350713842,805.0,1,0,1,0,1,0,1,0,0,0,0,0,0,1,0,0,0,0,0,0,Earth,False,TRAPPIST-1e,False,E,P,Teen,CabinBin_1,E_P,Earth_TRAPPIST-1e
+31.0,0.0,0.0,0.0,0.0,0.0,0.0,0,1,3,4,0,0.0,0.0,0.0,0.0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,1,Europa,True,55 Cancri e,False,B,P,Adult,CabinBin_1,B_P,Europa_55 Cancri e
+27.0,0.0,6977.0,0.0,4.0,1235.0,8216.0,3,2,3,4,0,1239.0,6977.0,0.15078495801387368,2738.6666666666665,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,Europa,False,55 Cancri e,False,B,P,YoungAdult,CabinBin_1,B_P,Europa_55 Cancri e
+66.0,39.0,6452.0,0.0,1409.0,155.0,8055.0,4,3,3,4,0,1564.0,6491.0,0.19414101290963257,2013.75,1,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,Europa,False,55 Cancri e,False,B,P,Senior,CabinBin_1,B_P,Europa_55 Cancri e
+24.0,1784.0,8.0,18.0,18.0,0.0,1828.0,4,1,1,5,1,18.0,1810.0,0.009841443411700382,457.0,1,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,Earth,False,TRAPPIST-1e,False,G,P,YoungAdult,CabinBin_1,G_P,Earth_TRAPPIST-1e
+19.0,293.0,3495.0,5273.0,118.0,422.0,9601.0,5,1,1,1,2,540.0,9061.0,0.05623828369089773,1920.2,1,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,Europa,False,55 Cancri e,False,C,P,YoungAdult,CabinBin_1,C_P,Europa_55 Cancri e
+36.0,0.0,0.0,0.0,0.0,0.0,0.0,0,1,1,2,5,0.0,0.0,0.0,0.0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,Earth,True,TRAPPIST-1e,False,E,P,Adult,CabinBin_1,E_P,Earth_TRAPPIST-1e
+21.0,0.0,619.0,12.0,3.0,0.0,634.0,3,1,1,12,3,3.0,631.0,0.004724409448818898,211.33333333333334,1,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,Earth,False,TRAPPIST-1e,False,F,P,YoungAdult,CabinBin_1,F_P,Earth_TRAPPIST-1e
+18.0,0.0,0.0,0.0,0.0,0.0,0.0,0,1,1,8,4,0.0,0.0,0.0,0.0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,Earth,True,55 Cancri e,False,G,S,YoungAdult,CabinBin_1,G_S,Earth_55 Cancri e
+26.0,0.0,0.0,0.0,0.0,0.0,0.0,0,1,1,9,3,0.0,0.0,0.0,0.0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,Earth,True,TRAPPIST-1e,False,G,S,YoungAdult,CabinBin_1,G_S,Earth_TRAPPIST-1e
+19.0,598.0,0.0,30.0,0.0,0.0,628.0,2,1,1,11,4,0.0,628.0,0.0,314.0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,Earth,False,TRAPPIST-1e,False,G,S,YoungAdult,CabinBin_1,G_S,Earth_TRAPPIST-1e
+48.0,0.0,0.0,0.0,0.0,0.0,0.0,0,1,1,12,7,0.0,0.0,0.0,0.0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,Earth,True,TRAPPIST-1e,False,G,S,MiddleAge,CabinBin_1,G_S,Earth_TRAPPIST-1e
+23.0,14.0,870.0,0.0,0.0,23.0,907.0,3,1,1,7,7,23.0,884.0,0.025330396475770924,302.3333333333333,1,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,Earth,False,TRAPPIST-1e,False,G,P,YoungAdult,CabinBin_1,G_P,Earth_TRAPPIST-1e
+24.0,483.0,0.0,87.0,214.0,0.0,784.0,3,1,1,8,5,214.0,570.0,0.27261146496815286,261.3333333333333,1,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,Earth,False,TRAPPIST-1e,False,G,P,YoungAdult,CabinBin_1,G_P,Earth_TRAPPIST-1e
+19.0,0.0,20.0,135.0,265.0,367.0,787.0,4,1,1,3,6,632.0,155.0,0.8020304568527918,196.75,1,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,Earth,False,TRAPPIST-1e,False,E,P,YoungAdult,CabinBin_1,E_P,Earth_TRAPPIST-1e
+24.0,0.0,0.0,0.0,0.0,0.0,0.0,0,1,1,19,2,0.0,0.0,0.0,0.0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,Mars,True,TRAPPIST-1e,False,F,S,YoungAdult,CabinBin_1,F_S,Mars_TRAPPIST-1e
+27.0,66.0,1736.0,0.0,0.0,15.0,1817.0,3,1,1,10,4,15.0,1802.0,0.00825082508250825,605.6666666666666,1,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,Earth,False,TRAPPIST-1e,False,G,P,YoungAdult,CabinBin_1,G_P,Earth_TRAPPIST-1e
+6.0,0.0,0.0,0.0,0.0,0.0,0.0,0,1,2,17,6,0.0,0.0,0.0,0.0,0,0,1,0,0,1,1,0,0,0,0,0,0,1,0,0,0,0,0,1,Earth,True,TRAPPIST-1e,False,G,S,Child,CabinBin_1,G_S,Earth_TRAPPIST-1e
+33.0,0.0,0.0,0.0,866.0,0.0,866.0,1,2,2,21,6,866.0,0.0,0.9988465974625144,866.0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,Earth,False,TRAPPIST-1e,False,F,S,Adult,CabinBin_1,F_S,Earth_TRAPPIST-1e
+23.0,0.0,0.0,1235.0,0.0,0.0,1235.0,1,1,1,18,4,0.0,1235.0,0.0,1235.0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,Earth,False,PSO J318.5-22,False,F,P,YoungAdult,CabinBin_1,F_P,Earth_PSO J318.5-22
+30.0,1.0,0.0,1585.0,0.0,484.0,2070.0,3,1,1,22,7,484.0,1586.0,0.2337035248672139,690.0,1,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,Earth,False,PSO J318.5-22,False,F,S,Adult,CabinBin_1,F_S,Earth_PSO J318.5-22
+27.0,0.0,17.0,997.0,0.0,0.0,1014.0,2,1,2,13,7,0.0,1014.0,0.0,507.0,0,0,0,0,0,1,1,1,0,0,0,0,1,0,0,0,0,0,0,0,Earth,False,TRAPPIST-1e,False,G,P,YoungAdult,CabinBin_1,G_P,Earth_TRAPPIST-1e
+1.0,0.0,0.0,0.0,0.0,0.0,0.0,0,2,2,13,7,0.0,0.0,0.0,0.0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Earth,False,TRAPPIST-1e,False,G,P,Child,CabinBin_1,G_P,Earth_TRAPPIST-1e
+20.0,1.0,0.0,0.0,599.0,0.0,600.0,2,1,1,25,1,599.0,1.0,0.9966722129783694,300.0,1,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,Earth,False,TRAPPIST-1e,False,F,S,YoungAdult,CabinBin_1,F_S,Earth_TRAPPIST-1e
+17.0,0.0,0.0,0.0,0.0,0.0,0.0,0,1,1,26,7,0.0,0.0,0.0,0.0,0,0,1,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,Earth,True,TRAPPIST-1e,False,F,S,Teen,CabinBin_1,F_S,Earth_TRAPPIST-1e
+34.0,0.0,0.0,39.0,1.0,556.0,596.0,3,1,1,22,6,557.0,39.0,0.932998324958124,198.66666666666666,1,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,Earth,False,TRAPPIST-1e,False,F,P,Adult,CabinBin_1,F_P,Earth_TRAPPIST-1e
+24.0,0.0,22.0,82.0,0.0,686.0,790.0,3,1,1,4,9,686.0,104.0,0.8672566371681416,263.3333333333333,1,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,Earth,False,PSO J318.5-22,False,E,P,YoungAdult,CabinBin_1,E_P,Earth_PSO J318.5-22
+29.0,14.0,869.0,0.0,1.0,0.0,884.0,3,1,1,14,3,1.0,883.0,0.0011299435028248588,294.6666666666667,1,0,0,0,1,0,1,0,0,0,0,0,0,0,0,1,0,0,0,0,Earth,False,TRAPPIST-1e,False,G,P,YoungAdult,CabinBin_1,G_P,Earth_TRAPPIST-1e
+20.0,1037.0,1.0,2.0,0.0,1576.0,2616.0,4,1,1,26,5,1576.0,1040.0,0.6022162781811234,654.0,1,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,Earth,False,TRAPPIST-1e,False,F,P,YoungAdult,CabinBin_1,F_P,Earth_TRAPPIST-1e
+5.0,0.0,0.0,0.0,0.0,0.0,0.0,0,1,1,15,5,0.0,0.0,0.0,0.0,0,0,1,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,Earth,True,55 Cancri e,False,G,P,Child,CabinBin_1,G_P,Earth_55 Cancri e
+22.0,0.0,0.0,0.0,0.0,0.0,0.0,0,1,2,6,4,0.0,0.0,0.0,0.0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,1,Europa,True,55 Cancri e,False,B,P,YoungAdult,CabinBin_1,B_P,Europa_55 Cancri e
+16.0,3966.0,2872.0,0.0,0.0,2458.0,9296.0,3,2,2,6,4,2458.0,6838.0,0.26438636119178227,3098.6666666666665,1,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,Europa,False,TRAPPIST-1e,False,B,P,Teen,CabinBin_1,B_P,Europa_TRAPPIST-1e
+7.0,0.0,0.0,0.0,0.0,0.0,0.0,0,1,1,16,4,0.0,0.0,0.0,0.0,0,0,1,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,Earth,True,55 Cancri e,False,G,P,Child,CabinBin_1,G_P,Earth_55 Cancri e
+36.0,0.0,0.0,571.0,36.0,0.0,607.0,2,1,1,28,6,36.0,571.0,0.05921052631578947,303.5,1,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,Earth,False,55 Cancri e,False,F,S,Adult,CabinBin_1,F_S,Earth_55 Cancri e
+26.0,46.0,315.0,2305.0,0.0,97.0,2763.0,4,1,1,4,7,97.0,2666.0,0.03509406657018813,690.75,1,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,Mars,False,55 Cancri e,False,D,S,YoungAdult,CabinBin_1,D_S,Mars_55 Cancri e
+40.0,413.0,514.0,1.0,0.0,0.0,928.0,3,1,1,28,7,0.0,928.0,0.0,309.3333333333333,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,Earth,False,TRAPPIST-1e,False,F,P,Adult,CabinBin_1,F_P,Earth_TRAPPIST-1e
+29.0,0.0,0.0,0.0,0.0,0.0,0.0,0,1,1,24,5,0.0,0.0,0.0,0.0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,Earth,True,TRAPPIST-1e,False,G,S,YoungAdult,CabinBin_1,G_S,Earth_TRAPPIST-1e
+2.0,0.0,0.0,0.0,0.0,0.0,0.0,0,1,3,30,3,0.0,0.0,0.0,0.0,0,0,1,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,1,Mars,True,TRAPPIST-1e,False,F,S,Child,CabinBin_1,F_S,Mars_TRAPPIST-1e
+23.0,378.0,402.0,0.0,0.0,509.0,1289.0,3,2,3,30,3,509.0,780.0,0.3945736434108527,429.6666666666667,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,Mars,False,TRAPPIST-1e,False,F,S,YoungAdult,CabinBin_1,F_S,Mars_TRAPPIST-1e
+0.0,0.0,0.0,0.0,0.0,0.0,0.0,0,3,3,30,3,0.0,0.0,0.0,0.0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Mars,False,TRAPPIST-1e,False,F,S,Child,CabinBin_1,F_S,Mars_TRAPPIST-1e
+30.0,0.0,8853.0,6108.0,29.0,3523.0,18513.0,4,1,1,2,2,3552.0,14961.0,0.19185481257426812,4628.25,1,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,Europa,False,55 Cancri e,False,C,P,Adult,CabinBin_1,C_P,Europa_55 Cancri e
+56.0,0.0,44.0,23.0,723.0,0.0,790.0,3,1,1,6,7,723.0,67.0,0.9140328697850821,263.3333333333333,1,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,Earth,False,TRAPPIST-1e,False,E,P,MiddleAge,CabinBin_1,E_P,Earth_TRAPPIST-1e
+36.0,0.0,0.0,0.0,0.0,0.0,0.0,0,1,2,7,2,0.0,0.0,0.0,0.0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,1,Europa,True,TRAPPIST-1e,False,B,P,Adult,CabinBin_1,B_P,Europa_TRAPPIST-1e
+56.0,0.0,0.0,0.0,0.0,0.0,0.0,0,2,2,7,2,0.0,0.0,0.0,0.0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Europa,True,TRAPPIST-1e,False,B,P,MiddleAge,CabinBin_1,B_P,Europa_TRAPPIST-1e
+19.0,32.0,0.0,521.0,0.0,223.0,776.0,3,1,1,32,5,223.0,553.0,0.287001287001287,258.6666666666667,1,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,Earth,False,TRAPPIST-1e,False,F,S,YoungAdult,CabinBin_1,F_S,Earth_TRAPPIST-1e
+39.0,0.0,0.0,0.0,0.0,0.0,0.0,0,1,1,21,7,0.0,0.0,0.0,0.0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,Earth,True,PSO J318.5-22,False,G,P,Adult,CabinBin_1,G_P,Earth_PSO J318.5-22
+38.0,2.0,26.0,148.0,1213.0,0.0,1389.0,4,1,1,33,3,1213.0,176.0,0.8726618705035971,347.25,1,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,Mars,False,TRAPPIST-1e,False,F,P,Adult,CabinBin_1,F_P,Mars_TRAPPIST-1e
+27.0,0.0,0.0,0.0,0.0,0.0,0.0,0,1,1,34,3,0.0,0.0,0.0,0.0,0,0,0,0,1,0,1,1,0,1,0,0,0,0,0,0,0,0,0,1,Mars,Unknown,TRAPPIST-1e,False,F,P,YoungAdult,CabinBin_1,F_P,Mars_TRAPPIST-1e
+35.0,0.0,463.0,0.0,1502.0,585.0,2550.0,3,1,1,1,1,2087.0,463.0,0.8181105448843591,850.0,1,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,Europa,False,TRAPPIST-1e,False,A,P,Adult,CabinBin_1,A_P,Europa_TRAPPIST-1e
+26.0,832.0,0.0,0.0,21.0,136.0,989.0,3,1,2,9,3,157.0,832.0,0.15858585858585858,329.6666666666667,1,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,Earth,False,55 Cancri e,False,E,S,YoungAdult,CabinBin_1,E_S,Earth_55 Cancri e
+31.0,0.0,0.0,705.0,0.0,0.0,705.0,1,2,2,33,3,0.0,705.0,0.0,705.0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,Earth,False,TRAPPIST-1e,False,F,S,Adult,CabinBin_1,F_S,Earth_TRAPPIST-1e
+38.0,0.0,3.0,0.0,756.0,0.0,759.0,2,1,1,34,4,756.0,3.0,0.9947368421052631,379.5,1,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,Earth,False,TRAPPIST-1e,False,F,S,Adult,CabinBin_1,F_S,Earth_TRAPPIST-1e
+27.0,3.0,11.0,0.0,0.0,1172.0,1186.0,3,1,1,35,3,1172.0,14.0,0.987363100252738,395.3333333333333,1,0,0,0,1,0,1,0,0,0,0,0,0,1,0,0,0,0,0,0,Earth,False,55 Cancri e,False,F,P,YoungAdult,CabinBin_1,F_P,Earth_55 Cancri e
+30.0,0.0,0.0,0.0,0.0,0.0,0.0,0,1,1,36,8,0.0,0.0,0.0,0.0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,Mars,True,55 Cancri e,False,F,P,Adult,CabinBin_1,F_P,Mars_55 Cancri e
+22.0,0.0,772.0,0.0,0.0,0.0,772.0,1,1,1,29,3,0.0,772.0,0.0,772.0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,Earth,False,TRAPPIST-1e,False,G,S,YoungAdult,CabinBin_1,G_S,Earth_TRAPPIST-1e
+29.0,0.0,0.0,0.0,0.0,0.0,0.0,0,1,1,7,0,0.0,0.0,0.0,0.0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,Europa,True,TRAPPIST-1e,False,C,S,YoungAdult,CabinBin_1,C_S,Europa_TRAPPIST-1e
+0.0,0.0,0.0,0.0,0.0,0.0,0.0,0,1,5,25,7,0.0,0.0,0.0,0.0,0,0,1,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,1,Earth,True,TRAPPIST-1e,False,G,P,Child,CabinBin_1,G_P,Earth_TRAPPIST-1e
+8.0,0.0,0.0,0.0,0.0,0.0,0.0,0,2,5,25,7,0.0,0.0,0.0,0.0,0,0,1,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,1,Earth,Unknown,55 Cancri e,False,G,P,Child,CabinBin_1,G_P,Earth_55 Cancri e
+3.0,0.0,0.0,0.0,0.0,0.0,0.0,0,3,5,25,7,0.0,0.0,0.0,0.0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Earth,True,TRAPPIST-1e,False,G,P,Child,CabinBin_1,G_P,Earth_TRAPPIST-1e
+27.0,0.0,0.0,0.0,0.0,0.0,0.0,0,4,5,25,7,0.0,0.0,0.0,0.0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Earth,True,TRAPPIST-1e,False,G,P,YoungAdult,CabinBin_1,G_P,Earth_TRAPPIST-1e
+9.0,0.0,0.0,0.0,0.0,0.0,0.0,0,5,5,25,7,0.0,0.0,0.0,0.0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Earth,False,TRAPPIST-1e,False,G,P,Child,CabinBin_1,G_P,Earth_TRAPPIST-1e
+29.0,362.0,15.0,0.0,0.0,450.0,827.0,3,1,1,39,8,450.0,377.0,0.5434782608695652,275.6666666666667,1,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,Earth,False,PSO J318.5-22,False,F,P,YoungAdult,CabinBin_1,F_P,Earth_PSO J318.5-22
+18.0,756.0,116.0,0.0,1.0,58.0,931.0,4,1,1,40,4,59.0,872.0,0.06330472103004292,232.75,1,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,Earth,False,TRAPPIST-1e,False,F,P,YoungAdult,CabinBin_1,F_P,Earth_TRAPPIST-1e
+22.0,197.0,0.0,1175.0,0.0,0.0,1372.0,2,1,1,7,1,0.0,1372.0,0.0,686.0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,Mars,False,TRAPPIST-1e,False,E,P,YoungAdult,CabinBin_1,E_P,Mars_TRAPPIST-1e
+24.0,6.0,11.0,1404.0,0.0,0.0,1421.0,3,1,1,37,3,0.0,1421.0,0.0,473.6666666666667,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,Mars,False,TRAPPIST-1e,False,F,S,YoungAdult,CabinBin_1,F_S,Mars_TRAPPIST-1e
+25.0,0.0,0.0,0.0,0.0,0.0,0.0,0,1,1,38,4,0.0,0.0,0.0,0.0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,Mars,True,55 Cancri e,False,F,S,YoungAdult,CabinBin_1,F_S,Mars_55 Cancri e
+36.0,261.0,0.0,206.0,465.0,0.0,932.0,3,1,1,39,7,465.0,467.0,0.4983922829581994,310.6666666666667,1,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,Earth,False,TRAPPIST-1e,False,F,S,Adult,CabinBin_1,F_S,Earth_TRAPPIST-1e
+14.0,0.0,0.0,0.0,0.0,0.0,0.0,0,1,3,4,0,0.0,0.0,0.0,0.0,0,0,1,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,1,Europa,True,TRAPPIST-1e,False,C,P,Teen,CabinBin_1,C_P,Europa_TRAPPIST-1e
+24.0,0.0,0.0,0.0,0.0,0.0,0.0,0,2,3,4,0,0.0,0.0,0.0,0.0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,Europa,True,55 Cancri e,False,C,P,YoungAdult,CabinBin_1,C_P,Europa_55 Cancri e
+26.0,0.0,275.0,0.0,4572.0,163.0,5010.0,3,3,3,4,0,4735.0,275.0,0.9449211734184794,1670.0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,Europa,False,55 Cancri e,True,C,P,YoungAdult,CabinBin_1,C_P,Europa_55 Cancri e
+29.0,1669.0,2.0,242.0,155.0,0.0,2068.0,4,1,1,43,4,155.0,1913.0,0.0749154180763654,517.0,1,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,Earth,False,PSO J318.5-22,False,F,P,YoungAdult,CabinBin_1,F_P,Earth_PSO J318.5-22
+40.0,44.0,0.0,565.0,0.0,18.0,627.0,3,1,1,33,4,18.0,609.0,0.028662420382165606,209.0,1,0,0,0,1,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,Earth,False,TRAPPIST-1e,False,G,P,Adult,CabinBin_1,G_P,Earth_TRAPPIST-1e
+36.0,33.0,0.0,0.0,12767.0,1193.0,13993.0,3,1,1,10,2,13960.0,33.0,0.9975703873088466,4664.333333333333,1,0,0,0,1,0,1,0,0,0,0,0,1,0,1,0,0,0,0,0,Europa,False,TRAPPIST-1e,Unknown,B,P,Adult,CabinBin_1,B_P,Europa_TRAPPIST-1e
+46.0,717.0,516.0,4.0,2.0,2439.0,3678.0,5,1,2,12,0,2441.0,1237.0,0.6634955150856211,735.6,1,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,Europa,False,TRAPPIST-1e,False,E,S,MiddleAge,CabinBin_1,E_S,Europa_TRAPPIST-1e
+42.0,4762.0,20.0,0.0,4.0,41.0,4827.0,4,2,2,12,0,45.0,4782.0,0.009320629660314831,1206.75,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,Europa,False,TRAPPIST-1e,False,E,S,Adult,CabinBin_1,E_S,Europa_TRAPPIST-1e
+23.0,0.0,0.0,0.0,0.0,0.0,0.0,0,1,1,34,5,0.0,0.0,0.0,0.0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,Earth,True,TRAPPIST-1e,False,G,P,YoungAdult,CabinBin_1,G_P,Earth_TRAPPIST-1e
+19.0,741.0,12.0,1.0,0.0,0.0,754.0,3,1,1,35,4,0.0,754.0,0.0,251.33333333333334,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,Earth,False,TRAPPIST-1e,False,G,P,YoungAdult,CabinBin_1,G_P,Earth_TRAPPIST-1e
+25.0,3.0,3833.0,8098.0,1531.0,0.0,13465.0,4,1,1,7,1,1531.0,11934.0,0.11369374721520867,3366.25,1,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,Europa,False,55 Cancri e,False,D,S,YoungAdult,CabinBin_1,D_S,Europa_55 Cancri e
+22.0,0.0,0.0,0.0,0.0,0.0,0.0,0,1,1,-1,11,0.0,0.0,0.0,0.0,0,0,0,0,1,0,1,0,0,1,1,0,0,0,0,0,0,0,0,1,Earth,True,TRAPPIST-1e,False,Unknown,Unknown,YoungAdult,CabinBin_Missing,Unknown_Unknown,Earth_TRAPPIST-1e

@@ -1,0 +1,75 @@
+{
+  "model_name": "catboost",
+  "save_path": "D:\\AI\\ML Workshop\\project\\processed\\catboost\\preprocessed_catboost.joblib",
+  "bundle_keys": [
+    "X_test",
+    "X_test_cat",
+    "X_train",
+    "X_train_cat",
+    "categorical_feature_indices",
+    "categorical_feature_indices_cat",
+    "categorical_feature_names",
+    "categorical_feature_names_cat",
+    "dropped_features",
+    "feature_names",
+    "feature_names_cat",
+    "input_validation_passed",
+    "model_name",
+    "notes",
+    "save_path",
+    "save_path_cat",
+    "test_ids",
+    "train_ids",
+    "y_train",
+    "y_train_cat"
+  ],
+  "X_train_shape": [
+    8693,
+    47
+  ],
+  "X_test_shape": [
+    4277,
+    47
+  ],
+  "y_train_shape": [
+    8693
+  ],
+  "feature_name_count": 47,
+  "categorical_feature_names": [
+    "HomePlanet",
+    "CryoSleep",
+    "Destination",
+    "VIP",
+    "Deck",
+    "Side",
+    "AgeGroup",
+    "CabinNumBin",
+    "DeckSide",
+    "HomePlanetDestination",
+    "Surname"
+  ],
+  "categorical_feature_indices": [
+    36,
+    37,
+    38,
+    39,
+    40,
+    41,
+    42,
+    43,
+    44,
+    45,
+    46
+  ],
+  "dropped_features": [
+    "PassengerId",
+    "GroupID",
+    "Name",
+    "Cabin"
+  ],
+  "notes": [
+    "CatBoost preserves categorical features as strings, including Surname.",
+    "Raw audit columns remain in the common table for traceability, but only Surname is retained as a CatBoost-specific categorical input."
+  ],
+  "input_validation_passed": true
+}

@@ -1,0 +1,62 @@
+{
+  "model_name": "lightgbm",
+  "save_path": "D:\\AI\\ML Workshop\\project\\processed\\lightgbm\\preprocessed_lightgbm.joblib",
+  "bundle_keys": [
+    "X_test",
+    "X_test_lgbm",
+    "X_train",
+    "X_train_lgbm",
+    "categorical_feature_names",
+    "categorical_feature_names_lgbm",
+    "dropped_features",
+    "feature_names",
+    "feature_names_lgbm",
+    "input_validation_passed",
+    "model_name",
+    "notes",
+    "save_path",
+    "save_path_lgbm",
+    "test_ids",
+    "train_ids",
+    "y_train",
+    "y_train_lgbm"
+  ],
+  "X_train_shape": [
+    8693,
+    46
+  ],
+  "X_test_shape": [
+    4277,
+    46
+  ],
+  "y_train_shape": [
+    8693
+  ],
+  "feature_name_count": 46,
+  "categorical_feature_names": [
+    "HomePlanet",
+    "CryoSleep",
+    "Destination",
+    "VIP",
+    "Deck",
+    "Side",
+    "AgeGroup",
+    "CabinNumBin",
+    "DeckSide",
+    "HomePlanetDestination"
+  ],
+  "categorical_feature_indices": null,
+  "dropped_features": [
+    "PassengerId",
+    "GroupID",
+    "Name",
+    "Cabin",
+    "Surname"
+  ],
+  "notes": [
+    "LightGBM keeps native categorical columns as pandas category dtype.",
+    "LightGBM branch now enforces shared train/test category levels for categorical features.",
+    "Raw audit columns remain in the common table for traceability, but are excluded from model inputs."
+  ],
+  "input_validation_passed": true
+}

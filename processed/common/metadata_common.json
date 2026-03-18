@@ -1,0 +1,493 @@
+{
+  "model_name": "common",
+  "save_path": "D:\\AI\\ML Workshop\\project\\processed\\common\\preprocessed_common.joblib",
+  "bundle_keys": [
+    "common_test",
+    "common_train",
+    "data_summary",
+    "inspection",
+    "notes",
+    "quality_report",
+    "rule_summary",
+    "save_path",
+    "stats",
+    "test_ids",
+    "train_ids",
+    "y_train"
+  ],
+  "X_train_shape": null,
+  "X_test_shape": null,
+  "y_train_shape": [
+    8693
+  ],
+  "feature_name_count": null,
+  "categorical_feature_names": null,
+  "categorical_feature_indices": null,
+  "dropped_features": [],
+  "notes": [
+    "Transported is sourced from train.csv only and cast to int 0/1 in shared preprocessing.",
+    "SurnameFreq is a train-fit frequency statistic. Unseen test surnames map to 0.",
+    "GroupSize currently uses combined_train_test_full_preprocessing for full preprocessing only.",
+    "If cross-validation is added later, SurnameFreq, CabinNumBin edges, age median after out-of-range filtering, spend medians, and GroupSize must be recomputed inside each fold.",
+    "CryoSleep and VIP use robust boolean normalization instead of direct bool-only mapping.",
+    "HomePlanet, VIP, and Destination use within-split group-consistent filling when a GroupID has exactly one observed value.",
+    "Missing CryoSleep values are inferred only by strict spend-based rules before spend imputation.",
+    "Spend columns use train-fit hierarchical median imputation, positive-spend fallback, and global median fallback.",
+    "CabinNumBin is fit on non-missing train CabinNum values and keeps raw missing CabinNum values in CabinBin_Missing.",
+    "Age is coerced to numeric before range checks; out-of-range ages set AgeWasOutOfRange=1, are reset to missing, and then filled with the train-fit age median.",
+    "AgeGroup uses fixed bins plus an explicit Unknown bucket; Adult is not used as an exception fallback.",
+    "Common feature tables retain raw audit columns for traceability, but model feature sets continue to exclude them by default.",
+    "A lightweight quality_report summarizes missingness, identifier checks, engineered features, and train-fit preprocessing assumptions."
+  ],
+  "rule_summary": {
+    "train": {
+      "group_fill": {
+        "HomePlanet": 90,
+        "VIP": 86,
+        "Destination": 54
+      },
+      "cryosleep_inference": {
+        "positive_spend_to_false": 119,
+        "adult_zero_spend_to_true": 60
+      },
+      "spend_fill": {
+        "RoomService": {
+          "group_median": 113,
+          "positive_median": 0,
+          "global_median": 0
+        },
+        "FoodCourt": {
+          "group_median": 113,
+          "positive_median": 0,
+          "global_median": 0
+        },
+        "ShoppingMall": {
+          "group_median": 112,
+          "positive_median": 0,
+          "global_median": 0
+        },
+        "Spa": {
+          "group_median": 118,
+          "positive_median": 0,
+          "global_median": 0
+        },
+        "VRDeck": {
+          "group_median": 126,
+          "positive_median": 0,
+          "global_median": 0
+        }
+      }
+    },
+    "test": {
+      "group_fill": {
+        "HomePlanet": 41,
+        "VIP": 36,
+        "Destination": 29
+      },
+      "cryosleep_inference": {
+        "positive_spend_to_false": 55,
+        "adult_zero_spend_to_true": 24
+      },
+      "spend_fill": {
+        "RoomService": {
+          "group_median": 57,
+          "positive_median": 0,
+          "global_median": 0
+        },
+        "FoodCourt": {
+          "group_median": 67,
+          "positive_median": 0,
+          "global_median": 0
+        },
+        "ShoppingMall": {
+          "group_median": 63,
+          "positive_median": 0,
+          "global_median": 0
+        },
+        "Spa": {
+          "group_median": 59,
+          "positive_median": 0,
+          "global_median": 0
+        },
+        "VRDeck": {
+          "group_median": 51,
+          "positive_median": 0,
+          "global_median": 0
+        }
+      }
+    }
+  },
+  "quality_report": {
+    "raw_missing_summary": {
+      "train": {
+        "total_missing_values": 2324,
+        "columns_with_missing": 12,
+        "missing_counts_by_column": {
+          "HomePlanet": 201,
+          "CryoSleep": 217,
+          "Cabin": 199,
+          "Destination": 182,
+          "Age": 179,
+          "VIP": 203,
+          "RoomService": 181,
+          "FoodCourt": 183,
+          "ShoppingMall": 208,
+          "Spa": 183,
+          "VRDeck": 188,
+          "Name": 200
+        }
+      },
+      "test": {
+        "total_missing_values": 1117,
+        "columns_with_missing": 12,
+        "missing_counts_by_column": {
+          "HomePlanet": 87,
+          "CryoSleep": 93,
+          "Cabin": 100,
+          "Destination": 92,
+          "Age": 91,
+          "VIP": 93,
+          "RoomService": 82,
+          "FoodCourt": 106,
+          "ShoppingMall": 98,
+          "Spa": 101,
+          "VRDeck": 80,
+          "Name": 94
+        }
+      }
+    },
+    "final_common_missing_summary": {
+      "train": {
+        "total_missing_values": 0,
+        "columns_with_missing": 0,
+        "missing_counts_by_column": {}
+      },
+      "test": {
+        "total_missing_values": 0,
+        "columns_with_missing": 0,
+        "missing_counts_by_column": {}
+      }
+    },
+    "identifier_checks": {
+      "train_passenger_id_unique": true,
+      "test_passenger_id_unique": true,
+      "cross_split_passenger_id_overlap_count": 0,
+      "train_ids_alignment_check": "pass",
+      "test_ids_alignment_check": "pass"
+    },
+    "common_shape_summary": {
+      "common_train_shape": [
+        8693,
+        51
+      ],
+      "common_test_shape": [
+        4277,
+        51
+      ]
+    },
+    "common_categorical_unique_counts": {
+      "HomePlanet": 4,
+      "CryoSleep": 3,
+      "Destination": 4,
+      "VIP": 3,
+      "Deck": 9,
+      "Side": 3,
+      "AgeGroup": 6,
+      "CabinNumBin": 6,
+      "DeckSide": 17,
+      "HomePlanetDestination": 16
+    },
+    "common_categorical_cardinality_summary": {
+      "HomePlanet": {
+        "train_unique_count": 4,
+        "test_unique_count": 4,
+        "combined_unique_count": 4
+      },
+      "CryoSleep": {
+        "train_unique_count": 3,
+        "test_unique_count": 3,
+        "combined_unique_count": 3
+      },
+      "Destination": {
+        "train_unique_count": 4,
+        "test_unique_count": 4,
+        "combined_unique_count": 4
+      },
+      "VIP": {
+        "train_unique_count": 3,
+        "test_unique_count": 3,
+        "combined_unique_count": 3
+      },
+      "Deck": {
+        "train_unique_count": 9,
+        "test_unique_count": 9,
+        "combined_unique_count": 9
+      },
+      "Side": {
+        "train_unique_count": 3,
+        "test_unique_count": 3,
+        "combined_unique_count": 3
+      },
+      "AgeGroup": {
+        "train_unique_count": 6,
+        "test_unique_count": 6,
+        "combined_unique_count": 6
+      },
+      "CabinNumBin": {
+        "train_unique_count": 6,
+        "test_unique_count": 6,
+        "combined_unique_count": 6
+      },
+      "DeckSide": {
+        "train_unique_count": 17,
+        "test_unique_count": 17,
+        "combined_unique_count": 17
+      },
+      "HomePlanetDestination": {
+        "train_unique_count": 16,
+        "test_unique_count": 15,
+        "combined_unique_count": 16
+      }
+    },
+    "model_input_overview": {
+      "logistic_regression": {
+        "X_train_shape": [
+          8693,
+          107
+        ],
+        "X_test_shape": [
+          4277,
+          107
+        ]
+      },
+      "random_forest": {
+        "X_train_shape": [
+          8693,
+          107
+        ],
+        "X_test_shape": [
+          4277,
+          107
+        ]
+      },
+      "hist_gradient_boosting": {
+        "X_train_shape": [
+          8693,
+          46
+        ],
+        "X_test_shape": [
+          4277,
+          46
+        ]
+      },
+      "xgboost": {
+        "X_train_shape": [
+          8693,
+          107
+        ],
+        "X_test_shape": [
+          4277,
+          107
+        ]
+      },
+      "lightgbm": {
+        "X_train_shape": [
+          8693,
+          46
+        ],
+        "X_test_shape": [
+          4277,
+          46
+        ]
+      },
+      "catboost": {
+        "X_train_shape": [
+          8693,
+          47
+        ],
+        "X_test_shape": [
+          4277,
+          47
+        ]
+      },
+      "knn": {
+        "X_train_shape": [
+          8693,
+          85
+        ],
+        "X_test_shape": [
+          4277,
+          85
+        ]
+      }
+    },
+    "age_quality_summary": {
+      "age_missing_after_fill": 0,
+      "age_out_of_range_flag_count": 0,
+      "age_group_unknown_count_train": 0,
+      "age_group_unknown_count_test": 0
+    },
+    "cabin_bin_summary": {
+      "cabin_num_bin_count": 6,
+      "cabin_num_missing_bucket_count_train": 199,
+      "cabin_num_missing_bucket_count_test": 100
+    },
+    "group_feature_mode": "combined_train_test_full_preprocessing",
+    "model_branch_notes": {
+      "lightgbm_category_levels_aligned": true
+    },
+    "engineered_features": [
+      "GroupID",
+      "GroupMemberNo",
+      "GroupSize",
+      "Deck",
+      "CabinNum",
+      "CabinNumBin",
+      "Side",
+      "Surname",
+      "SurnameFreq",
+      "TotalSpend",
+      "IsZeroSpend",
+      "SpendCount",
+      "LuxurySpend",
+      "BasicSpend",
+      "LuxuryShare",
+      "SpendPerActiveCategory",
+      "HasAnyLuxurySpend",
+      "AgeWasOutOfRange",
+      "IsChild",
+      "IsSenior",
+      "AgeGroup",
+      "IsSolo",
+      "IsMultiPassengerGroup",
+      "GroupMemberIsLeader",
+      "DeckSide",
+      "HomePlanetDestination",
+      "AgeMissing",
+      "HomePlanetMissing",
+      "CryoSleepMissing",
+      "CabinMissing",
+      "DestinationMissing",
+      "VIPMissing",
+      "RoomServiceMissing",
+      "FoodCourtMissing",
+      "ShoppingMallMissing",
+      "SpaMissing",
+      "VRDeckMissing",
+      "NameMissing"
+    ],
+    "train_fit_statistics": {
+      "stat_keys": [
+        "age_median",
+        "cabin_num_bin_edges",
+        "config",
+        "spend_global_median_map",
+        "spend_group_levels",
+        "spend_group_median_maps",
+        "spend_positive_median_map",
+        "surname_freq_map",
+        "train_fit_notes"
+      ],
+      "surname_freq_entry_count": 2217,
+      "spend_group_levels": [
+        "HomePlanet|Destination|VIP|Deck",
+        "HomePlanet|Destination|Deck",
+        "HomePlanet|Deck"
+      ],
+      "cabin_num_bin_count": 5,
+      "train_fit_notes": [
+        "SurnameFreq is fit on train surnames only and must be recomputed inside each CV fold.",
+        "CabinNumBin edges are fit on non-missing train CabinNum values only and must be recomputed inside each CV fold.",
+        "Spend medians and hierarchical spend group medians are train-fit statistics and must be recomputed inside each CV fold.",
+        "Age out-of-range handling and age median are train-fit preprocessing assumptions for future fold-local reuse.",
+        "GroupSize currently uses combined_train_test_full_preprocessing and must switch to split-local or fold-local helpers in future CV."
+      ]
+    },
+    "future_cv_recompute_items": [
+      "SurnameFreq",
+      "CabinNumBin edges",
+      "spend medians",
+      "hierarchical spend medians",
+      "age median after out-of-range filtering",
+      "combined-ID GroupSize"
+    ],
+    "rule_summary": {
+      "train": {
+        "group_fill": {
+          "HomePlanet": 90,
+          "VIP": 86,
+          "Destination": 54
+        },
+        "cryosleep_inference": {
+          "positive_spend_to_false": 119,
+          "adult_zero_spend_to_true": 60
+        },
+        "spend_fill": {
+          "RoomService": {
+            "group_median": 113,
+            "positive_median": 0,
+            "global_median": 0
+          },
+          "FoodCourt": {
+            "group_median": 113,
+            "positive_median": 0,
+            "global_median": 0
+          },
+          "ShoppingMall": {
+            "group_median": 112,
+            "positive_median": 0,
+            "global_median": 0
+          },
+          "Spa": {
+            "group_median": 118,
+            "positive_median": 0,
+            "global_median": 0
+          },
+          "VRDeck": {
+            "group_median": 126,
+            "positive_median": 0,
+            "global_median": 0
+          }
+        }
+      },
+      "test": {
+        "group_fill": {
+          "HomePlanet": 41,
+          "VIP": 36,
+          "Destination": 29
+        },
+        "cryosleep_inference": {
+          "positive_spend_to_false": 55,
+          "adult_zero_spend_to_true": 24
+        },
+        "spend_fill": {
+          "RoomService": {
+            "group_median": 57,
+            "positive_median": 0,
+            "global_median": 0
+          },
+          "FoodCourt": {
+            "group_median": 67,
+            "positive_median": 0,
+            "global_median": 0
+          },
+          "ShoppingMall": {
+            "group_median": 63,
+            "positive_median": 0,
+            "global_median": 0
+          },
+          "Spa": {
+            "group_median": 59,
+            "positive_median": 0,
+            "global_median": 0
+          },
+          "VRDeck": {
+            "group_median": 51,
+            "positive_median": 0,
+            "global_median": 0
+          }
+        }
+      }
+    }
+  }
+}

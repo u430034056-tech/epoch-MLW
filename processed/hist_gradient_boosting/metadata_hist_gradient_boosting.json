@@ -1,0 +1,77 @@
+{
+  "model_name": "hist_gradient_boosting",
+  "save_path": "D:\\AI\\ML Workshop\\project\\processed\\hist_gradient_boosting\\preprocessed_hist_gradient_boosting.joblib",
+  "bundle_keys": [
+    "X_test",
+    "X_test_hgb",
+    "X_train",
+    "X_train_hgb",
+    "categorical_feature_indices",
+    "categorical_feature_indices_hgb",
+    "categorical_feature_names",
+    "categorical_feature_names_hgb",
+    "dropped_features",
+    "feature_names",
+    "feature_names_hgb",
+    "input_validation_passed",
+    "model_name",
+    "notes",
+    "preprocessor",
+    "preprocessor_hgb",
+    "save_path",
+    "save_path_hgb",
+    "test_ids",
+    "train_ids",
+    "y_train",
+    "y_train_hgb"
+  ],
+  "X_train_shape": [
+    8693,
+    46
+  ],
+  "X_test_shape": [
+    4277,
+    46
+  ],
+  "y_train_shape": [
+    8693
+  ],
+  "feature_name_count": 46,
+  "categorical_feature_names": [
+    "HomePlanet",
+    "CryoSleep",
+    "Destination",
+    "VIP",
+    "Deck",
+    "Side",
+    "AgeGroup",
+    "CabinNumBin",
+    "DeckSide",
+    "HomePlanetDestination"
+  ],
+  "categorical_feature_indices": [
+    36,
+    37,
+    38,
+    39,
+    40,
+    41,
+    42,
+    43,
+    44,
+    45
+  ],
+  "dropped_features": [
+    "PassengerId",
+    "GroupID",
+    "Name",
+    "Cabin",
+    "Surname"
+  ],
+  "notes": [
+    "HistGradientBoosting uses dense numeric input with ordinal-encoded categorical columns.",
+    "Spend-related numeric columns use log1p before ordinal encoding and dense table assembly.",
+    "Raw audit columns remain in the common table for traceability, but are excluded from model inputs."
+  ],
+  "input_validation_passed": true
+}

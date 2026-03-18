@@ -1,0 +1,51 @@
+{
+  "model_name": "random_forest",
+  "save_path": "D:\\AI\\ML Workshop\\project\\processed\\random_forest\\preprocessed_random_forest.joblib",
+  "bundle_keys": [
+    "X_test",
+    "X_test_rf",
+    "X_train",
+    "X_train_rf",
+    "dropped_features",
+    "feature_names",
+    "feature_names_rf",
+    "input_validation_passed",
+    "model_name",
+    "notes",
+    "preprocessor",
+    "preprocessor_rf",
+    "save_path",
+    "save_path_rf",
+    "test_ids",
+    "train_ids",
+    "y_train",
+    "y_train_rf"
+  ],
+  "X_train_shape": [
+    8693,
+    107
+  ],
+  "X_test_shape": [
+    4277,
+    107
+  ],
+  "y_train_shape": [
+    8693
+  ],
+  "feature_name_count": 107,
+  "categorical_feature_names": null,
+  "categorical_feature_indices": null,
+  "dropped_features": [
+    "PassengerId",
+    "GroupID",
+    "Name",
+    "Cabin",
+    "Surname"
+  ],
+  "notes": [
+    "Random Forest uses cleaned numeric features and one-hot categorical features.",
+    "No scaling is applied because split-based tree models are insensitive to monotonic rescaling.",
+    "Raw audit columns remain in the common table for traceability, but are excluded from model inputs."
+  ],
+  "input_validation_passed": true
+}
