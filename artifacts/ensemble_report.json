@@ -1,0 +1,38 @@
+{
+  "model_name": "multi_model_probability_ensemble",
+  "training_mode": "fold_local_multi_model_oof_weight_search",
+  "base_model_names": [
+    "lightgbm",
+    "extra_trees"
+  ],
+  "best_weights": {
+    "lightgbm": 0.85,
+    "extra_trees": 0.15
+  },
+  "cv_accuracy": 0.8195099505349132,
+  "cv_accuracy_at_0_5": 0.8174393189922926,
+  "cv_logloss": 0.37605212786366216,
+  "threshold": 0.46,
+  "base_model_scores": {
+    "lightgbm": {
+      "accuracy_at_0_5": 0.8166340733923847,
+      "accuracy": 0.8178994593350972,
+      "threshold": 0.47,
+      "logloss": 0.37560631199661076
+    },
+    "extra_trees": {
+      "accuracy_at_0_5": 0.7992637754515127,
+      "accuracy": 0.8022546876797423,
+      "threshold": 0.45,
+      "logloss": 0.41477712011605217
+    }
+  },
+  "feature_count": 57,
+  "lgbm_best_iteration_mean": 391.0,
+  "lgbm_final_n_estimators": 391,
+  "weight_step": 0.05,
+  "cv_group_feature_mode": "split_local",
+  "final_group_feature_mode": "combined",
+  "extra_feature_mode": "none",
+  "test_positive_rate": 0.5356558335281739
+}
