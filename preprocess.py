@@ -157,9 +157,12 @@ def get_project_paths(project_root: str | Path | None = None) -> dict[str, Path]
     """Return all important project paths used by the preprocessing scaffold."""
     root = Path(project_root) if project_root is not None else Path.cwd()
     processed_root = root / "processed"
+    legacy_data_dir = root / "spaceship-titanic"
+    data_raw_dir = root / "data" / "raw"
+    data_dir = legacy_data_dir if (legacy_data_dir / "train.csv").exists() else data_raw_dir
     paths = {
         "project_root": root,
-        "data_dir": root / "spaceship-titanic",
+        "data_dir": data_dir,
         "processed_root": processed_root,
         "common_dir": processed_root / "common",
     }

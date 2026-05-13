@@ -108,11 +108,21 @@ Each model directory stores a `preprocessed_<model>.joblib` bundle plus a metada
 
 It does not train any model.
 
-## Future Model Integration
+Dataset path resolution:
 
-Each `model_*.py` file is currently a placeholder. Future training code should:
+- Preferred current path: `data/raw/train.csv` and `data/raw/test.csv`
+- Legacy compatible path: `spaceship-titanic/train.csv` and `spaceship-titanic/test.csv`
+
+The loader uses the legacy path only when `spaceship-titanic/train.csv` exists; otherwise it falls back to `data/raw/`.
+
+## Model Training Boundary
+
+This cleaned GitHub submission is centered on the preprocessing pipeline and final Kaggle submission artifact. `main.py` does not import or execute the model-training scripts; it only builds and reloads preprocessing bundles.
+
+If future training code is integrated into this mainline, it should:
+
 - call `load_preprocessed_data(...)`
 - consume the bundle for the relevant model
-- implement `train_model(...)` and `predict(...)` later
+- keep helper modules such as inference, run orchestration, and self-training utilities in the repository instead of relying on local-only files
 
 If cross-validation is introduced later, recompute all train-fit preprocessing statistics inside each fold instead of reusing full-train artifacts.
