@@ -1,8 +1,9 @@
 {
   "name": "submission_team_common_rawlike_feedback_rank_k3_seed17_w15_true2291",
   "team_preprocessing_only": true,
-  "source_base_probability": "/Users/shenyijie/Desktop/MLWP project/01_本地副本_实验/xgb_public_recovery_sprint_2026-04-27/reports/team_common_rawlike_raw_core_k3_multi3_public_test_proba.csv",
-  "source_alt_probability": "/Users/shenyijie/Desktop/MLWP project/01_本地副本_实验/xgb_public_recovery_sprint_2026-04-27/reports/team_common_rawlike_raw_core_k3_seed17_test_proba.csv",
+  "source_base_probability": "team_common_rawlike_raw_core_k3_multi3_public_test_proba.csv",
+  "source_alt_probability": "team_common_rawlike_raw_core_k3_seed17_test_proba.csv",
+  "source_note": "Generated during the local public-recovery sprint from the team preprocessing route; absolute local paths are intentionally omitted from this submitted metadata.",
   "blend_mode": "rank",
   "alt_name": "team_common_rawlike_raw_core_k3_seed17",
   "alt_weight": 0.15,

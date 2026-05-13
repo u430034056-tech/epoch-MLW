@@ -27,10 +27,10 @@ Preprocessing entrypoint:
 python main.py
 ```
 
-Verified locally with the project virtual environment:
+Verified locally with the project virtual environment using the same entrypoint:
 
 ```bash
-../../.venv/bin/python main.py
+python main.py
 ```
 
 The command successfully loads or builds preprocessing bundles for Logistic Regression, Random Forest, HistGradientBoosting, XGBoost, LightGBM, CatBoost, and KNN.
