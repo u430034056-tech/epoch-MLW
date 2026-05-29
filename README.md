@@ -21,7 +21,7 @@ The final CSV has `4277` prediction rows, exactly the columns `PassengerId,Trans
 
 ## Project Boundary
 
-This repository version is cleaned for submission around the final Kaggle file above. The checked-in code path focuses on reproducible preprocessing and submission artifacts. Some exploratory local XGBoost sprint work and public-feedback search logs live outside this GitHub mainline copy.
+This repository version is cleaned for submission around the final Kaggle file above. The checked-in code path includes reproducible preprocessing, the final submission artifacts, and the XGBoost branch used for the project report.
 
 ## Current Entrypoint
 
@@ -51,6 +51,22 @@ The preprocessing code reads Kaggle CSVs from `data/raw/`. If the older `spacesh
 
 Generated `processed/` bundles are local artifacts and are ignored by Git.
 
+## XGBoost Branch
+
+The project XGBoost workflow is checked in under `src/xgboost/`.
+
+Useful entrypoints:
+
+```bash
+# Clean no-target-encoding XGBoost CV and submission workflow.
+PYTHONPATH=. python -m src.xgboost.run_v2
+
+# Raw Kaggle CSV / SMOTE public-feedback recovery branch.
+PYTHONPATH=. python -m src.xgboost.run_umanglodaya_xgb --data-dir data/raw --seeds 2024
+```
+
+The detailed XGBoost notes are in `src/xgboost/README.md`. The final report should keep the result boundary clear: the `0.81412` score is the validated Kaggle public leaderboard submission, while OOF/CV scores in `src/xgboost/` document local model-selection evidence.
+
 ## Data
 
 Expected files:
@@ -65,6 +81,7 @@ The test file must be the 4277-row Kaggle test set and must not contain `Transpo
 
 - `preprocess.py`: shared preprocessing and model-specific bundle construction.
 - `main.py`: preprocessing-only entrypoint.
+- `src/xgboost/`: XGBoost CV, feature engineering, tuning, bagging, and public-feedback recovery scripts.
 - `data/raw/`: Kaggle train/test/sample submission CSV files.
 - `outputs/submissions/`: final validated Kaggle submission package.
 - `README_preprocessing.md`: detailed preprocessing design notes.
