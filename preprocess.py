@@ -9,7 +9,7 @@ import numpy as np
 import pandas as pd
 from sklearn.compose import ColumnTransformer
 from sklearn.pipeline import Pipeline
-from sklearn.preprocessing import OneHotEncoder, OrdinalEncoder, StandardScaler
+from sklearn.preprocessing import OneHotEncoder, StandardScaler
 
 
 SPEND_COLUMNS = ["RoomService", "FoodCourt", "ShoppingMall", "Spa", "VRDeck"]
@@ -44,6 +44,8 @@ COMMON_CATEGORICAL_COLUMNS = [
     "DeckSide",
     "HomePlanetDestination",
 ]
+SURNAME_FREQ_BIN_LABELS = ["Freq_0", "Freq_1", "Freq_2", "Freq_3_4", "Freq_5_7", "Freq_8_plus"]
+SURNAME_FREQUENT_THRESHOLD = 5
 BASE_NUMERIC_FEATURES = [
     "Age",
     "RoomService",
@@ -71,50 +73,39 @@ BASE_NUMERIC_FEATURES = [
     *MISSING_INDICATORS,
     "IsZeroSpend",
 ]
-KNN_NUMERIC_FEATURES = [
-    "Age",
-    "TotalSpend",
-    "SpendCount",
-    "LuxurySpend",
-    "BasicSpend",
-    "LuxuryShare",
-    "SpendPerActiveCategory",
-    "GroupMemberNo",
-    "GroupSize",
-    "CabinNum",
-    "SurnameFreq",
-    "IsZeroSpend",
-    "HasAnyLuxurySpend",
-    "AgeWasOutOfRange",
-    "IsChild",
-    "IsSenior",
-    "IsSolo",
-    "GroupMemberIsLeader",
-    *MISSING_INDICATORS,
+CATBOOST_EXTRA_NUMERIC_FEATURES = [
+    "GroupMemberRatio",
+    "IsFirstGroupMember",
+    "IsLastGroupMember",
+    "CabinNumIsMissing",
+    "CabinNumLog1p",
+    "SpendStd",
+    "SpendMax",
+    "SpendNonZeroRatio",
+    "LuxuryToBasicRatio",
+    "SpendPerGroupMember",
+    "IsRareSurname",
+    "IsFrequentSurname",
 ]
-KNN_CATEGORICAL_FEATURES = [
-    "HomePlanet",
-    "CryoSleep",
-    "Destination",
-    "VIP",
-    "Deck",
-    "Side",
-    "AgeGroup",
-    "CabinNumBin",
-    "DeckSide",
+CATBOOST_EXTRA_CATEGORICAL_FEATURES = [
+    "DeckCabinBin",
+    "DeckDestination",
+    "SurnameFreqBin",
 ]
+CATBOOST_FEATURE_OPTION_DEFAULTS = {
+    "include_surname": True,
+    "include_group_features": True,
+    "include_extra_cabin_features": True,
+    "include_extra_spend_features": True,
+    "include_extra_surname_features": True,
+}
 LOG1P_FEATURE_COLUMNS = SPEND_COLUMNS + ["TotalSpend", "LuxurySpend", "BasicSpend", "SpendPerActiveCategory"]
 MODEL_SUFFIXES = {
     "logistic_regression": "lr",
     "random_forest": "rf",
-    "hist_gradient_boosting": "hgb",
     "xgboost": "xgb",
     "lightgbm": "lgbm",
     "catboost": "cat",
-    "knn": "knn",
-}
-LEGACY_MODEL_NAME_ALIASES = {
-    "histgradientboosting": "hist_gradient_boosting",
 }
 SPEND_GROUP_LEVELS = [
     ["HomePlanet", "Destination", "VIP", "Deck"],
@@ -149,6 +140,21 @@ SHARED_ENGINEERED_FEATURES = [
     "GroupMemberIsLeader",
     "DeckSide",
     "HomePlanetDestination",
+    "GroupMemberRatio",
+    "IsFirstGroupMember",
+    "IsLastGroupMember",
+    "CabinNumIsMissing",
+    "CabinNumLog1p",
+    "DeckCabinBin",
+    "DeckDestination",
+    "SpendStd",
+    "SpendMax",
+    "SpendNonZeroRatio",
+    "LuxuryToBasicRatio",
+    "SpendPerGroupMember",
+    "SurnameFreqBin",
+    "IsRareSurname",
+    "IsFrequentSurname",
     *MISSING_INDICATORS,
 ]
 
@@ -501,6 +507,95 @@ def create_interaction_categorical_features(df: pd.DataFrame) -> pd.DataFrame:
     interaction_df["DeckSide"] = (deck_values + "_" + side_values).astype("string")
     interaction_df["HomePlanetDestination"] = (home_values + "_" + destination_values).astype("string")
     return interaction_df
+
+
+def _bucket_surname_frequency(series: pd.Series) -> pd.Series:
+    """Bucket surname frequency counts into stable, deterministic categorical bins."""
+    numeric_series = pd.to_numeric(series, errors="coerce").fillna(0).astype(int)
+    bucketed = pd.Series(index=numeric_series.index, dtype="string")
+    bucketed.loc[numeric_series <= 0] = SURNAME_FREQ_BIN_LABELS[0]
+    bucketed.loc[numeric_series == 1] = SURNAME_FREQ_BIN_LABELS[1]
+    bucketed.loc[numeric_series == 2] = SURNAME_FREQ_BIN_LABELS[2]
+    bucketed.loc[numeric_series.between(3, 4, inclusive="both")] = SURNAME_FREQ_BIN_LABELS[3]
+    bucketed.loc[numeric_series.between(5, 7, inclusive="both")] = SURNAME_FREQ_BIN_LABELS[4]
+    bucketed.loc[numeric_series >= 8] = SURNAME_FREQ_BIN_LABELS[5]
+    return bucketed.astype("string")
+
+
+def create_catboost_group_features(df: pd.DataFrame) -> pd.DataFrame:
+    """Create CatBoost-oriented group features with deterministic, split-safe formulas."""
+    print("[create_catboost_group_features] Building CatBoost-specific group features.")
+    group_df = df.copy()
+    safe_group_size = group_df["GroupSize"].clip(lower=1)
+    safe_member_no = group_df["GroupMemberNo"].where(group_df["GroupMemberNo"] > 0, 0)
+    group_df["GroupMemberRatio"] = safe_member_no / safe_group_size
+    group_df["IsFirstGroupMember"] = (group_df["GroupMemberNo"] == 1).astype(int)
+    group_df["IsLastGroupMember"] = (
+        group_df["GroupMemberNo"].gt(0) & group_df["GroupMemberNo"].eq(group_df["GroupSize"])
+    ).astype(int)
+    return group_df
+
+
+def create_catboost_cabin_features(df: pd.DataFrame) -> pd.DataFrame:
+    """Create CatBoost-oriented Cabin and deck interaction features."""
+    print("[create_catboost_cabin_features] Building CatBoost-specific cabin features.")
+    cabin_df = df.copy()
+    cabin_num = pd.to_numeric(cabin_df["CabinNum"], errors="coerce").fillna(-1.0)
+    deck_values = cabin_df["Deck"].astype("string").fillna("Unknown")
+    destination_values = cabin_df["Destination"].astype("string").fillna("Unknown")
+    cabin_bin_values = cabin_df["CabinNumBin"].astype("string").fillna("CabinBin_Missing")
+    cabin_df["CabinNumIsMissing"] = cabin_num.lt(0).astype(int)
+    cabin_df["CabinNumLog1p"] = np.log1p(cabin_num.clip(lower=0))
+    cabin_df["DeckCabinBin"] = (deck_values + "_" + cabin_bin_values).astype("string")
+    cabin_df["DeckDestination"] = (deck_values + "_" + destination_values).astype("string")
+    return cabin_df
+
+
+def create_catboost_spend_features(df: pd.DataFrame) -> pd.DataFrame:
+    """Create CatBoost-oriented spend-distribution features."""
+    print("[create_catboost_spend_features] Building CatBoost-specific spend features.")
+    spend_df = df.copy()
+    safe_group_size = spend_df["GroupSize"].clip(lower=1)
+    spend_df["SpendStd"] = spend_df[SPEND_COLUMNS].std(axis=1, ddof=0)
+    spend_df["SpendMax"] = spend_df[SPEND_COLUMNS].max(axis=1)
+    spend_df["SpendNonZeroRatio"] = spend_df["SpendCount"] / float(len(SPEND_COLUMNS))
+    spend_df["LuxuryToBasicRatio"] = spend_df["LuxurySpend"] / (spend_df["BasicSpend"] + 1.0)
+    spend_df["SpendPerGroupMember"] = spend_df["TotalSpend"] / safe_group_size
+    for column in ["SpendStd", "SpendMax", "SpendNonZeroRatio", "LuxuryToBasicRatio", "SpendPerGroupMember"]:
+        spend_df[column] = np.nan_to_num(spend_df[column], nan=0.0, posinf=0.0, neginf=0.0)
+    return spend_df
+
+
+def create_catboost_surname_features(df: pd.DataFrame) -> pd.DataFrame:
+    """Create CatBoost-oriented surname frequency features without target encoding."""
+    print("[create_catboost_surname_features] Building CatBoost-specific surname features.")
+    surname_df = df.copy()
+    surname_freq = pd.to_numeric(surname_df["SurnameFreq"], errors="coerce").fillna(0).astype(int)
+    surname_df["SurnameFreqBin"] = _bucket_surname_frequency(surname_freq)
+    surname_df["IsRareSurname"] = surname_freq.le(1).astype(int)
+    surname_df["IsFrequentSurname"] = surname_freq.ge(SURNAME_FREQUENT_THRESHOLD).astype(int)
+    return surname_df
+
+
+def create_catboost_extra_features(df: pd.DataFrame) -> pd.DataFrame:
+    """Create the optional low-risk CatBoost feature family on top of the shared common frame."""
+    feature_df = df.copy()
+    feature_df = create_catboost_group_features(feature_df)
+    feature_df = create_catboost_cabin_features(feature_df)
+    feature_df = create_catboost_spend_features(feature_df)
+    feature_df = create_catboost_surname_features(feature_df)
+    return feature_df
+
+
+def resolve_catboost_feature_options(feature_options: dict[str, Any] | None = None) -> dict[str, bool]:
+    """Return normalized CatBoost feature switches used for fold tuning and full preprocessing."""
+    resolved = {key: bool(value) for key, value in CATBOOST_FEATURE_OPTION_DEFAULTS.items()}
+    if feature_options is None:
+        return resolved
+    for key, value in feature_options.items():
+        if key in resolved:
+            resolved[key] = bool(value)
+    return resolved
 
 
 def _fit_spend_group_medians(train_df: pd.DataFrame) -> dict[str, dict[str, dict[str, float]]]:
@@ -1002,6 +1097,8 @@ def build_common_features(train_df: pd.DataFrame, test_df: pd.DataFrame) -> dict
     test_working = create_group_structure_features(test_working)
     train_working = create_interaction_categorical_features(train_working)
     test_working = create_interaction_categorical_features(test_working)
+    train_working = create_catboost_extra_features(train_working)
+    test_working = create_catboost_extra_features(test_working)
 
     train_working = finalize_common_frame(train_working, "train")
     test_working = finalize_common_frame(test_working, "test")
@@ -1070,6 +1167,119 @@ def build_common_features(train_df: pd.DataFrame, test_df: pd.DataFrame) -> dict
     return common_bundle
 
 
+def prepare_fold_input_frame(
+    df: pd.DataFrame,
+    *,
+    target_col: str = "Transported",
+) -> tuple[pd.DataFrame, pd.Series | None, pd.Series]:
+    """Split a raw fold frame into features, optional target, and preserved PassengerId order."""
+    if "PassengerId" not in df.columns:
+        raise ValueError("[prepare_fold_input_frame] Input frame must contain PassengerId.")
+
+    working_df = df.copy()
+    y_series: pd.Series | None = None
+    if target_col in working_df.columns:
+        y_series = working_df[target_col].astype(int).copy()
+        working_df = working_df.drop(columns=[target_col])
+
+    ids = working_df["PassengerId"].astype("string").copy()
+    return working_df, y_series, ids
+
+
+def _fit_train_group_fill_maps(train_df: pd.DataFrame, columns: list[str]) -> dict[str, dict[str, str]]:
+    """Fit train-only group fill maps used by fold-local preprocessing."""
+    fill_maps: dict[str, dict[str, str]] = {}
+    for column in columns:
+        if column not in train_df.columns:
+            fill_maps[column] = {}
+            continue
+        observed = train_df.loc[train_df[column].notna(), ["GroupID", column]].copy()
+        if observed.empty:
+            fill_maps[column] = {}
+            continue
+        unique_counts = observed.groupby("GroupID")[column].nunique(dropna=True)
+        valid_group_ids = unique_counts[unique_counts == 1].index
+        if len(valid_group_ids) == 0:
+            fill_maps[column] = {}
+            continue
+        group_value_map = observed[observed["GroupID"].isin(valid_group_ids)].groupby("GroupID")[column].first().to_dict()
+        fill_maps[column] = {str(key): str(value) for key, value in group_value_map.items()}
+    return fill_maps
+
+
+def _apply_train_group_fill_maps(
+    df: pd.DataFrame,
+    fill_maps: dict[str, dict[str, str]],
+) -> pd.DataFrame:
+    """Apply train-only group fill maps to a target frame."""
+    filled_df = df.copy()
+    for column, group_value_map in fill_maps.items():
+        if column not in filled_df.columns or not group_value_map:
+            continue
+        candidate_values = filled_df["GroupID"].astype("string").map(group_value_map)
+        fill_mask = filled_df[column].isna() & candidate_values.notna()
+        if int(fill_mask.sum()) > 0:
+            filled_df.loc[fill_mask, column] = candidate_values.loc[fill_mask]
+    return filled_df
+
+
+def _finalize_fold_common_frame(df: pd.DataFrame, stage_name: str) -> pd.DataFrame:
+    """Finalize and validate a fold-local common frame."""
+    finalized = create_spend_features(df)
+    finalized = create_age_features(finalized)
+    finalized = create_spend_structure_features(finalized)
+    finalized = create_group_structure_features(finalized)
+    finalized = create_interaction_categorical_features(finalized)
+    finalized = create_catboost_extra_features(finalized)
+    finalized = finalize_common_frame(finalized, stage_name)
+    _validate_common_frame(finalized, stage_name)
+    return finalized
+
+
+def build_fold_common_frame(train_df: pd.DataFrame, apply_df: pd.DataFrame) -> pd.DataFrame:
+    """Build a fold-local common feature frame using train-fit statistics only."""
+    train_features, _, train_ids = prepare_fold_input_frame(train_df)
+    apply_features, _, apply_ids = prepare_fold_input_frame(apply_df)
+
+    train_working = enforce_dtypes(basic_cleaning(train_features))
+    apply_working = enforce_dtypes(basic_cleaning(apply_features))
+
+    train_working = split_passenger_id_features(train_working)
+    apply_working = split_passenger_id_features(apply_working)
+    train_group_sizes = train_working["GroupID"].value_counts(dropna=False).to_dict()
+    train_working["GroupSize"] = train_working["GroupID"].map(train_group_sizes).fillna(1).astype(int)
+    apply_working["GroupSize"] = apply_working["GroupID"].map(train_group_sizes).fillna(1).astype(int)
+
+    train_working = split_cabin_features(train_working)
+    apply_working = split_cabin_features(apply_working)
+    train_working = extract_name_features(train_working)
+    apply_working = extract_name_features(apply_working)
+
+    train_working = create_missing_indicators(train_working)
+    apply_working = create_missing_indicators(apply_working)
+
+    group_fill_columns = ["HomePlanet", "VIP", "Destination"]
+    fill_maps = _fit_train_group_fill_maps(train_working, group_fill_columns)
+    train_working = _apply_train_group_fill_maps(train_working, fill_maps)
+    apply_working = _apply_train_group_fill_maps(apply_working, fill_maps)
+
+    train_working, _ = infer_missing_cryosleep(train_working)
+    apply_working, _ = infer_missing_cryosleep(apply_working)
+    train_working = apply_cryosleep_spend_rule(train_working)
+    apply_working = apply_cryosleep_spend_rule(apply_working)
+
+    common_stats = fit_common_statistics(train_working)
+    train_working = apply_common_statistics(train_working, common_stats)
+    apply_working = apply_common_statistics(apply_working, common_stats)
+
+    train_working = _finalize_fold_common_frame(train_working, "fold_train")
+    apply_working = _finalize_fold_common_frame(apply_working, "fold_apply")
+
+    _assert_ids_aligned(train_ids, train_working, "fold_train")
+    _assert_ids_aligned(apply_ids, apply_working, "fold_apply")
+    return apply_working
+
+
 def _build_feature_set(
     common_train: pd.DataFrame,
     common_test: pd.DataFrame,
@@ -1092,6 +1302,18 @@ def _build_feature_set(
         "train_ids": train_ids.copy(),
         "test_ids": test_ids.copy(),
     }
+
+
+def _dedupe_columns(columns: list[str]) -> list[str]:
+    """Preserve column order while removing duplicates."""
+    seen: set[str] = set()
+    ordered: list[str] = []
+    for column in columns:
+        if column in seen:
+            continue
+        seen.add(column)
+        ordered.append(column)
+    return ordered
 
 
 def get_feature_sets_for_lr(
@@ -1126,30 +1348,6 @@ def get_feature_sets_for_rf(
         COMMON_CATEGORICAL_COLUMNS.copy(),
         COMMON_RAW_AUDIT_COLUMNS.copy(),
     )
-
-
-def get_feature_sets_for_hgb(
-    common_train: pd.DataFrame, common_test: pd.DataFrame, train_ids: pd.Series, test_ids: pd.Series
-) -> dict[str, Any]:
-    """Select HistGradientBoosting input columns from the shared feature tables."""
-    print("[get_feature_sets_for_hgb] Selecting HistGradientBoosting feature columns.")
-    return _build_feature_set(
-        common_train,
-        common_test,
-        train_ids,
-        test_ids,
-        "hist_gradient_boosting",
-        BASE_NUMERIC_FEATURES.copy(),
-        COMMON_CATEGORICAL_COLUMNS.copy(),
-        COMMON_RAW_AUDIT_COLUMNS.copy(),
-    )
-
-
-def get_feature_sets_for_hist_gradient_boosting(
-    common_train: pd.DataFrame, common_test: pd.DataFrame, train_ids: pd.Series, test_ids: pd.Series
-) -> dict[str, Any]:
-    """Select HistGradientBoosting input columns using the canonical public branch name."""
-    return get_feature_sets_for_hgb(common_train, common_test, train_ids, test_ids)
 
 
 def get_feature_sets_for_xgb(
@@ -1187,37 +1385,43 @@ def get_feature_sets_for_lgbm(
 
 
 def get_feature_sets_for_cat(
-    common_train: pd.DataFrame, common_test: pd.DataFrame, train_ids: pd.Series, test_ids: pd.Series
+    common_train: pd.DataFrame,
+    common_test: pd.DataFrame,
+    train_ids: pd.Series,
+    test_ids: pd.Series,
+    feature_options: dict[str, Any] | None = None,
 ) -> dict[str, Any]:
     """Select CatBoost input columns from the shared feature tables."""
     print("[get_feature_sets_for_cat] Selecting CatBoost feature columns.")
+    resolved_options = resolve_catboost_feature_options(feature_options)
     dropped_features = [column for column in COMMON_RAW_AUDIT_COLUMNS if column != "Surname"]
+    numeric_features = BASE_NUMERIC_FEATURES.copy()
+    categorical_features = COMMON_CATEGORICAL_COLUMNS.copy()
+
+    if resolved_options["include_group_features"]:
+        numeric_features.extend(CATBOOST_EXTRA_NUMERIC_FEATURES[:3])
+    if resolved_options["include_extra_cabin_features"]:
+        numeric_features.extend(CATBOOST_EXTRA_NUMERIC_FEATURES[3:5])
+        categorical_features.extend(CATBOOST_EXTRA_CATEGORICAL_FEATURES[:2])
+    if resolved_options["include_extra_spend_features"]:
+        numeric_features.extend(CATBOOST_EXTRA_NUMERIC_FEATURES[5:10])
+    if resolved_options["include_extra_surname_features"]:
+        numeric_features.extend(CATBOOST_EXTRA_NUMERIC_FEATURES[10:])
+        categorical_features.append(CATBOOST_EXTRA_CATEGORICAL_FEATURES[2])
+    if resolved_options["include_surname"]:
+        categorical_features.append("Surname")
+    else:
+        dropped_features.append("Surname")
+
     return _build_feature_set(
         common_train,
         common_test,
         train_ids,
         test_ids,
         "catboost",
-        BASE_NUMERIC_FEATURES.copy(),
-        COMMON_CATEGORICAL_COLUMNS + ["Surname"],
-        dropped_features,
-    )
-
-
-def get_feature_sets_for_knn(
-    common_train: pd.DataFrame, common_test: pd.DataFrame, train_ids: pd.Series, test_ids: pd.Series
-) -> dict[str, Any]:
-    """Select a compact KNN feature subset from the shared feature tables."""
-    print("[get_feature_sets_for_knn] Selecting compact KNN feature columns.")
-    return _build_feature_set(
-        common_train,
-        common_test,
-        train_ids,
-        test_ids,
-        "knn",
-        KNN_NUMERIC_FEATURES.copy(),
-        KNN_CATEGORICAL_FEATURES.copy(),
-        COMMON_RAW_AUDIT_COLUMNS + ["HomePlanetDestination"],
+        _dedupe_columns(numeric_features),
+        _dedupe_columns(categorical_features),
+        _dedupe_columns(dropped_features),
     )
 
 
@@ -1338,44 +1542,6 @@ def preprocess_for_random_forest(feature_set: dict[str, Any], y_train: pd.Series
     )
 
 
-def preprocess_for_histgradientboosting(feature_set: dict[str, Any], y_train: pd.Series) -> dict[str, Any]:
-    """Transform shared features into a dense HistGradientBoosting-ready table."""
-    print("[preprocess_for_histgradientboosting] Applying ordinal encoding for dense gradient boosting input.")
-    train_df = _clone_with_log1p(feature_set["train_df"], LOG1P_FEATURE_COLUMNS)
-    test_df = _clone_with_log1p(feature_set["test_df"], LOG1P_FEATURE_COLUMNS)
-    encoder = OrdinalEncoder(handle_unknown="use_encoded_value", unknown_value=-1)
-    encoded_train = encoder.fit_transform(train_df[feature_set["categorical_features"]])
-    encoded_test = encoder.transform(test_df[feature_set["categorical_features"]])
-    encoded_train_df = pd.DataFrame(encoded_train, columns=feature_set["categorical_features"], index=train_df.index)
-    encoded_test_df = pd.DataFrame(encoded_test, columns=feature_set["categorical_features"], index=test_df.index)
-    X_train = pd.concat([train_df[feature_set["numeric_features"]], encoded_train_df], axis=1)
-    X_test = pd.concat([test_df[feature_set["numeric_features"]], encoded_test_df], axis=1)
-    categorical_indices = [X_train.columns.get_loc(column) for column in feature_set["categorical_features"]]
-    return _build_model_bundle(
-        model_name="hist_gradient_boosting",
-        X_train=X_train,
-        X_test=X_test,
-        y_train=y_train,
-        train_ids=feature_set["train_ids"],
-        test_ids=feature_set["test_ids"],
-        feature_names=X_train.columns.tolist(),
-        preprocessor=encoder,
-        categorical_feature_names=feature_set["categorical_features"],
-        categorical_feature_indices=categorical_indices,
-        dropped_features=feature_set["dropped_features"],
-        notes=[
-            "HistGradientBoosting uses dense numeric input with ordinal-encoded categorical columns.",
-            "Spend-related numeric columns use log1p before ordinal encoding and dense table assembly.",
-            "Raw audit columns remain in the common table for traceability, but are excluded from model inputs.",
-        ],
-    )
-
-
-def preprocess_for_hist_gradient_boosting(feature_set: dict[str, Any], y_train: pd.Series) -> dict[str, Any]:
-    """Prepare the HistGradientBoosting preprocessing bundle using the canonical public branch name."""
-    return preprocess_for_histgradientboosting(feature_set, y_train)
-
-
 def preprocess_for_xgboost(feature_set: dict[str, Any], y_train: pd.Series) -> dict[str, Any]:
     """Transform shared features into an XGBoost-ready design matrix."""
     print("[preprocess_for_xgboost] Applying log1p and one-hot encoding without scaling.")
@@ -1465,55 +1631,6 @@ def preprocess_for_catboost(feature_set: dict[str, Any], y_train: pd.Series) -> 
     )
 
 
-def preprocess_for_knn(feature_set: dict[str, Any], y_train: pd.Series) -> dict[str, Any]:
-    """Transform shared features into a dense KNN-ready numeric matrix."""
-    print("[preprocess_for_knn] Applying log1p, scaling, and dense one-hot encoding.")
-    train_df = _clone_with_log1p(feature_set["train_df"], LOG1P_FEATURE_COLUMNS)
-    test_df = _clone_with_log1p(feature_set["test_df"], LOG1P_FEATURE_COLUMNS)
-
-    preprocessor = ColumnTransformer(
-        transformers=[
-            ("num", Pipeline([("scaler", StandardScaler())]), feature_set["numeric_features"]),
-            ("cat", OneHotEncoder(handle_unknown="ignore", sparse_output=False), feature_set["categorical_features"]),
-        ],
-        remainder="drop",
-        sparse_threshold=0.0,
-    )
-    X_train = preprocessor.fit_transform(train_df)
-    X_test = preprocessor.transform(test_df)
-
-    if hasattr(X_train, "toarray"):
-        X_train = X_train.toarray()
-    if hasattr(X_test, "toarray"):
-        X_test = X_test.toarray()
-
-    X_train = np.asarray(X_train, dtype=np.float32)
-    X_test = np.asarray(X_test, dtype=np.float32)
-
-    if np.isnan(X_train).any():
-        raise ValueError("[preprocess_for_knn] X_train contains missing values after preprocessing.")
-    if np.isnan(X_test).any():
-        raise ValueError("[preprocess_for_knn] X_test contains missing values after preprocessing.")
-
-    return _build_model_bundle(
-        model_name="knn",
-        X_train=X_train,
-        X_test=X_test,
-        y_train=y_train,
-        train_ids=feature_set["train_ids"],
-        test_ids=feature_set["test_ids"],
-        feature_names=preprocessor.get_feature_names_out().tolist(),
-        preprocessor=preprocessor,
-        dropped_features=feature_set["dropped_features"],
-        notes=[
-            "KNN uses standardized numeric features and one-hot encoded categorical features.",
-            "KNN is a distance-based model, so the final output is a dense numeric matrix.",
-            "Spend-related numeric columns and TotalSpend use log1p before scaling to reduce long-tail effects.",
-            "KNN uses a compact feature subset and explicitly excludes high-cardinality audit columns and HomePlanetDestination to avoid one-hot dimension inflation.",
-        ],
-    )
-
-
 def _shape_as_list(value: Any) -> list[int] | None:
     """Return a JSON-friendly shape description when the object exposes shape."""
     if hasattr(value, "shape"):
@@ -1539,8 +1656,6 @@ def _assert_model_feature_isolation(model_name: str, feature_set: dict[str, Any]
     disallowed_columns = set(COMMON_RAW_AUDIT_COLUMNS)
     if model_name == "catboost":
         disallowed_columns.discard("Surname")
-    if model_name == "knn":
-        disallowed_columns.add("HomePlanetDestination")
 
     selected_columns = set(feature_set["train_df"].columns).union(set(feature_set["test_df"].columns))
     leaked_selected_columns = sorted(disallowed_columns.intersection(selected_columns))
@@ -1617,6 +1732,48 @@ def validate_model_input_bundle(model_name: str, feature_set: dict[str, Any], bu
     bundle["input_validation_passed"] = True
 
 
+def build_fold_catboost_bundle(
+    train_fold_df: pd.DataFrame,
+    valid_fold_df: pd.DataFrame,
+    feature_options: dict[str, Any] | None = None,
+) -> dict[str, Any]:
+    """Build fold-local CatBoost inputs without writing processed artifacts."""
+    if "Transported" not in train_fold_df.columns or "Transported" not in valid_fold_df.columns:
+        raise ValueError("[build_fold_catboost_bundle] Both fold DataFrames must contain Transported.")
+
+    common_train = build_fold_common_frame(train_fold_df, train_fold_df)
+    common_valid = build_fold_common_frame(train_fold_df, valid_fold_df)
+    y_train = train_fold_df["Transported"].astype(int).copy()
+    y_valid = valid_fold_df["Transported"].astype(int).copy()
+    train_ids = common_train["PassengerId"].astype("string").copy()
+    valid_ids = common_valid["PassengerId"].astype("string").copy()
+
+    feature_set = get_feature_sets_for_cat(
+        common_train,
+        common_valid,
+        train_ids,
+        valid_ids,
+        feature_options=feature_options,
+    )
+    model_bundle = preprocess_for_catboost(feature_set, y_train)
+    _assert_model_feature_isolation("catboost", feature_set, model_bundle)
+    validate_model_input_bundle("catboost", feature_set, model_bundle)
+
+    return {
+        "X_train": model_bundle["X_train"].copy(),
+        "X_valid": model_bundle["X_test"].copy(),
+        "y_train": y_train,
+        "y_valid": y_valid,
+        "train_ids": train_ids,
+        "valid_ids": valid_ids,
+        "feature_names": [str(name) for name in model_bundle["feature_names"]],
+        "categorical_feature_names": [str(name) for name in model_bundle["categorical_feature_names"]],
+        "categorical_feature_indices": [int(index) for index in model_bundle["categorical_feature_indices"]],
+        "cat_feature_spec": [str(name) for name in model_bundle["categorical_feature_names"]],
+        "feature_options": resolve_catboost_feature_options(feature_options),
+    }
+
+
 def save_preprocessed_bundle(bundle: dict[str, Any], save_dir: str | Path, model_name: str) -> Path:
     """Save a preprocessing bundle to joblib plus a JSON metadata sidecar."""
     save_path = Path(save_dir)
@@ -1673,11 +1830,26 @@ def save_preprocessed_bundle(bundle: dict[str, Any], save_dir: str | Path, model
 
 def load_preprocessed_bundle(model_name: str, processed_root: str | Path | None = None) -> dict[str, Any]:
     """Load a saved preprocessing bundle from the processed directory."""
+    from inference_utils import load_joblib_with_pandas_compat
+
     base_processed = Path(processed_root) if processed_root is not None else get_project_paths()["processed_root"]
-    resolved_model_name = LEGACY_MODEL_NAME_ALIASES.get(model_name, model_name)
-    bundle_path = base_processed / resolved_model_name / f"preprocessed_{resolved_model_name}.joblib"
+    bundle_path = base_processed / model_name / f"preprocessed_{model_name}.joblib"
     print(f"[load_preprocessed_bundle] Loading bundle from: {bundle_path}")
-    return joblib.load(bundle_path)
+    try:
+        bundle = load_joblib_with_pandas_compat(bundle_path)
+    except Exception as exc:
+        raise RuntimeError(
+            f"[preprocess] Failed to load bundle '{bundle_path}' with pandas-compatible deserialization: "
+            f"{type(exc).__name__}: {exc}. "
+            "If this bundle was created by an incompatible environment, remove the stale processed outputs "
+            "for this model and rerun preprocessing to rebuild them."
+        ) from exc
+    if not isinstance(bundle, dict):
+        raise TypeError(
+            f"[preprocess] Loaded bundle '{bundle_path}' is not a dictionary. "
+            "Remove the stale processed output and rerun preprocessing."
+        )
+    return bundle
 
 
 def run_all_preprocessing(project_root: str | Path | None = None, save_outputs: bool = True) -> dict[str, dict[str, Any]]:
@@ -1694,20 +1866,16 @@ def run_all_preprocessing(project_root: str | Path | None = None, save_outputs: 
     feature_builders = {
         "logistic_regression": get_feature_sets_for_lr,
         "random_forest": get_feature_sets_for_rf,
-        "hist_gradient_boosting": get_feature_sets_for_hist_gradient_boosting,
         "xgboost": get_feature_sets_for_xgb,
         "lightgbm": get_feature_sets_for_lgbm,
         "catboost": get_feature_sets_for_cat,
-        "knn": get_feature_sets_for_knn,
     }
     preprocessors = {
         "logistic_regression": preprocess_for_logistic_regression,
         "random_forest": preprocess_for_random_forest,
-        "hist_gradient_boosting": preprocess_for_hist_gradient_boosting,
         "xgboost": preprocess_for_xgboost,
         "lightgbm": preprocess_for_lightgbm,
         "catboost": preprocess_for_catboost,
-        "knn": preprocess_for_knn,
     }
 
     for model_name in feature_builders:
