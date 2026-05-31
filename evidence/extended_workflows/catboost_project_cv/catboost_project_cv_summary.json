@@ -1,0 +1,67 @@
+{
+  "model": "CatBoost",
+  "source_branch": "origin/upload/project-kevinhe",
+  "source_dir": "/Users/shenyijie/Desktop/MLWP project/group3/sources/github_upload_project_kevinhe_full",
+  "protocol": "fixed report project-side config, 5-fold StratifiedKFold OOF threshold search",
+  "params": {
+    "iterations": 2000,
+    "learning_rate": 0.03,
+    "depth": 6,
+    "l2_leaf_reg": 5.0
+  },
+  "cv_folds": 5,
+  "random_state": 42,
+  "early_stopping_rounds": 100,
+  "threshold_grid": {
+    "start": 0.3,
+    "end": 0.7,
+    "step": 0.01
+  },
+  "threshold_metric": "accuracy",
+  "best_threshold": 0.49,
+  "mean_cv_accuracy": 0.8189353298160192,
+  "mean_cv_auc": 0.906362078763155,
+  "oof_accuracy": 0.8189347751064074,
+  "oof_auc": 0.9062040159715676,
+  "oof_f1": 0.8227876604368386,
+  "fold_best_iterations": [
+    812,
+    557,
+    823,
+    810,
+    540
+  ],
+  "cv_seconds": 42.133108374953736,
+  "final_train_seconds": 17.611579249962233,
+  "final_train_summary": {
+    "summary_type": "train_only",
+    "mode": "final_train",
+    "train_accuracy": 0.8851949844702635,
+    "train_auc": 0.959278749165611,
+    "train_f1": 0.8862807657247037,
+    "train_precision": 0.8842655752614825,
+    "train_recall": 0.8883051621745089,
+    "train_logloss": 0.2743511603569907,
+    "train_positive_rate_observed": 0.5036236051995858,
+    "train_positive_rate_predicted": 0.5059243069136087,
+    "n_train_samples": 8693,
+    "n_test_samples": 4277,
+    "categorical_feature_count": 14
+  },
+  "final_train_run": "train_001",
+  "managed_train_dir": "/Users/shenyijie/Desktop/MLWP project/group3/reproduction/outputs/catboost_project_cv/artifacts/train/catboost/train_001",
+  "submission_validation": {
+    "path": "/Users/shenyijie/Desktop/MLWP project/group3/reproduction/outputs/catboost_project_cv/submissions/submission_catboost.csv",
+    "shape": [
+      4277,
+      2
+    ],
+    "columns": [
+      "PassengerId",
+      "Transported"
+    ],
+    "id_order_match": true,
+    "boolean_like": true,
+    "true_count": 2198
+  }
+}

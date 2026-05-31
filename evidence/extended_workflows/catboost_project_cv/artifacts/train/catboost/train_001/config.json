@@ -1,0 +1,12 @@
+{
+  "loss_function": "Logloss",
+  "eval_metric": "Accuracy",
+  "iterations": 2000,
+  "learning_rate": 0.03,
+  "depth": 6,
+  "l2_leaf_reg": 5.0,
+  "random_seed": 42,
+  "verbose": 100,
+  "allow_writing_files": false,
+  "thread_count": -1
+}

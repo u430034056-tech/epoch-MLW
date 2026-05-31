@@ -1,0 +1,20 @@
+{
+  "model": "random_forest",
+  "cv_strategy": "StratifiedKFold(n_splits=5, shuffle=True)",
+  "scoring": "accuracy",
+  "best_cv_accuracy": 0.8155994179425367,
+  "oof_best_threshold": 0.5099999999999999,
+  "oof_accuracy_at_best_threshold": 0.8157137927067756,
+  "best_params": {
+    "n_estimators": 2600,
+    "min_samples_split": 5,
+    "min_samples_leaf": 5,
+    "max_leaf_nodes": 128,
+    "max_features": 0.5,
+    "max_depth": 16,
+    "criterion": "log_loss",
+    "class_weight": "balanced",
+    "ccp_alpha": 3e-05,
+    "bootstrap": false
+  }
+}

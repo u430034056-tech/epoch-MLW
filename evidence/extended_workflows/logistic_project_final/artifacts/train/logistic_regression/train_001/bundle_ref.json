@@ -1,0 +1,4 @@
+{
+  "bundle_path": "processed/logistic_regression/preprocessed_logistic_regression.joblib",
+  "bundle_role": "training_and_test_feature_source"
+}

@@ -1,0 +1,63 @@
+{
+  "model_name": "catboost",
+  "timestamp": "2026-05-29T15:42:59.997162+00:00",
+  "random_seed": 42,
+  "train_shape": [
+    8693,
+    62
+  ],
+  "test_shape": [
+    4277,
+    62
+  ],
+  "threshold": 0.49,
+  "bundle_path": "/Users/shenyijie/Desktop/MLWP project/group3/reproduction/work/catboost_project_cv_project/processed/catboost/preprocessed_catboost.joblib",
+  "bundle_source": "/Users/shenyijie/Desktop/MLWP project/group3/reproduction/work/catboost_project_cv_project/processed/catboost/preprocessed_catboost.joblib",
+  "feature_count": 62,
+  "categorical_feature_names": [
+    "HomePlanet",
+    "CryoSleep",
+    "Destination",
+    "VIP",
+    "Deck",
+    "Side",
+    "AgeGroup",
+    "CabinNumBin",
+    "DeckSide",
+    "HomePlanetDestination",
+    "DeckCabinBin",
+    "DeckDestination",
+    "SurnameFreqBin",
+    "Surname"
+  ],
+  "categorical_feature_count": 14,
+  "config": {
+    "loss_function": "Logloss",
+    "eval_metric": "Accuracy",
+    "iterations": 2000,
+    "learning_rate": 0.03,
+    "depth": 6,
+    "l2_leaf_reg": 5.0,
+    "random_seed": 42,
+    "verbose": 100,
+    "allow_writing_files": false,
+    "thread_count": -1
+  },
+  "infer_bundle_mode": "processed_default_compatible",
+  "train_data_mode": "default_processed_bundle",
+  "train_summary": {
+    "summary_type": "train_only",
+    "mode": "final_train",
+    "train_accuracy": 0.8851949844702635,
+    "train_auc": 0.959278749165611,
+    "train_f1": 0.8862807657247037,
+    "train_precision": 0.8842655752614825,
+    "train_recall": 0.8883051621745089,
+    "train_logloss": 0.2743511603569907,
+    "train_positive_rate_observed": 0.5036236051995858,
+    "train_positive_rate_predicted": 0.5059243069136087,
+    "n_train_samples": 8693,
+    "n_test_samples": 4277,
+    "categorical_feature_count": 14
+  }
+}

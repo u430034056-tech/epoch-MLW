@@ -1,9 +1,8 @@
-numpy>=2.0,<3.0
-pandas>=2.2,<4.0
+pandas
+numpy
+scipy
+joblib
 scikit-learn==1.6.1
-joblib>=1.4
-xgboost>=2.1,<4.0
-optuna>=3.6,<5.0
-shap>=0.46,<1.0
-matplotlib>=3.8
-seaborn>=0.13
+xgboost
+lightgbm
+catboost

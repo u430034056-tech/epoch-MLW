@@ -1,0 +1,4 @@
+{
+  "bundle_path": "processed/catboost/preprocessed_catboost.joblib",
+  "bundle_role": "training_and_test_feature_source"
+}

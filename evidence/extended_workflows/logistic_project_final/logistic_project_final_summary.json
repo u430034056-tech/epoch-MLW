@@ -1,0 +1,35 @@
+{
+  "model": "Logistic Regression",
+  "source_model_script": "/Users/shenyijie/Desktop/MLWP project/group3/sources/model_code_selected/main/model_logistic_regression.py",
+  "source_preprocess_script": "/Users/shenyijie/Desktop/MLWP project/group3/sources/model_code_selected/main/preprocess.py",
+  "helper_source": "/Users/shenyijie/Desktop/MLWP project/group3/sources/github_upload_project_kevinhe_full",
+  "note": "main@8f61ec2 LR script requires helper modules absent from main, so helper APIs are supplied from upload/project-kevinhe.",
+  "protocol": "project-side final_train, saga l2 C=1.0, threshold=0.5",
+  "train_summary": {
+    "summary_type": "train_only",
+    "mode": "final_train",
+    "train_accuracy": 0.7917864948809387,
+    "train_positive_rate_observed": 0.5036236051995858,
+    "train_positive_rate_predicted": 0.5284711837110319,
+    "n_train_samples": 8693,
+    "n_test_samples": 4277
+  },
+  "feature_count": 107,
+  "coefficient_path": "/Users/shenyijie/Desktop/MLWP project/group3/reproduction/outputs/logistic_project_final/artifacts/logistic_regression/coefficients.csv",
+  "train_summary_path": "/Users/shenyijie/Desktop/MLWP project/group3/reproduction/outputs/logistic_project_final/artifacts/train/logistic_regression/train_001/train_summary.json",
+  "submission_validation": {
+    "path": "/Users/shenyijie/Desktop/MLWP project/group3/reproduction/outputs/logistic_project_final/submissions/submission_logistic_regression.csv",
+    "shape": [
+      4277,
+      2
+    ],
+    "columns": [
+      "PassengerId",
+      "Transported"
+    ],
+    "id_order_match": true,
+    "boolean_like": true,
+    "true_count": 2274
+  },
+  "log_path": "/Users/shenyijie/Desktop/MLWP project/group3/reproduction/logs/logistic_project_final_run.log"
+}

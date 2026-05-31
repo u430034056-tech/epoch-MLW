@@ -1,0 +1,9 @@
+{
+  "summary_type": "train_only",
+  "mode": "final_train",
+  "train_accuracy": 0.7917864948809387,
+  "train_positive_rate_observed": 0.5036236051995858,
+  "train_positive_rate_predicted": 0.5284711837110319,
+  "n_train_samples": 8693,
+  "n_test_samples": 4277
+}
