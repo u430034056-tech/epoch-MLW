@@ -1,0 +1,11 @@
+RF runnable package
+
+Run:
+  python model_random_forest.py
+
+Expected output:
+  submission_rf.csv
+
+Notes:
+- Uses bundled processed/random_forest/preprocessed_random_forest.joblib
+- Requires Python with: numpy, pandas, scikit-learn, joblib

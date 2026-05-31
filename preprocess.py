@@ -157,9 +157,14 @@ def get_project_paths(project_root: str | Path | None = None) -> dict[str, Path]
     """Return all important project paths used by the preprocessing scaffold."""
     root = Path(project_root) if project_root is not None else Path.cwd()
     processed_root = root / "processed"
+    # The repo may store Kaggle CSVs either under an extracted `spaceship-titanic/`
+    # directory or under `data/raw/`. Prefer the extracted directory when present.
+    default_kaggle_dir = root / "spaceship-titanic"
+    fallback_raw_dir = root / "data" / "raw"
+    data_dir = default_kaggle_dir if default_kaggle_dir.exists() else fallback_raw_dir
     paths = {
         "project_root": root,
-        "data_dir": root / "spaceship-titanic",
+        "data_dir": data_dir,
         "processed_root": processed_root,
         "common_dir": processed_root / "common",
     }
