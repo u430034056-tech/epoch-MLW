@@ -1,0 +1,7 @@
+{
+  "feature_ablation_matrix": "/Users/shenyijie/Desktop/MLWP project/01_本地副本_实验/xgb_feature_ablation_sprint_2026-04-27/reports/feature_ablation_matrix.csv",
+  "feature_verdict": "/Users/shenyijie/Desktop/MLWP project/01_本地副本_实验/xgb_feature_ablation_sprint_2026-04-27/reports/feature_verdict.md",
+  "top_submissions": "/Users/shenyijie/Desktop/MLWP project/01_本地副本_实验/xgb_feature_ablation_sprint_2026-04-27/submissions/submission_manifest_top8.csv",
+  "submission_validation": "/Users/shenyijie/Desktop/MLWP project/01_本地副本_实验/xgb_feature_ablation_sprint_2026-04-27/reports/submission_validation.csv",
+  "valid_submission_count": 8
+}

@@ -1,0 +1,24 @@
+{
+  "rank": 15,
+  "name": "submission_kaggle_hs_15_logit_anchor511_a7_blend05_legacy_public10_public10_stepwise_balanced25_stepwise_safe_te05_v245",
+  "file": "/Users/shenyijie/Desktop/MLWP project/01_本地副本_实验/reports/xgboost/submission_candidates/submission_kaggle_hs_15_logit_anchor511_a7_blend05_legacy_public10_public10_stepwise_balanced25_stepwise_safe_te05_v245.csv",
+  "metadata_path": "/Users/shenyijie/Desktop/MLWP project/01_本地副本_实验/reports/xgboost/submission_candidates/submission_kaggle_hs_15_logit_anchor511_a7_blend05_legacy_public10_public10_stepwise_balanced25_stepwise_safe_te05_v245.json",
+  "blend_kind": "logit",
+  "target_rate_name": "anchor511",
+  "target_positive_rate": 0.51134,
+  "threshold": 0.03774732488402036,
+  "honest_oof_acc": 0.8218106522489359,
+  "positive_rate": 0.5115735328501286,
+  "changed_vs_v2_best": 95,
+  "changed_vs_public_style": 397,
+  "changed_vs_anchor_a7": 135,
+  "weights": {
+    "v2": 0.45,
+    "stepwise_balanced": 0.25,
+    "public": 0.1,
+    "legacy_public": 0.1,
+    "stepwise_safe_te": 0.05,
+    "a7_blend": 0.05
+  },
+  "source": "Kaggle high-score XGB blend: public-style raw CSV family + travel-group groupfill + fold-safe local XGB families"
+}

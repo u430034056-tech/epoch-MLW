@@ -1,0 +1,13 @@
+{
+  "file": "/Users/shenyijie/Desktop/MLWP project/01_本地副本_实验/reports/xgboost/submission_candidates/submission_umanglodaya_seed2024_blend_seed17_w75_rate535.csv",
+  "source": "seed2024 public-feedback anchored probability blend",
+  "anchor": "submission_umanglodaya_xgb_smote_seed2024.csv",
+  "anchor_public_score": 0.81412,
+  "other": "seed17",
+  "other_public_score": 0.81342,
+  "anchor_weight": 0.75,
+  "threshold_name": "rate535",
+  "threshold": 0.49724426999999993,
+  "positive_rate": 0.5354220247837269,
+  "changed_vs_seed2024": 5
+}

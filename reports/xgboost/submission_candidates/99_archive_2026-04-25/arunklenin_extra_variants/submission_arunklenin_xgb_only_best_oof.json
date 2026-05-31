@@ -1,0 +1,11 @@
+{
+  "name": "submission_arunklenin_xgb_only_best_oof",
+  "file": "/Users/shenyijie/Desktop/MLWP project/01_本地副本_实验/reports/xgboost/submission_candidates/submission_arunklenin_xgb_only_best_oof.csv",
+  "metadata_path": "/Users/shenyijie/Desktop/MLWP project/01_本地副本_实验/reports/xgboost/submission_candidates/submission_arunklenin_xgb_only_best_oof.json",
+  "threshold": 0.5210000000000001,
+  "target_rate_name": "best_oof",
+  "positive_rate": 0.49918166939443537,
+  "oof_accuracy": 0.8101921085931209,
+  "changed_vs_umanglodaya_smote": 497,
+  "changed_vs_umanglodaya_seed0": 499
+}

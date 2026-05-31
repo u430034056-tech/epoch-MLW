@@ -1,0 +1,13 @@
+{
+  "name": "submission_kaggle_fe_xgb_regularized_rate532",
+  "file": "/Users/shenyijie/Desktop/MLWP project/01_本地副本_实验/reports/xgboost/submission_candidates/submission_kaggle_fe_xgb_regularized_rate532.csv",
+  "metadata_path": "/Users/shenyijie/Desktop/MLWP project/01_本地副本_实验/reports/xgboost/submission_candidates/submission_kaggle_fe_xgb_regularized_rate532.json",
+  "source_model": "kaggle_fe_xgb_regularized",
+  "threshold": 0.47375789284706116,
+  "target_rate_name": "rate532",
+  "positive_rate": 0.5326163198503624,
+  "oof_accuracy": 0.814448406764063,
+  "changed_vs_v2_best": 205,
+  "changed_vs_anchor_a7": 173,
+  "changed_vs_hs10": 168
+}

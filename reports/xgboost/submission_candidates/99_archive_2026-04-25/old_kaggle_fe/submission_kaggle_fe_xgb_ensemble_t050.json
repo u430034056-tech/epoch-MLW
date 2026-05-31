@@ -1,0 +1,13 @@
+{
+  "name": "submission_kaggle_fe_xgb_ensemble_t050",
+  "file": "/Users/shenyijie/Desktop/MLWP project/01_本地副本_实验/reports/xgboost/submission_candidates/submission_kaggle_fe_xgb_ensemble_t050.csv",
+  "metadata_path": "/Users/shenyijie/Desktop/MLWP project/01_本地副本_实验/reports/xgboost/submission_candidates/submission_kaggle_fe_xgb_ensemble_t050.json",
+  "source_model": "kaggle_fe_xgb_ensemble",
+  "threshold": 0.5,
+  "target_rate_name": "t050",
+  "positive_rate": 0.508066401683423,
+  "oof_accuracy": 0.8147935120211665,
+  "changed_vs_v2_best": 214,
+  "changed_vs_anchor_a7": 214,
+  "changed_vs_hs10": 221
+}

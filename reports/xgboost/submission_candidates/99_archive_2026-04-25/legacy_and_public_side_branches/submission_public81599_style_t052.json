@@ -1,0 +1,17 @@
+{
+  "submission_path": "/Users/shenyijie/Desktop/MLWP project/reports/xgboost/submission_candidates/submission_public81599_style_t052.csv",
+  "metadata_path": "/Users/shenyijie/Desktop/MLWP project/reports/xgboost/submission_candidates/submission_public81599_style_t052.json",
+  "honest_oof_acc_at_050": 0.806971126193489,
+  "honest_oof_acc_at_threshold": 0.8059358104221788,
+  "threshold": 0.52,
+  "threshold_scan": {
+    "0.48": 0.8063959507649833,
+    "0.49": 0.8067410560220868,
+    "0.50": 0.806971126193489,
+    "0.51": 0.8062809156792822,
+    "0.52": 0.8059358104221788
+  },
+  "positive_rate": 0.5321487023614683,
+  "changed_vs_050": 19,
+  "raw_data_dir": "/Users/shenyijie/Desktop/20260319_xgboost 2/data/raw"
+}

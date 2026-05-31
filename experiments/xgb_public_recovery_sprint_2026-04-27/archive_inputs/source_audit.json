@@ -1,0 +1,16 @@
+{
+  "team_preprocessing_only": true,
+  "purpose": "Recover public leaderboard score after drop_cabinnum public failure by using raw-highscore-like compact views derived from team common bundle.",
+  "common_bundle": "/Users/shenyijie/Desktop/MLWP project/01_本地副本_实验/processed/common/preprocessed_common.joblib",
+  "xgb_bundle_reference_only": "/Users/shenyijie/Desktop/MLWP project/01_本地副本_实验/processed/xgboost/preprocessed_xgboost.joblib",
+  "old_probability_logs_reference_only": "/Users/shenyijie/Desktop/MLWP project/01_本地副本_实验/reports/xgboost/logs",
+  "forbidden_training_sources": [
+    "raw Kaggle train/test CSV",
+    "archived umanglodaya raw-template submission CSV as model input",
+    "raw-template test probabilities as blend input"
+  ],
+  "known_public_feedback": {
+    "submission_blend_drop_cabinnum_w40_team_A7_blend_w60_rate5366_public.csv": 0.8043,
+    "lesson": "Do not prioritize drop_cabinnum OOF gains; keep CabinNum-derived information and compact public-style views separate from A7-heavy blends."
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "name": "submission_arunklenin_xgb_only_rate535",
+  "file": "/Users/shenyijie/Desktop/MLWP project/01_本地副本_实验/reports/xgboost/submission_candidates/submission_arunklenin_xgb_only_rate535.csv",
+  "metadata_path": "/Users/shenyijie/Desktop/MLWP project/01_本地副本_实验/reports/xgboost/submission_candidates/submission_arunklenin_xgb_only_rate535.json",
+  "threshold": 0.4807036817073822,
+  "target_rate_name": "rate535",
+  "positive_rate": 0.5351882160392799,
+  "oof_accuracy": 0.8085816173933049,
+  "changed_vs_umanglodaya_smote": 429,
+  "changed_vs_umanglodaya_seed0": 435
+}

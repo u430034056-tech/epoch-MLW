@@ -1,0 +1,88 @@
+{
+  "model": {
+    "raw_data_dir": "/Users/shenyijie/Desktop/20260319_xgboost 2/data/raw",
+    "feature_count": 32,
+    "seeds": [
+      2140
+    ],
+    "n_splits": 10,
+    "oof_accuracy_050": 0.8090417577361095,
+    "oof_best_threshold": 0.5210000000000001,
+    "oof_best_accuracy": 0.8101921085931209,
+    "oof_logloss": 0.3875628460381234,
+    "oof_auc": 0.901892322668859,
+    "test_positive_rate_050": 0.5164835164835165,
+    "oof_proba_path": "/Users/shenyijie/Desktop/MLWP project/01_本地副本_实验/reports/xgboost/logs/arunklenin_xgb_only_oof_proba.csv",
+    "test_proba_path": "/Users/shenyijie/Desktop/MLWP project/01_本地副本_实验/reports/xgboost/logs/arunklenin_xgb_only_test_proba.csv"
+  },
+  "submissions": [
+    {
+      "name": "submission_arunklenin_xgb_only_t050",
+      "file": "/Users/shenyijie/Desktop/MLWP project/01_本地副本_实验/reports/xgboost/submission_candidates/submission_arunklenin_xgb_only_t050.csv",
+      "metadata_path": "/Users/shenyijie/Desktop/MLWP project/01_本地副本_实验/reports/xgboost/submission_candidates/submission_arunklenin_xgb_only_t050.json",
+      "threshold": 0.5,
+      "target_rate_name": "t050",
+      "positive_rate": 0.5164835164835165,
+      "oof_accuracy": 0.8090417577361095,
+      "changed_vs_umanglodaya_smote": 461,
+      "changed_vs_umanglodaya_seed0": 469
+    },
+    {
+      "name": "submission_arunklenin_xgb_only_best_oof",
+      "file": "/Users/shenyijie/Desktop/MLWP project/01_本地副本_实验/reports/xgboost/submission_candidates/submission_arunklenin_xgb_only_best_oof.csv",
+      "metadata_path": "/Users/shenyijie/Desktop/MLWP project/01_本地副本_实验/reports/xgboost/submission_candidates/submission_arunklenin_xgb_only_best_oof.json",
+      "threshold": 0.5210000000000001,
+      "target_rate_name": "best_oof",
+      "positive_rate": 0.49918166939443537,
+      "oof_accuracy": 0.8101921085931209,
+      "changed_vs_umanglodaya_smote": 497,
+      "changed_vs_umanglodaya_seed0": 499
+    },
+    {
+      "name": "submission_arunklenin_xgb_only_rate520",
+      "file": "/Users/shenyijie/Desktop/MLWP project/01_本地副本_实验/reports/xgboost/submission_candidates/submission_arunklenin_xgb_only_rate520.csv",
+      "metadata_path": "/Users/shenyijie/Desktop/MLWP project/01_本地副本_实验/reports/xgboost/submission_candidates/submission_arunklenin_xgb_only_rate520.json",
+      "threshold": 0.49734681844711304,
+      "target_rate_name": "rate520",
+      "positive_rate": 0.5202244563946692,
+      "oof_accuracy": 0.8078914068790981,
+      "changed_vs_umanglodaya_smote": 451,
+      "changed_vs_umanglodaya_seed0": 457
+    },
+    {
+      "name": "submission_arunklenin_xgb_only_rate532",
+      "file": "/Users/shenyijie/Desktop/MLWP project/01_本地副本_实验/reports/xgboost/submission_candidates/submission_arunklenin_xgb_only_rate532.csv",
+      "metadata_path": "/Users/shenyijie/Desktop/MLWP project/01_本地副本_实验/reports/xgboost/submission_candidates/submission_arunklenin_xgb_only_rate532.json",
+      "threshold": 0.4834592342376709,
+      "target_rate_name": "rate532",
+      "positive_rate": 0.5326163198503624,
+      "oof_accuracy": 0.8086966524790061,
+      "changed_vs_umanglodaya_smote": 432,
+      "changed_vs_umanglodaya_seed0": 438
+    },
+    {
+      "name": "submission_arunklenin_xgb_only_rate535",
+      "file": "/Users/shenyijie/Desktop/MLWP project/01_本地副本_实验/reports/xgboost/submission_candidates/submission_arunklenin_xgb_only_rate535.csv",
+      "metadata_path": "/Users/shenyijie/Desktop/MLWP project/01_本地副本_实验/reports/xgboost/submission_candidates/submission_arunklenin_xgb_only_rate535.json",
+      "threshold": 0.4807036817073822,
+      "target_rate_name": "rate535",
+      "positive_rate": 0.5351882160392799,
+      "oof_accuracy": 0.8085816173933049,
+      "changed_vs_umanglodaya_smote": 429,
+      "changed_vs_umanglodaya_seed0": 435
+    },
+    {
+      "name": "submission_arunklenin_xgb_only_rate536",
+      "file": "/Users/shenyijie/Desktop/MLWP project/01_本地副本_实验/reports/xgboost/submission_candidates/submission_arunklenin_xgb_only_rate536.csv",
+      "metadata_path": "/Users/shenyijie/Desktop/MLWP project/01_本地副本_实验/reports/xgboost/submission_candidates/submission_arunklenin_xgb_only_rate536.json",
+      "threshold": 0.47857028245925903,
+      "target_rate_name": "rate536",
+      "positive_rate": 0.5368248772504092,
+      "oof_accuracy": 0.8083515472219027,
+      "changed_vs_umanglodaya_smote": 426,
+      "changed_vs_umanglodaya_seed0": 432
+    }
+  ],
+  "source": "XGB-only branch from arunklenin/space-titanic-eda-advanced-feature-engineering",
+  "excluded": "final public notebook OR blend with external submissions"
+}

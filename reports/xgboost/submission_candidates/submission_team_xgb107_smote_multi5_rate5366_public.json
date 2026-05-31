@@ -1,0 +1,18 @@
+{
+  "file": "/Users/shenyijie/Desktop/MLWP project/01_本地副本_实验/reports/xgboost/submission_candidates/submission_team_xgb107_smote_multi5_rate5366_public.csv",
+  "team_preprocessing_only": true,
+  "source_bundles": {
+    "xgboost": "/Users/shenyijie/Desktop/MLWP project/01_本地副本_实验/processed/xgboost/preprocessed_xgboost.joblib",
+    "common": "/Users/shenyijie/Desktop/MLWP project/01_本地副本_实验/processed/common/preprocessed_common.joblib"
+  },
+  "probability_set": "team_xgb107_smote_multi5",
+  "source": "/Users/shenyijie/Desktop/MLWP project/01_本地副本_实验/processed/xgboost/preprocessed_xgboost.joblib + SMOTE seeds=[2024, 17, 7, 42, 88]",
+  "threshold": 0.4454452395439148,
+  "target_positive_rate": 0.53659,
+  "oof_best_threshold": 0.4760000000000001,
+  "oof_best_accuracy": 0.8131830208213505,
+  "oof_logloss": 0.38563316700431216,
+  "oof_auc": 0.9044423635082608,
+  "positive_rate": 0.5365910685059622,
+  "true_count": 2295
+}

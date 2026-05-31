@@ -1,0 +1,39 @@
+{
+  "file": "/Users/shenyijie/Desktop/MLWP project/reports/xgboost/submission_candidates/submission_xgb_anchor511_plus_a7groupfill_override_t0507.csv",
+  "metadata_path": "/Users/shenyijie/Desktop/MLWP project/reports/xgboost/submission_candidates/submission_xgb_anchor511_plus_a7groupfill_override_t0507.json",
+  "source": "anchor-plus base with A7/groupfill consensus override on the uncertainty band",
+  "honest_oof_acc": 0.8231910732773496,
+  "threshold": 0.507,
+  "positive_rate": 0.5122749590834698,
+  "changed_vs_v2_best": 130,
+  "changed_vs_public_style": 384,
+  "changed_vs_groupfill": 377,
+  "details": {
+    "base_weights": {
+      "v2_opt": 0.38490445605177737,
+      "stepwise_balanced_te": 0.46093627311420354,
+      "public_style": 0.11026447231061248,
+      "legacy_public_style": 0.02311992005896517,
+      "stepwise_safe_te": 0.013140661866260665,
+      "A7_blend": 0.005755940836541332,
+      "groupfill": 0.001878275761639495
+    },
+    "override": {
+      "uncertain_band": [
+        0.479,
+        0.507
+      ],
+      "force_one_if": {
+        "A7_blend_min": 0.62,
+        "groupfill_min": 0.525
+      },
+      "force_zero_if": {
+        "A7_blend_max": 0.375,
+        "groupfill_max": 0.405
+      },
+      "changed_rows_oof": 10,
+      "changed_rows_test": 5
+    },
+    "rationale": "current strongest XGB-only candidate after local uncertainty-band search"
+  }
+}

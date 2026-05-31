@@ -1,0 +1,16 @@
+{
+  "name": "submission_team_A6_ensemble_rate5352_umang",
+  "file": "/Users/shenyijie/Desktop/MLWP project/01_本地副本_实验/xgb_feature_ablation_sprint_2026-04-27/submissions/submission_team_A6_ensemble_rate5352_umang.csv",
+  "team_preprocessing_only": true,
+  "probability_set": "team_A6_ensemble",
+  "source": "/Users/shenyijie/Desktop/MLWP project/01_本地副本_实验/reports/xgboost/logs/A6_oof.csv",
+  "threshold": 0.4784497618675232,
+  "oof_acc_best": 0.8189347751064074,
+  "oof_acc_050": 0.8183595996779017,
+  "oof_logloss": 0.3786038785947481,
+  "oof_auc": 0.9055333287103378,
+  "positive_rate": 0.5351882160392799,
+  "true_count": 2289,
+  "candidate_kind": "positive_rate_anchor",
+  "target_positive_rate": 0.5351882160392799
+}

@@ -1,0 +1,18 @@
+{
+  "file": "/Users/shenyijie/Desktop/MLWP project/reports/xgboost/submission_candidates/submission_xgb_public_family_pair_t051.csv",
+  "metadata_path": "/Users/shenyijie/Desktop/MLWP project/reports/xgboost/submission_candidates/submission_xgb_public_family_pair_t051.json",
+  "source": "public_style 50% + groupfill 50% linear blend",
+  "honest_oof_acc": 0.8121477050500403,
+  "threshold": 0.51,
+  "positive_rate": 0.5118073415945756,
+  "changed_vs_v2_best": 306,
+  "changed_vs_public_style": 298,
+  "changed_vs_groupfill": 247,
+  "details": {
+    "weights": {
+      "v2_opt": 0.0,
+      "public_style": 0.5,
+      "groupfill": 0.5
+    }
+  }
+}

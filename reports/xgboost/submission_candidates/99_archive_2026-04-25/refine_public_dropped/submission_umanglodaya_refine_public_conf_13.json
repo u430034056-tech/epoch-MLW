@@ -1,0 +1,12 @@
+{
+  "name": "submission_umanglodaya_refine_public_conf_13",
+  "file": "/Users/shenyijie/Desktop/MLWP project/01_本地副本_实验/reports/xgboost/submission_candidates/submission_umanglodaya_refine_public_conf_13.csv",
+  "metadata_path": "/Users/shenyijie/Desktop/MLWP project/01_本地副本_实验/reports/xgboost/submission_candidates/submission_umanglodaya_refine_public_conf_13.json",
+  "strategy": "public_conf",
+  "n_flipped": 13,
+  "positive_rate": 0.5351882160392799,
+  "oof_accuracy": 0.8088116875647072,
+  "oof_delta_vs_smote": 0.0005751754285057142,
+  "changed_vs_smote": 13,
+  "changed_vs_public": 28
+}

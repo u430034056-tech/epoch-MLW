@@ -1,0 +1,25 @@
+{
+  "name": "submission_team_common_rawlike_feedback_prob_k5_seed17_w15_true2291",
+  "team_preprocessing_only": true,
+  "source_base_probability": "/Users/shenyijie/Desktop/MLWP project/01_本地副本_实验/xgb_public_recovery_sprint_2026-04-27/reports/team_common_rawlike_raw_core_k3_multi3_public_test_proba.csv",
+  "source_alt_probability": "/Users/shenyijie/Desktop/MLWP project/01_本地副本_实验/xgb_public_recovery_sprint_2026-04-27/reports/team_common_rawlike_raw_core_k5_seed17_test_proba.csv",
+  "blend_mode": "prob",
+  "alt_name": "team_common_rawlike_raw_core_k5_seed17",
+  "alt_weight": 0.15,
+  "true_count": 2291,
+  "positive_rate": 0.5356558335281739,
+  "diff_vs_81365_anchor": 2,
+  "diff_vs_raw_seed2024": 90,
+  "must_true_ids": [
+    "2216_01"
+  ],
+  "must_false_ids": [
+    "1369_01"
+  ],
+  "public_feedback_used": {
+    "anchor_public": 0.81365,
+    "t050_public": 0.81342,
+    "true2292_public": 0.81342,
+    "k3_multi5_public": 0.81318
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "file": "/Users/shenyijie/Desktop/MLWP project/reports/xgboost/submission_candidates/submission_xgb_family_blend_v2p95_publicp05_t0475.csv",
+  "metadata_path": "/Users/shenyijie/Desktop/MLWP project/reports/xgboost/submission_candidates/submission_xgb_family_blend_v2p95_publicp05_t0475.json",
+  "source": "v2_opt 95% + public_style 5% linear blend, lowered threshold for public-LB chase",
+  "honest_oof_acc": 0.814448406764063,
+  "threshold": 0.475,
+  "positive_rate": 0.5328501285948094,
+  "changed_vs_v2_best": 92,
+  "changed_vs_public_style": 392,
+  "changed_vs_groupfill": 389,
+  "details": {
+    "weights": {
+      "v2_opt": 0.95,
+      "public_style": 0.05,
+      "groupfill": 0.0
+    },
+    "rationale": "match historical strong-XGB public positive rate near 0.533"
+  }
+}

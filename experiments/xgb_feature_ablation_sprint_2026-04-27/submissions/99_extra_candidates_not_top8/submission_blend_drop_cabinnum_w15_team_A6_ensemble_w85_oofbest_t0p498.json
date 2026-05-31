@@ -1,0 +1,15 @@
+{
+  "name": "submission_blend_drop_cabinnum_w15_team_A6_ensemble_w85_oofbest_t0p498",
+  "file": "/Users/shenyijie/Desktop/MLWP project/01_本地副本_实验/xgb_feature_ablation_sprint_2026-04-27/submissions/submission_blend_drop_cabinnum_w15_team_A6_ensemble_w85_oofbest_t0p498.csv",
+  "team_preprocessing_only": true,
+  "probability_set": "blend_drop_cabinnum_w15_team_A6_ensemble_w85",
+  "source": "blend(drop_cabinnum, team_A6_ensemble)",
+  "threshold": 0.4980000000000001,
+  "oof_acc_best": 0.8193949154492121,
+  "oof_acc_050": 0.8192798803635108,
+  "oof_logloss": 0.37891036872272565,
+  "oof_auc": 0.9054128220370787,
+  "positive_rate": 0.5195230301613281,
+  "true_count": 2222,
+  "candidate_kind": "oof_best_threshold"
+}

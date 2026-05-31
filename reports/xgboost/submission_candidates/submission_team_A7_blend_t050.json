@@ -1,0 +1,18 @@
+{
+  "file": "/Users/shenyijie/Desktop/MLWP project/01_本地副本_实验/reports/xgboost/submission_candidates/submission_team_A7_blend_t050.csv",
+  "team_preprocessing_only": true,
+  "source_bundles": {
+    "xgboost": "/Users/shenyijie/Desktop/MLWP project/01_本地副本_实验/processed/xgboost/preprocessed_xgboost.joblib",
+    "common": "/Users/shenyijie/Desktop/MLWP project/01_本地副本_实验/processed/common/preprocessed_common.joblib"
+  },
+  "probability_set": "team_A7_blend",
+  "source": "/Users/shenyijie/Desktop/MLWP project/01_本地副本_实验/reports/xgboost/logs/A7_oof.csv + /Users/shenyijie/Desktop/MLWP project/01_本地副本_实验/reports/xgboost/logs/A7_test_proba.csv",
+  "threshold": 0.5,
+  "oof_best_threshold": 0.4910000000000001,
+  "oof_best_accuracy": 0.8199700908777177,
+  "oof_accuracy_at_threshold": 0.8180144944207983,
+  "oof_logloss": 0.37845155619471194,
+  "oof_auc": 0.905731464654993,
+  "positive_rate": 0.5223287350946926,
+  "true_count": 2234
+}

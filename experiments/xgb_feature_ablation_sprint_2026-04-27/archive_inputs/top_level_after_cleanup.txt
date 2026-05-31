@@ -1,0 +1,9 @@
+total 8
+drwxr-xr-x@  8 shenyijie  staff   256 Apr 27 16:36 .
+drwx------@ 19 shenyijie  staff   608 Apr 27 16:36 ..
+drwxr-xr-x@  7 shenyijie  staff   224 Apr 25 19:07 .venv
+drwxr-xr-x@  5 shenyijie  staff   160 Apr 27 16:19 00_GitHub主线_已提交
+drwxr-xr-x@ 15 shenyijie  staff   480 Apr 27 16:36 01_本地副本_实验
+drwxr-xr-x@ 13 shenyijie  staff   416 Apr 25 18:02 02_快捷入口索引
+drwxr-xr-x@  7 shenyijie  staff   224 Apr 27 16:36 99_本地缓存_可删_未删除
+-rw-r--r--@  1 shenyijie  staff  3533 Apr 27 16:33 README_文件夹整理说明.md

@@ -1,0 +1,307 @@
+{
+  "raw_data_dir": "/Users/shenyijie/Desktop/20260319_xgboost 2/data/raw",
+  "feature_count": 34,
+  "model_results": [
+    {
+      "name": "kaggle_fe_xgb_regularized",
+      "cv_kind": "StratifiedKFold multi-seed fold-model average",
+      "seeds": [
+        42,
+        2024,
+        7
+      ],
+      "params": {
+        "learning_rate": 0.03,
+        "max_depth": 4,
+        "min_child_weight": 2,
+        "subsample": 0.86,
+        "colsample_bytree": 0.82,
+        "gamma": 0.1,
+        "reg_alpha": 0.3,
+        "reg_lambda": 4.0,
+        "n_estimators": 900
+      },
+      "oof_accuracy_050": 0.8158288277924767,
+      "oof_best_threshold": 0.5380000000000001,
+      "oof_best_accuracy": 0.8187047049350051,
+      "oof_logloss": 0.3703821520629917,
+      "oof_auc": 0.9092258935041795,
+      "test_positive_rate_050": 0.5104044891278934,
+      "oof_proba_path": "/Users/shenyijie/Desktop/MLWP project/01_本地副本_实验/reports/xgboost/logs/kaggle_fe_xgb_regularized_oof_proba.csv",
+      "test_proba_path": "/Users/shenyijie/Desktop/MLWP project/01_本地副本_实验/reports/xgboost/logs/kaggle_fe_xgb_regularized_test_proba.csv"
+    },
+    {
+      "name": "kaggle_fe_xgb_public",
+      "cv_kind": "StratifiedKFold multi-seed fold-model average",
+      "seeds": [
+        42,
+        2024,
+        7
+      ],
+      "params": {
+        "learning_rate": 0.06672065863100594,
+        "max_depth": 5,
+        "min_child_weight": 1,
+        "subsample": 0.9527591724824661,
+        "colsample_bytree": 0.9241969052729379,
+        "gamma": 0.0,
+        "reg_alpha": 4.581902571574289,
+        "reg_lambda": 3.0610042624477543,
+        "n_estimators": 730
+      },
+      "oof_accuracy_050": 0.8129529506499482,
+      "oof_best_threshold": 0.5190000000000001,
+      "oof_best_accuracy": 0.8147935120211665,
+      "oof_logloss": 0.37913711890246826,
+      "oof_auc": 0.9068044848703647,
+      "test_positive_rate_050": 0.5015197568389058,
+      "oof_proba_path": "/Users/shenyijie/Desktop/MLWP project/01_本地副本_实验/reports/xgboost/logs/kaggle_fe_xgb_public_oof_proba.csv",
+      "test_proba_path": "/Users/shenyijie/Desktop/MLWP project/01_本地副本_实验/reports/xgboost/logs/kaggle_fe_xgb_public_test_proba.csv"
+    },
+    {
+      "name": "kaggle_fe_xgb_shallow",
+      "cv_kind": "StratifiedKFold multi-seed fold-model average",
+      "seeds": [
+        42,
+        2024,
+        7
+      ],
+      "params": {
+        "learning_rate": 0.04,
+        "max_depth": 3,
+        "min_child_weight": 1,
+        "subsample": 0.9,
+        "colsample_bytree": 0.85,
+        "gamma": 0.05,
+        "reg_alpha": 0.1,
+        "reg_lambda": 2.0,
+        "n_estimators": 950
+      },
+      "oof_accuracy_050": 0.8149085471068676,
+      "oof_best_threshold": 0.5240000000000001,
+      "oof_best_accuracy": 0.8159438628781779,
+      "oof_logloss": 0.37256044286352946,
+      "oof_auc": 0.9081588814185749,
+      "test_positive_rate_050": 0.5106382978723404,
+      "oof_proba_path": "/Users/shenyijie/Desktop/MLWP project/01_本地副本_实验/reports/xgboost/logs/kaggle_fe_xgb_shallow_oof_proba.csv",
+      "test_proba_path": "/Users/shenyijie/Desktop/MLWP project/01_本地副本_实验/reports/xgboost/logs/kaggle_fe_xgb_shallow_test_proba.csv"
+    },
+    {
+      "name": "kaggle_fe_xgb_ensemble",
+      "cv_kind": "mean of top Kaggle-FE XGB parameter families",
+      "seeds": [
+        42,
+        2024,
+        7
+      ],
+      "params": {
+        "members": "kaggle_fe_xgb_regularized,kaggle_fe_xgb_shallow,kaggle_fe_xgb_public"
+      },
+      "oof_accuracy_050": 0.8147935120211665,
+      "oof_best_threshold": 0.5260000000000001,
+      "oof_best_accuracy": 0.8174393189922926,
+      "oof_logloss": 0.37145436309387014,
+      "oof_auc": 0.9089294571456248,
+      "test_positive_rate_050": 0.508066401683423,
+      "oof_proba_path": "/Users/shenyijie/Desktop/MLWP project/01_本地副本_实验/reports/xgboost/logs/kaggle_fe_xgb_ensemble_oof_proba.csv",
+      "test_proba_path": "/Users/shenyijie/Desktop/MLWP project/01_本地副本_实验/reports/xgboost/logs/kaggle_fe_xgb_ensemble_test_proba.csv"
+    }
+  ],
+  "submission_results": [
+    {
+      "name": "submission_kaggle_fe_xgb_ensemble_t050",
+      "file": "/Users/shenyijie/Desktop/MLWP project/01_本地副本_实验/reports/xgboost/submission_candidates/submission_kaggle_fe_xgb_ensemble_t050.csv",
+      "metadata_path": "/Users/shenyijie/Desktop/MLWP project/01_本地副本_实验/reports/xgboost/submission_candidates/submission_kaggle_fe_xgb_ensemble_t050.json",
+      "source_model": "kaggle_fe_xgb_ensemble",
+      "threshold": 0.5,
+      "target_rate_name": "t050",
+      "positive_rate": 0.508066401683423,
+      "oof_accuracy": 0.8147935120211665,
+      "changed_vs_v2_best": 214,
+      "changed_vs_anchor_a7": 214,
+      "changed_vs_hs10": 221
+    },
+    {
+      "name": "submission_kaggle_fe_xgb_ensemble_best_oof",
+      "file": "/Users/shenyijie/Desktop/MLWP project/01_本地副本_实验/reports/xgboost/submission_candidates/submission_kaggle_fe_xgb_ensemble_best_oof.csv",
+      "metadata_path": "/Users/shenyijie/Desktop/MLWP project/01_本地副本_实验/reports/xgboost/submission_candidates/submission_kaggle_fe_xgb_ensemble_best_oof.json",
+      "source_model": "kaggle_fe_xgb_ensemble",
+      "threshold": 0.5260000000000001,
+      "target_rate_name": "best_oof",
+      "positive_rate": 0.48702361468318917,
+      "oof_accuracy": 0.8174393189922926,
+      "changed_vs_v2_best": 232,
+      "changed_vs_anchor_a7": 266,
+      "changed_vs_hs10": 281
+    },
+    {
+      "name": "submission_kaggle_fe_xgb_ensemble_rate526",
+      "file": "/Users/shenyijie/Desktop/MLWP project/01_本地副本_实验/reports/xgboost/submission_candidates/submission_kaggle_fe_xgb_ensemble_rate526.csv",
+      "metadata_path": "/Users/shenyijie/Desktop/MLWP project/01_本地副本_实验/reports/xgboost/submission_candidates/submission_kaggle_fe_xgb_ensemble_rate526.json",
+      "source_model": "kaggle_fe_xgb_ensemble",
+      "threshold": 0.47650203108787537,
+      "target_rate_name": "rate526",
+      "positive_rate": 0.5263034837502922,
+      "oof_accuracy": 0.8138732313355573,
+      "changed_vs_v2_best": 220,
+      "changed_vs_anchor_a7": 194,
+      "changed_vs_hs10": 183
+    },
+    {
+      "name": "submission_kaggle_fe_xgb_ensemble_rate532",
+      "file": "/Users/shenyijie/Desktop/MLWP project/01_本地副本_实验/reports/xgboost/submission_candidates/submission_kaggle_fe_xgb_ensemble_rate532.csv",
+      "metadata_path": "/Users/shenyijie/Desktop/MLWP project/01_本地副本_实验/reports/xgboost/submission_candidates/submission_kaggle_fe_xgb_ensemble_rate532.json",
+      "source_model": "kaggle_fe_xgb_ensemble",
+      "threshold": 0.4663344919681549,
+      "target_rate_name": "rate532",
+      "positive_rate": 0.5326163198503624,
+      "oof_accuracy": 0.813643161164155,
+      "changed_vs_v2_best": 213,
+      "changed_vs_anchor_a7": 181,
+      "changed_vs_hs10": 172
+    },
+    {
+      "name": "submission_kaggle_fe_xgb_ensemble_rate536",
+      "file": "/Users/shenyijie/Desktop/MLWP project/01_本地副本_实验/reports/xgboost/submission_candidates/submission_kaggle_fe_xgb_ensemble_rate536.csv",
+      "metadata_path": "/Users/shenyijie/Desktop/MLWP project/01_本地副本_实验/reports/xgboost/submission_candidates/submission_kaggle_fe_xgb_ensemble_rate536.json",
+      "source_model": "kaggle_fe_xgb_ensemble",
+      "threshold": 0.4601500332355499,
+      "target_rate_name": "rate536",
+      "positive_rate": 0.5368248772504092,
+      "oof_accuracy": 0.813643161164155,
+      "changed_vs_v2_best": 217,
+      "changed_vs_anchor_a7": 179,
+      "changed_vs_hs10": 166
+    },
+    {
+      "name": "submission_kaggle_fe_xgb_regularized_t050",
+      "file": "/Users/shenyijie/Desktop/MLWP project/01_本地副本_实验/reports/xgboost/submission_candidates/submission_kaggle_fe_xgb_regularized_t050.csv",
+      "metadata_path": "/Users/shenyijie/Desktop/MLWP project/01_本地副本_实验/reports/xgboost/submission_candidates/submission_kaggle_fe_xgb_regularized_t050.json",
+      "source_model": "kaggle_fe_xgb_regularized",
+      "threshold": 0.5,
+      "target_rate_name": "t050",
+      "positive_rate": 0.5104044891278934,
+      "oof_accuracy": 0.8158288277924767,
+      "changed_vs_v2_best": 204,
+      "changed_vs_anchor_a7": 200,
+      "changed_vs_hs10": 211
+    },
+    {
+      "name": "submission_kaggle_fe_xgb_regularized_best_oof",
+      "file": "/Users/shenyijie/Desktop/MLWP project/01_本地副本_实验/reports/xgboost/submission_candidates/submission_kaggle_fe_xgb_regularized_best_oof.csv",
+      "metadata_path": "/Users/shenyijie/Desktop/MLWP project/01_本地副本_实验/reports/xgboost/submission_candidates/submission_kaggle_fe_xgb_regularized_best_oof.json",
+      "source_model": "kaggle_fe_xgb_regularized",
+      "threshold": 0.5380000000000001,
+      "target_rate_name": "best_oof",
+      "positive_rate": 0.4783726911386486,
+      "oof_accuracy": 0.8187047049350051,
+      "changed_vs_v2_best": 239,
+      "changed_vs_anchor_a7": 281,
+      "changed_vs_hs10": 300
+    },
+    {
+      "name": "submission_kaggle_fe_xgb_regularized_rate526",
+      "file": "/Users/shenyijie/Desktop/MLWP project/01_本地副本_实验/reports/xgboost/submission_candidates/submission_kaggle_fe_xgb_regularized_rate526.csv",
+      "metadata_path": "/Users/shenyijie/Desktop/MLWP project/01_本地副本_实验/reports/xgboost/submission_candidates/submission_kaggle_fe_xgb_regularized_rate526.json",
+      "source_model": "kaggle_fe_xgb_regularized",
+      "threshold": 0.4811423122882843,
+      "target_rate_name": "rate526",
+      "positive_rate": 0.5263034837502922,
+      "oof_accuracy": 0.8147935120211665,
+      "changed_vs_v2_best": 208,
+      "changed_vs_anchor_a7": 180,
+      "changed_vs_hs10": 181
+    },
+    {
+      "name": "submission_kaggle_fe_xgb_regularized_rate532",
+      "file": "/Users/shenyijie/Desktop/MLWP project/01_本地副本_实验/reports/xgboost/submission_candidates/submission_kaggle_fe_xgb_regularized_rate532.csv",
+      "metadata_path": "/Users/shenyijie/Desktop/MLWP project/01_本地副本_实验/reports/xgboost/submission_candidates/submission_kaggle_fe_xgb_regularized_rate532.json",
+      "source_model": "kaggle_fe_xgb_regularized",
+      "threshold": 0.47375789284706116,
+      "target_rate_name": "rate532",
+      "positive_rate": 0.5326163198503624,
+      "oof_accuracy": 0.814448406764063,
+      "changed_vs_v2_best": 205,
+      "changed_vs_anchor_a7": 173,
+      "changed_vs_hs10": 168
+    },
+    {
+      "name": "submission_kaggle_fe_xgb_regularized_rate536",
+      "file": "/Users/shenyijie/Desktop/MLWP project/01_本地副本_实验/reports/xgboost/submission_candidates/submission_kaggle_fe_xgb_regularized_rate536.csv",
+      "metadata_path": "/Users/shenyijie/Desktop/MLWP project/01_本地副本_实验/reports/xgboost/submission_candidates/submission_kaggle_fe_xgb_regularized_rate536.json",
+      "source_model": "kaggle_fe_xgb_regularized",
+      "threshold": 0.46610355377197266,
+      "target_rate_name": "rate536",
+      "positive_rate": 0.5368248772504092,
+      "oof_accuracy": 0.8131830208213505,
+      "changed_vs_v2_best": 211,
+      "changed_vs_anchor_a7": 177,
+      "changed_vs_hs10": 164
+    },
+    {
+      "name": "submission_kaggle_fe_xgb_shallow_t050",
+      "file": "/Users/shenyijie/Desktop/MLWP project/01_本地副本_实验/reports/xgboost/submission_candidates/submission_kaggle_fe_xgb_shallow_t050.csv",
+      "metadata_path": "/Users/shenyijie/Desktop/MLWP project/01_本地副本_实验/reports/xgboost/submission_candidates/submission_kaggle_fe_xgb_shallow_t050.json",
+      "source_model": "kaggle_fe_xgb_shallow",
+      "threshold": 0.5,
+      "target_rate_name": "t050",
+      "positive_rate": 0.5106382978723404,
+      "oof_accuracy": 0.8149085471068676,
+      "changed_vs_v2_best": 217,
+      "changed_vs_anchor_a7": 199,
+      "changed_vs_hs10": 220
+    },
+    {
+      "name": "submission_kaggle_fe_xgb_shallow_best_oof",
+      "file": "/Users/shenyijie/Desktop/MLWP project/01_本地副本_实验/reports/xgboost/submission_candidates/submission_kaggle_fe_xgb_shallow_best_oof.csv",
+      "metadata_path": "/Users/shenyijie/Desktop/MLWP project/01_本地副本_实验/reports/xgboost/submission_candidates/submission_kaggle_fe_xgb_shallow_best_oof.json",
+      "source_model": "kaggle_fe_xgb_shallow",
+      "threshold": 0.5240000000000001,
+      "target_rate_name": "best_oof",
+      "positive_rate": 0.49310264203881227,
+      "oof_accuracy": 0.8159438628781779,
+      "changed_vs_v2_best": 226,
+      "changed_vs_anchor_a7": 242,
+      "changed_vs_hs10": 261
+    },
+    {
+      "name": "submission_kaggle_fe_xgb_shallow_rate526",
+      "file": "/Users/shenyijie/Desktop/MLWP project/01_本地副本_实验/reports/xgboost/submission_candidates/submission_kaggle_fe_xgb_shallow_rate526.csv",
+      "metadata_path": "/Users/shenyijie/Desktop/MLWP project/01_本地副本_实验/reports/xgboost/submission_candidates/submission_kaggle_fe_xgb_shallow_rate526.json",
+      "source_model": "kaggle_fe_xgb_shallow",
+      "threshold": 0.4815663695335388,
+      "target_rate_name": "rate526",
+      "positive_rate": 0.5263034837502922,
+      "oof_accuracy": 0.8147935120211665,
+      "changed_vs_v2_best": 224,
+      "changed_vs_anchor_a7": 184,
+      "changed_vs_hs10": 195
+    },
+    {
+      "name": "submission_kaggle_fe_xgb_shallow_rate532",
+      "file": "/Users/shenyijie/Desktop/MLWP project/01_本地副本_实验/reports/xgboost/submission_candidates/submission_kaggle_fe_xgb_shallow_rate532.csv",
+      "metadata_path": "/Users/shenyijie/Desktop/MLWP project/01_本地副本_实验/reports/xgboost/submission_candidates/submission_kaggle_fe_xgb_shallow_rate532.json",
+      "source_model": "kaggle_fe_xgb_shallow",
+      "threshold": 0.47501328587532043,
+      "target_rate_name": "rate532",
+      "positive_rate": 0.5326163198503624,
+      "oof_accuracy": 0.813643161164155,
+      "changed_vs_v2_best": 225,
+      "changed_vs_anchor_a7": 179,
+      "changed_vs_hs10": 186
+    },
+    {
+      "name": "submission_kaggle_fe_xgb_shallow_rate536",
+      "file": "/Users/shenyijie/Desktop/MLWP project/01_本地副本_实验/reports/xgboost/submission_candidates/submission_kaggle_fe_xgb_shallow_rate536.csv",
+      "metadata_path": "/Users/shenyijie/Desktop/MLWP project/01_本地副本_实验/reports/xgboost/submission_candidates/submission_kaggle_fe_xgb_shallow_rate536.json",
+      "source_model": "kaggle_fe_xgb_shallow",
+      "threshold": 0.46889278292655945,
+      "target_rate_name": "rate536",
+      "positive_rate": 0.5368248772504092,
+      "oof_accuracy": 0.8131830208213505,
+      "changed_vs_v2_best": 231,
+      "changed_vs_anchor_a7": 183,
+      "changed_vs_hs10": 182
+    }
+  ]
+}

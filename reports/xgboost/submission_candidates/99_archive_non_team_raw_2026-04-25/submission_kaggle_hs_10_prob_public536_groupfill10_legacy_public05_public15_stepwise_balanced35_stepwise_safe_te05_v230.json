@@ -1,0 +1,24 @@
+{
+  "rank": 10,
+  "name": "submission_kaggle_hs_10_prob_public536_groupfill10_legacy_public05_public15_stepwise_balanced35_stepwise_safe_te05_v230",
+  "file": "/Users/shenyijie/Desktop/MLWP project/01_本地副本_实验/reports/xgboost/submission_candidates/submission_kaggle_hs_10_prob_public536_groupfill10_legacy_public05_public15_stepwise_balanced35_stepwise_safe_te05_v230.csv",
+  "metadata_path": "/Users/shenyijie/Desktop/MLWP project/01_本地副本_实验/reports/xgboost/submission_candidates/submission_kaggle_hs_10_prob_public536_groupfill10_legacy_public05_public15_stepwise_balanced35_stepwise_safe_te05_v230.json",
+  "blend_kind": "prob",
+  "target_rate_name": "public536",
+  "target_positive_rate": 0.53659,
+  "threshold": 0.47744702620096585,
+  "honest_oof_acc": 0.8212354768204302,
+  "positive_rate": 0.5368248772504092,
+  "changed_vs_v2_best": 181,
+  "changed_vs_public_style": 331,
+  "changed_vs_anchor_a7": 161,
+  "weights": {
+    "v2": 0.3,
+    "stepwise_balanced": 0.35,
+    "public": 0.15,
+    "groupfill": 0.1,
+    "legacy_public": 0.05,
+    "stepwise_safe_te": 0.05
+  },
+  "source": "Kaggle high-score XGB blend: public-style raw CSV family + travel-group groupfill + fold-safe local XGB families"
+}

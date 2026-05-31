@@ -1,0 +1,12 @@
+name,public_score,note
+submission_team_common_rawlike_feedback_rank_k3_seed17_w15_true2291,0.81412,2026-05-13 final selected submission; tied current best anchor
+submission_team_common_rawlike_raw_core_k3_multi3_public_rate53566_seed7,0.81365,previous anchor before feedback
+submission_team_common_rawlike_raw_core_k3_multi3_public_t050,0.81342,same proba threshold 0.50
+submission_team_common_rawlike_raw_core_k3_multi3_public_true2292,0.81342,same ranking +1 true
+submission_team_common_rawlike_raw_core_k3_multi5_rate53566_seed7,0.81318,multi5 lower
+submission_team_common_rawlike_feedback_rank_k3_seed17_w05_true2291,0.81412,current best anchor
+submission_team_common_rawlike_anchor81412_rank_k3_seed17_w04_true2291,0.81365,2 flips vs anchor; includes 1369 True and 4381 False
+submission_team_common_rawlike_anchor81412_rank_k3_seed17_w05_true2290,0.81388,single flip: 4381 True->False bad
+submission_team_common_rawlike_anchor81412_rank_k3_seed17_w05_true2292,0.81388,single flip: 1369 False->True bad
+submission_team_common_rawlike_anchor81412_rank_k3_seed17_w05_true2289,0.81365,2 flips: 4381 and 7364 True->False
+submission_team_common_rawlike_anchor81412_diag_new_plus_removed,0.81388,single flip: 7511 False->True bad

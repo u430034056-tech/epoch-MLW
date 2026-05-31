@@ -1,0 +1,28 @@
+{
+  "file": "/Users/shenyijie/Desktop/MLWP project/reports/xgboost/submission_candidates/submission_xgb_family_override_v2_public_groupfill.csv",
+  "metadata_path": "/Users/shenyijie/Desktop/MLWP project/reports/xgboost/submission_candidates/submission_xgb_family_override_v2_public_groupfill.json",
+  "source": "v2_opt base with public/groupfill consensus override",
+  "honest_oof_acc": 0.8183595996779017,
+  "threshold": 0.5,
+  "positive_rate": 0.5087678279167641,
+  "changed_vs_v2_best": 21,
+  "changed_vs_public_style": 425,
+  "changed_vs_groupfill": 348,
+  "details": {
+    "base": "v2_opt >= 0.5",
+    "uncertain_band": [
+      0.45,
+      0.56
+    ],
+    "force_one_if": {
+      "public_style_min": 0.65,
+      "groupfill_min": 0.65
+    },
+    "force_zero_if": {
+      "public_style_max": 0.42,
+      "groupfill_max": 0.42
+    },
+    "changed_rows_oof": 114,
+    "changed_rows_test": 44
+  }
+}

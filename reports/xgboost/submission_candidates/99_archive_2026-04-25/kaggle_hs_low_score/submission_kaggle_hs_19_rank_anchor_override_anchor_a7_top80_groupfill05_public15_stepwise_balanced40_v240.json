@@ -1,0 +1,22 @@
+{
+  "rank": 19,
+  "name": "submission_kaggle_hs_19_rank_anchor_override_anchor_a7_top80_groupfill05_public15_stepwise_balanced40_v240",
+  "file": "/Users/shenyijie/Desktop/MLWP project/01_本地副本_实验/reports/xgboost/submission_candidates/submission_kaggle_hs_19_rank_anchor_override_anchor_a7_top80_groupfill05_public15_stepwise_balanced40_v240.csv",
+  "metadata_path": "/Users/shenyijie/Desktop/MLWP project/01_本地副本_实验/reports/xgboost/submission_candidates/submission_kaggle_hs_19_rank_anchor_override_anchor_a7_top80_groupfill05_public15_stepwise_balanced40_v240.json",
+  "blend_kind": "rank_anchor_override",
+  "target_rate_name": "anchor_a7_top80",
+  "target_positive_rate": 0.5197568389057751,
+  "threshold": 0.4977899906454631,
+  "honest_oof_acc": 0.8222707925917405,
+  "positive_rate": 0.5197568389057751,
+  "changed_vs_v2_best": 112,
+  "changed_vs_public_style": 382,
+  "changed_vs_anchor_a7": 80,
+  "weights": {
+    "v2": 0.4,
+    "stepwise_balanced": 0.4,
+    "public": 0.15,
+    "groupfill": 0.05
+  },
+  "source": "Kaggle high-score XGB blend: public-style raw CSV family + travel-group groupfill + fold-safe local XGB families"
+}

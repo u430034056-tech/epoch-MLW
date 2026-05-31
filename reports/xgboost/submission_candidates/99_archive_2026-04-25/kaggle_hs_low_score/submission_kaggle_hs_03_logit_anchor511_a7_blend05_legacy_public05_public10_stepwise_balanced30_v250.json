@@ -1,0 +1,23 @@
+{
+  "rank": 3,
+  "name": "submission_kaggle_hs_03_logit_anchor511_a7_blend05_legacy_public05_public10_stepwise_balanced30_v250",
+  "file": "/Users/shenyijie/Desktop/MLWP project/01_本地副本_实验/reports/xgboost/submission_candidates/submission_kaggle_hs_03_logit_anchor511_a7_blend05_legacy_public05_public10_stepwise_balanced30_v250.csv",
+  "metadata_path": "/Users/shenyijie/Desktop/MLWP project/01_本地副本_实验/reports/xgboost/submission_candidates/submission_kaggle_hs_03_logit_anchor511_a7_blend05_legacy_public05_public10_stepwise_balanced30_v250.json",
+  "blend_kind": "logit",
+  "target_rate_name": "anchor511",
+  "target_positive_rate": 0.51134,
+  "threshold": 0.037026707893444796,
+  "honest_oof_acc": 0.8219256873346371,
+  "positive_rate": 0.5115735328501286,
+  "changed_vs_v2_best": 97,
+  "changed_vs_public_style": 393,
+  "changed_vs_anchor_a7": 137,
+  "weights": {
+    "v2": 0.5,
+    "stepwise_balanced": 0.3,
+    "public": 0.1,
+    "legacy_public": 0.05,
+    "a7_blend": 0.05
+  },
+  "source": "Kaggle high-score XGB blend: public-style raw CSV family + travel-group groupfill + fold-safe local XGB families"
+}

@@ -1,0 +1,8 @@
+{
+  "blend_weight_first": 0.30000000000000004,
+  "blend_weight_second": 0.7,
+  "oof_best_threshold": 0.5080000000000001,
+  "oof_best_accuracy": 0.8207753364776257,
+  "oof_logloss": 0.37738968204574086,
+  "oof_auc": 0.9062908030090407
+}

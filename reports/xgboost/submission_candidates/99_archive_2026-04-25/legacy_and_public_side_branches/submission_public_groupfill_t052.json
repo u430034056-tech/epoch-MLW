@@ -1,0 +1,19 @@
+{
+  "submission_path": "/Users/shenyijie/Desktop/MLWP project/reports/xgboost/submission_candidates/submission_public_groupfill_t052.csv",
+  "metadata_path": "/Users/shenyijie/Desktop/MLWP project/reports/xgboost/submission_candidates/submission_public_groupfill_t052.json",
+  "oof_proba_path": "/Users/shenyijie/Desktop/MLWP project/reports/xgboost/logs/public_groupfill_t052_oof_proba.csv",
+  "test_proba_path": "/Users/shenyijie/Desktop/MLWP project/reports/xgboost/logs/public_groupfill_t052_test_proba.csv",
+  "honest_oof_acc_at_050": 0.805245599907972,
+  "honest_oof_acc_at_threshold": 0.8078914068790981,
+  "threshold": 0.52,
+  "threshold_scan": {
+    "0.48": 0.8059358104221788,
+    "0.49": 0.8059358104221788,
+    "0.50": 0.805245599907972,
+    "0.51": 0.8073162314505924,
+    "0.52": 0.8078914068790981
+  },
+  "positive_rate": 0.48725742342763617,
+  "changed_vs_050": 44,
+  "raw_data_dir": "/Users/shenyijie/Desktop/20260319_xgboost 2/data/raw"
+}

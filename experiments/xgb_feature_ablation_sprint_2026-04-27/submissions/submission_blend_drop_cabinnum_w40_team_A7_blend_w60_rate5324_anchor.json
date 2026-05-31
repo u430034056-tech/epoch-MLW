@@ -1,0 +1,16 @@
+{
+  "name": "submission_blend_drop_cabinnum_w40_team_A7_blend_w60_rate5324_anchor",
+  "file": "/Users/shenyijie/Desktop/MLWP project/01_本地副本_实验/xgb_feature_ablation_sprint_2026-04-27/submissions/submission_blend_drop_cabinnum_w40_team_A7_blend_w60_rate5324_anchor.csv",
+  "team_preprocessing_only": true,
+  "probability_set": "blend_drop_cabinnum_w40_team_A7_blend_w60",
+  "source": "blend(drop_cabinnum, team_A7_blend)",
+  "threshold": 0.4844202995300293,
+  "oof_acc_best": 0.8204302312205223,
+  "oof_acc_050": 0.8190498101921085,
+  "oof_logloss": 0.3796621260163712,
+  "oof_auc": 0.9051744554437625,
+  "positive_rate": 0.5323825111059154,
+  "true_count": 2277,
+  "candidate_kind": "positive_rate_anchor",
+  "target_positive_rate": 0.5323825111059154
+}

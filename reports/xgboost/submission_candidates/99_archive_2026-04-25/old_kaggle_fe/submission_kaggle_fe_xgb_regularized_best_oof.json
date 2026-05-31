@@ -1,0 +1,13 @@
+{
+  "name": "submission_kaggle_fe_xgb_regularized_best_oof",
+  "file": "/Users/shenyijie/Desktop/MLWP project/01_本地副本_实验/reports/xgboost/submission_candidates/submission_kaggle_fe_xgb_regularized_best_oof.csv",
+  "metadata_path": "/Users/shenyijie/Desktop/MLWP project/01_本地副本_实验/reports/xgboost/submission_candidates/submission_kaggle_fe_xgb_regularized_best_oof.json",
+  "source_model": "kaggle_fe_xgb_regularized",
+  "threshold": 0.5380000000000001,
+  "target_rate_name": "best_oof",
+  "positive_rate": 0.4783726911386486,
+  "oof_accuracy": 0.8187047049350051,
+  "changed_vs_v2_best": 239,
+  "changed_vs_anchor_a7": 281,
+  "changed_vs_hs10": 300
+}

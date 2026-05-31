@@ -1,0 +1,17 @@
+{
+  "file": "/Users/shenyijie/Desktop/MLWP project/reports/xgboost/submission_candidates/submission_anchor_score_hi53_lo35.csv",
+  "source": "anchor + consensus score override",
+  "weights": {
+    "A7": 0.6,
+    "V2opt": 0.2,
+    "legacy_pair": 0.2
+  },
+  "rule": {
+    "flip_to_one_if_score_ge": 0.53,
+    "flip_to_zero_if_score_le": 0.35
+  },
+  "changed_vs_anchor": 4,
+  "n_to_one": 4,
+  "n_to_zero": 0,
+  "positive_rate": 0.5333177460837035
+}

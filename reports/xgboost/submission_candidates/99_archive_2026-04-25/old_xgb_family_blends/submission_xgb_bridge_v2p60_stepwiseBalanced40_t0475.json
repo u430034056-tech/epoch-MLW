@@ -1,0 +1,18 @@
+{
+  "file": "/Users/shenyijie/Desktop/MLWP project/reports/xgboost/submission_candidates/submission_xgb_bridge_v2p60_stepwiseBalanced40_t0475.csv",
+  "metadata_path": "/Users/shenyijie/Desktop/MLWP project/reports/xgboost/submission_candidates/submission_xgb_bridge_v2p60_stepwiseBalanced40_t0475.json",
+  "source": "v2_opt 60% + fold-safe stepwise_balanced_te 40%, lowered threshold",
+  "honest_oof_acc": 0.8196249856206143,
+  "threshold": 0.475,
+  "positive_rate": 0.530512041150339,
+  "changed_vs_v2_best": 120,
+  "changed_vs_public_style": 408,
+  "changed_vs_groupfill": 379,
+  "details": {
+    "weights": {
+      "v2_opt": 0.6,
+      "stepwise_balanced_te": 0.4
+    },
+    "rationale": "keep stronger OOF while moving test positive rate back near 0.53"
+  }
+}

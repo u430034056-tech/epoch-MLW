@@ -1,0 +1,13 @@
+{
+  "submission_path": "/Users/shenyijie/Desktop/MLWP project/01_本地副本_实验/reports/xgboost/submission_candidates/submission_umanglodaya_xgb_smote.csv",
+  "metadata_path": "/Users/shenyijie/Desktop/MLWP project/01_本地副本_实验/reports/xgboost/submission_candidates/submission_umanglodaya_xgb_smote.json",
+  "oof_proba_path": "/Users/shenyijie/Desktop/MLWP project/01_本地副本_实验/reports/xgboost/logs/umanglodaya_xgb_smote_oof_proba.csv",
+  "test_proba_path": "/Users/shenyijie/Desktop/MLWP project/01_本地副本_实验/reports/xgboost/logs/umanglodaya_xgb_smote_test_proba.csv",
+  "oof_accuracy_050": 0.8082365121362015,
+  "oof_accuracy_best": 0.8091567928218106,
+  "oof_best_threshold": 0.5400000000000001,
+  "positive_rate_050": 0.5344867898059388,
+  "changed_vs_public_no_smote": 41,
+  "changed_vs_hs10": 326,
+  "raw_data_dir": "/Users/shenyijie/Desktop/20260319_xgboost 2/data/raw"
+}

@@ -1,0 +1,9 @@
+file,rows,true_count,diff_vs_81365,diff_vs_raw_seed2024,passenger_id_aligned,transported_bool,valid
+submission_team_common_rawlike_feedback_prob_k3_seed2024_w10_true2291.csv,4277,2291,4,88,True,True,True
+submission_team_common_rawlike_feedback_prob_k5_multi3_public_w15_true2291.csv,4277,2291,2,90,True,True,True
+submission_team_common_rawlike_feedback_prob_k5_seed17_w15_true2291.csv,4277,2291,2,90,True,True,True
+submission_team_common_rawlike_feedback_prob_k5_seed2024_w10_true2291.csv,4277,2291,2,88,True,True,True
+submission_team_common_rawlike_feedback_prob_k5_seed7_w10_true2291.csv,4277,2291,2,90,True,True,True
+submission_team_common_rawlike_feedback_rank_k3_seed17_w05_true2291.csv,4277,2291,2,88,True,True,True
+submission_team_common_rawlike_feedback_rank_k3_seed17_w15_true2291.csv,4277,2291,4,88,True,True,True
+submission_team_common_rawlike_feedback_rank_k5_seed17_w10_true2291.csv,4277,2291,2,90,True,True,True

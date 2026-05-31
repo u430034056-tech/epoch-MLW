@@ -1,0 +1,12 @@
+{
+  "file": "/Users/shenyijie/Desktop/MLWP project/reports/xgboost/submission_candidates/submission_legacy_pair_revival.csv",
+  "threshold": 0.485,
+  "positive_rate": 0.5260696750058452,
+  "source": "legacy final_selection revival",
+  "weights": {
+    "stepwise_balanced_te": 0.35,
+    "legacy_public_style": 0.65
+  },
+  "anchor_submission": "/Users/shenyijie/Desktop/20260319_xgboost 2/submission_xgb_conservative.csv",
+  "changed_vs_anchor": 87
+}

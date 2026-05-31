@@ -1,0 +1,11 @@
+{
+  "name": "submission_arunklenin_xgb_only_t050",
+  "file": "/Users/shenyijie/Desktop/MLWP project/01_本地副本_实验/reports/xgboost/submission_candidates/submission_arunklenin_xgb_only_t050.csv",
+  "metadata_path": "/Users/shenyijie/Desktop/MLWP project/01_本地副本_实验/reports/xgboost/submission_candidates/submission_arunklenin_xgb_only_t050.json",
+  "threshold": 0.5,
+  "target_rate_name": "t050",
+  "positive_rate": 0.5164835164835165,
+  "oof_accuracy": 0.8090417577361095,
+  "changed_vs_umanglodaya_smote": 461,
+  "changed_vs_umanglodaya_seed0": 469
+}

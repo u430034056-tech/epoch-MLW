@@ -1,0 +1,31 @@
+{
+  "file": "/Users/shenyijie/Desktop/MLWP project/01_本地副本_实验/reports/xgboost/submission_candidates/submission_umanglodaya_seed2024_to_seed17_conf_top08.csv",
+  "source": "seed2024 anchor with top-k confidence override",
+  "anchor": "submission_umanglodaya_xgb_smote_seed2024.csv",
+  "anchor_public_score": 0.81412,
+  "other": "seed17",
+  "other_public_score": 0.81342,
+  "k": 8,
+  "positive_rate": 0.5342529810614917,
+  "changed_vs_seed2024": 8,
+  "candidate_indices": [
+    4110,
+    3489,
+    730,
+    2058,
+    2589,
+    1260,
+    1028,
+    1233
+  ],
+  "passenger_ids": [
+    "8929_01",
+    "7591_01",
+    "1492_02",
+    "4439_02",
+    "5664_04",
+    "2674_02",
+    "2155_01",
+    "2613_01"
+  ]
+}

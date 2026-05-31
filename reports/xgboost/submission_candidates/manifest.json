@@ -1,0 +1,234 @@
+[
+  {
+    "file": "/Users/shenyijie/Desktop/MLWP project/reports/xgboost/submission_candidates/submission_legacy_pair_revival.csv",
+    "threshold": 0.485,
+    "positive_rate": 0.5260696750058452,
+    "source": "legacy final_selection revival",
+    "weights": {
+      "stepwise_balanced_te": 0.35,
+      "legacy_public_style": 0.65
+    },
+    "anchor_submission": "/Users/shenyijie/Desktop/20260319_xgboost 2/submission_xgb_conservative.csv",
+    "changed_vs_anchor": 87
+  },
+  {
+    "file": "/Users/shenyijie/Desktop/MLWP project/reports/xgboost/submission_candidates/submission_legacy_pair_groupfix.csv",
+    "threshold": 0.485,
+    "positive_rate": 0.5265372924947394,
+    "source": "legacy pair + group mean replace",
+    "base_candidate": "submission_legacy_pair_revival.csv",
+    "rule": {
+      "group_key": "GroupID",
+      "size_min": 4,
+      "std_max": 0.12
+    },
+    "changed_rows_by_rule": 106,
+    "changed_vs_anchor": 93
+  },
+  {
+    "file": "/Users/shenyijie/Desktop/MLWP project/reports/xgboost/submission_candidates/submission_anchor_a7_override.csv",
+    "threshold": 0.5,
+    "positive_rate": 0.5295768061725509,
+    "source": "anchor conservative + A7 high-confidence override",
+    "rule": {
+      "flip_to_one_if_a7_ge": 0.55,
+      "flip_to_zero_if_a7_le": 0.45
+    },
+    "changed_vs_anchor": 22,
+    "n_to_one": 5,
+    "n_to_zero": 17
+  },
+  {
+    "file": "/Users/shenyijie/Desktop/MLWP project/reports/xgboost/submission_candidates/submission_anchor_a7_hi52_lo46.csv",
+    "threshold": 0.5,
+    "positive_rate": 0.5312134673836801,
+    "source": "anchor conservative + A7 asymmetric override",
+    "rule": {
+      "flip_to_one_if_a7_ge": 0.52,
+      "flip_to_zero_if_a7_le": 0.46
+    },
+    "changed_vs_anchor": 39,
+    "n_to_one": 17,
+    "n_to_zero": 22
+  },
+  {
+    "file": "/Users/shenyijie/Desktop/MLWP project/reports/xgboost/submission_candidates/submission_anchor_a7_hi52_lo45.csv",
+    "threshold": 0.5,
+    "positive_rate": 0.5323825111059154,
+    "source": "anchor conservative + A7 asymmetric override",
+    "rule": {
+      "flip_to_one_if_a7_ge": 0.52,
+      "flip_to_zero_if_a7_le": 0.45
+    },
+    "changed_vs_anchor": 34,
+    "n_to_one": 17,
+    "n_to_zero": 17
+  },
+  {
+    "file": "/Users/shenyijie/Desktop/MLWP project/reports/xgboost/submission_candidates/submission_anchor_a7_hi52_lo44.csv",
+    "threshold": 0.5,
+    "positive_rate": 0.5342529810614917,
+    "source": "anchor conservative + A7 asymmetric override",
+    "rule": {
+      "flip_to_one_if_a7_ge": 0.52,
+      "flip_to_zero_if_a7_le": 0.44
+    },
+    "changed_vs_anchor": 26,
+    "n_to_one": 17,
+    "n_to_zero": 9
+  },
+  {
+    "file": "/Users/shenyijie/Desktop/MLWP project/reports/xgboost/submission_candidates/submission_public81599_style.csv",
+    "threshold": 0.5,
+    "positive_rate": 0.5365910685059622,
+    "source": "public notebook 0.81599 style rebuild from raw csv",
+    "honest_oof_acc": 0.806971126193489,
+    "changed_vs_v2_best": 446,
+    "changed_vs_a7": 442,
+    "changed_vs_old_conservative": 434,
+    "raw_data_dir": "/Users/shenyijie/Desktop/20260319_xgboost 2/data/raw"
+  },
+  {
+    "file": "/Users/shenyijie/Desktop/MLWP project/reports/xgboost/submission_candidates/submission_public81599_style_t052.csv",
+    "threshold": 0.52,
+    "positive_rate": 0.5321487023614683,
+    "source": "public notebook 0.81599 style rebuild from raw csv",
+    "honest_oof_acc": 0.8059358104221788,
+    "changed_vs_050": 19,
+    "changed_vs_v2_best": 429,
+    "changed_vs_a7": 427,
+    "raw_data_dir": "/Users/shenyijie/Desktop/20260319_xgboost 2/data/raw"
+  },
+  {
+    "file": "/Users/shenyijie/Desktop/MLWP project/reports/xgboost/submission_candidates/submission_public_groupfill_t052.csv",
+    "threshold": 0.52,
+    "positive_rate": 0.48725742342763617,
+    "source": "raw csv group-consistent fill + group size/cabin number branch",
+    "honest_oof_acc": 0.8078914068790981,
+    "changed_vs_public81599_style": 545,
+    "changed_vs_v2_best": 369,
+    "changed_vs_a7": 383,
+    "changed_vs_old_conservative": 377,
+    "raw_data_dir": "/Users/shenyijie/Desktop/20260319_xgboost 2/data/raw"
+  },
+  {
+    "file": "/Users/shenyijie/Desktop/MLWP project/reports/xgboost/submission_candidates/submission_xgb_family_blend_v2p95_publicp05_t0505.csv",
+    "threshold": 0.505,
+    "positive_rate": 0.5106382978723404,
+    "source": "v2_opt 95% + public_style 5% linear blend",
+    "honest_oof_acc": 0.8175543540779938,
+    "changed_vs_v2_best": 25,
+    "changed_vs_public_style": 421,
+    "changed_vs_groupfill": 358
+  },
+  {
+    "file": "/Users/shenyijie/Desktop/MLWP project/reports/xgboost/submission_candidates/submission_xgb_family_blend_v2p95_publicp05_t0475.csv",
+    "threshold": 0.475,
+    "positive_rate": 0.5328501285948094,
+    "source": "v2_opt 95% + public_style 5% linear blend, lowered threshold for public-LB chase",
+    "honest_oof_acc": 0.814448406764063,
+    "changed_vs_v2_best": 92,
+    "changed_vs_public_style": 392,
+    "changed_vs_groupfill": 389
+  },
+  {
+    "file": "/Users/shenyijie/Desktop/MLWP project/reports/xgboost/submission_candidates/submission_xgb_family_override_v2_public_groupfill.csv",
+    "threshold": 0.5,
+    "positive_rate": 0.5087678279167641,
+    "source": "v2_opt base with public/groupfill consensus override",
+    "honest_oof_acc": 0.8183595996779017,
+    "changed_vs_v2_best": 21,
+    "changed_vs_public_style": 425,
+    "changed_vs_groupfill": 348
+  },
+  {
+    "file": "/Users/shenyijie/Desktop/MLWP project/reports/xgboost/submission_candidates/submission_xgb_public_family_pair_t051.csv",
+    "threshold": 0.51,
+    "positive_rate": 0.5118073415945756,
+    "source": "public_style 50% + groupfill 50% linear blend",
+    "honest_oof_acc": 0.8121477050500403,
+    "changed_vs_v2_best": 306,
+    "changed_vs_public_style": 298,
+    "changed_vs_groupfill": 247
+  },
+  {
+    "file": "/Users/shenyijie/Desktop/MLWP project/reports/xgboost/submission_candidates/submission_xgb_bridge_v2p55_stepwiseBalanced45_t0485.csv",
+    "threshold": 0.485,
+    "positive_rate": 0.524666822539163,
+    "source": "v2_opt 55% + fold-safe stepwise_balanced_te 45%",
+    "honest_oof_acc": 0.8203151961348211,
+    "changed_vs_v2_best": 115,
+    "changed_vs_public_style": 419,
+    "changed_vs_groupfill": 378
+  },
+  {
+    "file": "/Users/shenyijie/Desktop/MLWP project/reports/xgboost/submission_candidates/submission_xgb_bridge_v2p60_stepwiseBalanced40_t0475.csv",
+    "threshold": 0.475,
+    "positive_rate": 0.530512041150339,
+    "source": "v2_opt 60% + fold-safe stepwise_balanced_te 40%, lowered threshold",
+    "honest_oof_acc": 0.8196249856206143,
+    "changed_vs_v2_best": 120,
+    "changed_vs_public_style": 408,
+    "changed_vs_groupfill": 379
+  },
+  {
+    "file": "/Users/shenyijie/Desktop/MLWP project/reports/xgboost/submission_candidates/submission_xgb_fourway_v2p40_stepwise40_public10_group10_t0477.csv",
+    "threshold": 0.477,
+    "positive_rate": 0.5337853635725976,
+    "source": "v2_opt 40% + fold-safe stepwise_balanced_te 40% + public_style 10% + groupfill 10%",
+    "honest_oof_acc": 0.8213505119061314,
+    "changed_vs_v2_best": 160,
+    "changed_vs_public_style": 358,
+    "changed_vs_groupfill": 349
+  },
+  {
+    "file": "/Users/shenyijie/Desktop/MLWP project/reports/xgboost/submission_candidates/submission_xgb_fourway_refined_v2p40_stepwise42_public10_group8_t0477.csv",
+    "threshold": 0.477,
+    "positive_rate": 0.5340191723170447,
+    "source": "refined four-way blend around the strongest coarse XGB point",
+    "honest_oof_acc": 0.8214655469918325,
+    "changed_vs_v2_best": 161,
+    "changed_vs_public_style": 355,
+    "changed_vs_groupfill": 356
+  },
+  {
+    "file": "/Users/shenyijie/Desktop/MLWP project/reports/xgboost/submission_candidates/submission_xgb_anchor511_v2p39_stepwise48_public11_legacy2_t0507.csv",
+    "threshold": 0.507,
+    "positive_rate": 0.5113397241056815,
+    "source": "anchor-511 blend: v2_opt 39% + stepwise_balanced_te 48% + public_style 11% + legacy_public 2%",
+    "honest_oof_acc": 0.8220407224203382,
+    "changed_vs_v2_best": 134,
+    "changed_vs_public_style": 380,
+    "changed_vs_groupfill": 381
+  },
+  {
+    "file": "/Users/shenyijie/Desktop/MLWP project/reports/xgboost/submission_candidates/submission_xgb_anchor511_v2p39_stepwise46_public11_legacy3_safeTe2_t0507.csv",
+    "threshold": 0.507,
+    "positive_rate": 0.5113397241056815,
+    "source": "anchor-511 refined blend around the strongest v2_best-aligned point",
+    "honest_oof_acc": 0.8221557575060393,
+    "changed_vs_v2_best": 132,
+    "changed_vs_public_style": 380,
+    "changed_vs_groupfill": 383
+  },
+  {
+    "file": "/Users/shenyijie/Desktop/MLWP project/reports/xgboost/submission_candidates/submission_xgb_anchor511_plus_a7blend_groupfill_t0507.csv",
+    "threshold": 0.507,
+    "positive_rate": 0.5113397241056815,
+    "source": "anchor-511 blend with tiny extra A7/groupfill weights",
+    "honest_oof_acc": 0.8222707925917405,
+    "changed_vs_v2_best": 134,
+    "changed_vs_public_style": 380,
+    "changed_vs_groupfill": 381
+  },
+  {
+    "file": "/Users/shenyijie/Desktop/MLWP project/reports/xgboost/submission_candidates/submission_xgb_anchor511_plus_a7groupfill_override_t0507.csv",
+    "threshold": 0.507,
+    "positive_rate": 0.5122749590834698,
+    "source": "anchor-plus base with A7/groupfill consensus override on the uncertainty band",
+    "honest_oof_acc": 0.8231910732773496,
+    "changed_vs_v2_best": 130,
+    "changed_vs_public_style": 384,
+    "changed_vs_groupfill": 377
+  }
+]

@@ -1,0 +1,11 @@
+{
+  "boost": 0.05,
+  "penalty": 0.1,
+  "flipped": 165,
+  "correct_flip": 74,
+  "wrong_flip": 91,
+  "delta_correct": -17,
+  "base_acc": 0.8183595996779017,
+  "rule_acc": 0.8164040032209824,
+  "delta_acc": -0.0019555964569193396
+}

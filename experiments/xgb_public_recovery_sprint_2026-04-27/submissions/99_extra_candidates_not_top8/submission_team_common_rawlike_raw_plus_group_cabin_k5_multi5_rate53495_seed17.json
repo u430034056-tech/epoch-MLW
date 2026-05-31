@@ -1,0 +1,20 @@
+{
+  "name": "submission_team_common_rawlike_raw_plus_group_cabin_k5_multi5_rate53495_seed17",
+  "file": "/Users/shenyijie/Desktop/MLWP project/01_本地副本_实验/xgb_public_recovery_sprint_2026-04-27/submissions/submission_team_common_rawlike_raw_plus_group_cabin_k5_multi5_rate53495_seed17.csv",
+  "team_preprocessing_only": true,
+  "probability_set": "team_common_rawlike_raw_plus_group_cabin_k5_multi5",
+  "feature_view": "raw_plus_group_cabin",
+  "smote_k": 5,
+  "seed_label": "multi5",
+  "source": "/Users/shenyijie/Desktop/MLWP project/01_本地副本_实验/processed/common/preprocessed_common.joblib; view=raw_plus_group_cabin; n_features=30; dropped=['ShoppingMall', 'FoodCourt', 'Age', 'CryoSleep_True', 'VIP_False', 'VIP_True', 'HomePlanet_Earth', 'HomePlanet_Europa', 'HomePlanet_Mars', 'Destination_55 Cancri e', 'Destination_PSO J318.5-22', 'Destination_TRAPPIST-1e']; averaged_seeds=[2024, 17, 7, 42, 88]",
+  "threshold": 0.4863712191581726,
+  "positive_rate": 0.5349544072948328,
+  "true_count": 2288,
+  "oof_best_threshold": 0.44500000000000006,
+  "oof_best_accuracy": 0.8122627401357414,
+  "oof_acc_050": 0.8080064419647993,
+  "oof_logloss": 0.3863905218456369,
+  "oof_auc": 0.9022083714686356,
+  "candidate_kind": "positive_rate_anchor",
+  "target_positive_rate": 0.5349544072948328
+}

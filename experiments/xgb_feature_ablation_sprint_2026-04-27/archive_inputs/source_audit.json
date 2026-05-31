@@ -1,0 +1,18 @@
+{
+  "sprint_root": "/Users/shenyijie/Desktop/MLWP project/01_本地副本_实验/xgb_feature_ablation_sprint_2026-04-27",
+  "team_preprocessing_only": true,
+  "common_bundle": "/Users/shenyijie/Desktop/MLWP project/01_本地副本_实验/processed/common/preprocessed_common.joblib",
+  "xgb_bundle": "/Users/shenyijie/Desktop/MLWP project/01_本地副本_实验/processed/xgboost/preprocessed_xgboost.joblib",
+  "old_logs_used_for_blend": {
+    "A6_oof": "/Users/shenyijie/Desktop/MLWP project/01_本地副本_实验/reports/xgboost/logs/A6_oof.csv",
+    "A6_test": "/Users/shenyijie/Desktop/MLWP project/01_本地副本_实验/reports/xgboost/logs/A6_test_proba.csv",
+    "A7_oof": "/Users/shenyijie/Desktop/MLWP project/01_本地副本_实验/reports/xgboost/logs/A7_oof.csv",
+    "A7_test": "/Users/shenyijie/Desktop/MLWP project/01_本地副本_实验/reports/xgboost/logs/A7_test_proba.csv"
+  },
+  "github_main_head": "c19ac9b608f52f5d31969a64d2d050503e21eb25",
+  "github_main_status_before": "",
+  "forbidden_training_sources": [
+    "raw Kaggle-template preprocessing branch",
+    "archived umanglodaya raw CSV submissions as model input"
+  ]
+}

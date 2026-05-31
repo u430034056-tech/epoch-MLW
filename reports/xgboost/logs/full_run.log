@@ -1,0 +1,42 @@
+2026-04-24 01:44:09,825 | INFO | Config: XGBoost config: seed=42, folds=5, cat=10, drop=5, early_stopping=150
+2026-04-24 01:44:09,877 | INFO | Feature schema: {"n_rows": 8693, "n_cols": 57, "dtype_counts": {"category": 10, "float64": 20, "int64": 25, "int8": 1, "int16": 1}, "n_categorical": 10, "categorical_columns": ["HomePlanet", "CryoSleep", "Destination", "VIP", "Deck", "Side", "CabinNumBin", "AgeGroup", "DeckSide", "HomePlanetDestination"]}
+2026-04-24 01:44:09,877 | INFO | Running stage A0 (Legacy bundle + StratifiedKFold + default params (current team baseline))
+2026-04-24 01:44:12,312 | INFO | [A0] OOF acc=0.8127 logloss=0.3826 auc=0.9046 | fold acc mean=0.8127 std=0.0061 | mean best_iter=400 | elapsed=2.4s
+2026-04-24 01:44:12,321 | INFO | Running stage A1 (Legacy bundle + StratifiedGroupKFold + early stopping (honest CV of the status quo))
+2026-04-24 01:44:14,939 | INFO | [A1] OOF acc=0.8102 logloss=0.3799 auc=0.9048 | fold acc mean=0.8102 std=0.0162 | mean best_iter=193 | elapsed=2.6s
+2026-04-24 01:44:14,947 | INFO | Running stage A2 (Common features + native category dtype + STRONG_PARAMS + early stopping)
+2026-04-24 01:44:18,414 | INFO | [A2] OOF acc=0.8143 logloss=0.3784 auc=0.9058 | fold acc mean=0.8143 std=0.0152 | mean best_iter=349 | elapsed=3.5s
+2026-04-24 01:44:18,422 | INFO | Running stage A3 (A2 + fold-aware SurnameFreq/CabinNumBin + fold-safe target encoding)
+2026-04-24 01:44:22,181 | INFO | [A3] OOF acc=0.8171 logloss=0.3787 auc=0.9055 | fold acc mean=0.8171 std=0.0147 | mean best_iter=333 | elapsed=3.8s
+2026-04-24 01:44:22,190 | INFO | Running stage A3b (A3 + OOF target encoding + group-level aggregates)
+2026-04-24 01:44:26,354 | INFO | [A3b] OOF acc=0.8150 logloss=0.3788 auc=0.9053 | fold acc mean=0.8150 std=0.0163 | mean best_iter=286 | elapsed=4.2s
+2026-04-24 01:44:26,362 | INFO | Loaded best params from /Users/shenyijie/Desktop/MLWP project/reports/xgboost/logs/best_params.json (OOF acc=0.8184)
+2026-04-24 01:44:26,362 | INFO | Running stage A4 (A3 + Optuna-tuned parameters)
+2026-04-24 01:44:29,067 | INFO | [A4] OOF acc=0.8184 logloss=0.3797 auc=0.9052 | fold acc mean=0.8183 std=0.0194 | mean best_iter=321 | elapsed=2.7s
+2026-04-24 01:44:29,075 | INFO | [A5][rule audit] flipped=165 correct=74 wrong=91 Δacc=-0.0020 → rule left DISABLED
+2026-04-24 01:44:29,082 | INFO | [A5] best_threshold=0.500 best_oof_acc=0.8184
+2026-04-24 01:44:29,083 | INFO | Running A7 (blend A4_plain + A4_OOFte) ...
+2026-04-24 01:44:32,117 | INFO | [A7_plain] OOF acc=0.8184 logloss=0.3797 auc=0.9052 | fold acc mean=0.8183 std=0.0194 | mean best_iter=321 | elapsed=2.7s
+2026-04-24 01:44:32,117 | INFO | [A7_OOFte] OOF acc=0.8177 logloss=0.3789 auc=0.9055 | fold acc mean=0.8176 std=0.0143 | mean best_iter=331 | elapsed=3.0s
+2026-04-24 01:44:32,196 | INFO | [A7] w=0.45 threshold=0.510 OOF acc=0.8200 logloss=0.3785 auc=0.9057
+2026-04-24 01:44:32,213 | INFO | Running A6 (multi-seed bagging) ...
+2026-04-24 01:44:45,828 | INFO | [A6] per-seed OOF acc: [0.8184, 0.8174, 0.8157, 0.815, 0.8143]
+2026-04-24 01:44:45,837 | INFO | [A6] seeds=[42, 2024, 7, 1337, 88] ensemble OOF acc=0.8184 logloss=0.3786 auc=0.9055 threshold=0.500
+2026-04-24 01:44:45,848 | INFO | Ablation table:
+stage  n_folds  oof_acc  oof_logloss  oof_auc  mean_best_iter  elapsed_seconds                                                                         description                                                                   stage_description  delta_vs_A1  delta_vs_A0
+   A0        5 0.812723     0.382581 0.904619           400.0         2.434017            Legacy bundle + StratifiedKFold + default params (current team baseline)            Legacy bundle + StratifiedKFold + default params (current team baseline)       0.0025       0.0000
+   A1        5 0.810192     0.379917 0.904825           192.6         2.617212 Legacy bundle + StratifiedGroupKFold + early stopping (honest CV of the status quo) Legacy bundle + StratifiedGroupKFold + early stopping (honest CV of the status quo)       0.0000      -0.0025
+   A2        5 0.814333     0.378360 0.905787           349.4         3.464766            Common features + native category dtype + STRONG_PARAMS + early stopping            Common features + native category dtype + STRONG_PARAMS + early stopping       0.0041       0.0016
+   A3        5 0.817094     0.378680 0.905538           332.8         3.756433                 A2 + fold-aware SurnameFreq/CabinNumBin + fold-safe target encoding                 A2 + fold-aware SurnameFreq/CabinNumBin + fold-safe target encoding       0.0069       0.0044
+  A3b        5 0.815024     0.378837 0.905306           286.2         4.162351                                   A3 + OOF target encoding + group-level aggregates                                   A3 + OOF target encoding + group-level aggregates       0.0048       0.0023
+   A4        5 0.818360     0.379697 0.905217           321.2         2.702930                                                        A3 + Optuna-tuned parameters                                                        A3 + Optuna-tuned parameters       0.0082       0.0056
+   A5        5 0.818360     0.379697 0.905217           321.2         2.702930                                                    A4 + threshold scan (best=0.500)                     A4 + threshold scan (0.500); rule audit Δacc=-0.0020 [disabled]       0.0082       0.0056
+   A7        5 0.819970     0.378452 0.905731           326.1         5.734745                                            Blend(plain×0.45 + OOFte×0.55) @ t=0.510        Blend(plain×0.45 + OOFte×0.55) @ t=0.510 — plain OOF=0.8184 OOFte OOF=0.8177       0.0098       0.0072
+   A6        5 0.818360     0.378604 0.905533           321.2        13.603698                                                    5-seed bagging + threshold=0.500         5-seed bagging (per-seed OOF acc min/max = 0.8143/0.8184) + threshold=0.500       0.0082       0.0056
+2026-04-24 01:44:45,849 | INFO | submission_best.csv = A7 blend (w=0.45, threshold=0.510, OOF=0.8200)
+2026-04-24 01:44:46,327 | INFO | Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2026-04-24 01:44:46,327 | INFO | Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2026-04-24 01:44:46,330 | INFO | Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2026-04-24 01:44:46,330 | INFO | Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2026-04-24 01:44:48,258 | INFO | Saved SHAP summary to /Users/shenyijie/Desktop/MLWP project/reports/xgboost/figures/A4_shap_summary.png
+2026-04-24 01:44:48,321 | INFO | Done. Reports at /Users/shenyijie/Desktop/MLWP project/reports/xgboost

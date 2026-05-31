@@ -1,0 +1,24 @@
+{
+  "n_rows": 8693,
+  "n_cols": 57,
+  "dtype_counts": {
+    "category": 10,
+    "float64": 20,
+    "int64": 25,
+    "int8": 1,
+    "int16": 1
+  },
+  "n_categorical": 10,
+  "categorical_columns": [
+    "HomePlanet",
+    "CryoSleep",
+    "Destination",
+    "VIP",
+    "Deck",
+    "Side",
+    "CabinNumBin",
+    "AgeGroup",
+    "DeckSide",
+    "HomePlanetDestination"
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "file": "/Users/shenyijie/Desktop/MLWP project/01_本地副本_实验/reports/xgboost/submission_candidates/submission_blend_team_xgb095_arun_k5_multi5_w45_team_A6_ensemble_w55_rate5324_anchor.csv",
+  "team_preprocessing_only": true,
+  "source_bundles": {
+    "xgboost": "/Users/shenyijie/Desktop/MLWP project/01_本地副本_实验/processed/xgboost/preprocessed_xgboost.joblib",
+    "common": "/Users/shenyijie/Desktop/MLWP project/01_本地副本_实验/processed/common/preprocessed_common.joblib"
+  },
+  "probability_set": "blend_team_xgb095_arun_k5_multi5_w45_team_A6_ensemble_w55",
+  "source": "blend(/Users/shenyijie/Desktop/MLWP project/01_本地副本_实验/processed/xgboost/preprocessed_xgboost.joblib + feature_view=drop_umang_low95 dropped=['num__ShoppingMall', 'num__Age', 'cat__CryoSleep_True', 'cat__HomePlanet_Earth', 'cat__HomePlanet_Europa', 'cat__VIP_True', 'cat__HomePlanet_Mars', 'cat__Destination_PSO J318.5-22', 'cat__VIP_False', 'cat__Destination_55 Cancri e', 'num__FoodCourt', 'cat__Destination_TRAPPIST-1e'] + params=arun_xgb_only + SMOTE=k5{'sampling_strategy': 1, 'k_neighbors': 5} seeds=[2024, 17, 7, 42, 88], /Users/shenyijie/Desktop/MLWP project/01_本地副本_实验/reports/xgboost/logs/A6_oof.csv + /Users/shenyijie/Desktop/MLWP project/01_本地副本_实验/reports/xgboost/logs/A6_test_proba.csv)",
+  "threshold": 0.4855811595916748,
+  "target_positive_rate": 0.5323825111059154,
+  "oof_best_threshold": 0.5190000000000001,
+  "oof_best_accuracy": 0.8189347751064074,
+  "oof_logloss": 0.37786760320033086,
+  "oof_auc": 0.9060560889351422,
+  "positive_rate": 0.5323825111059154,
+  "true_count": 2277
+}

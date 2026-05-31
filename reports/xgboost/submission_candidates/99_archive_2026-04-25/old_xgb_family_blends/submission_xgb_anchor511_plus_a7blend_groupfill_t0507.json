@@ -1,0 +1,24 @@
+{
+  "file": "/Users/shenyijie/Desktop/MLWP project/reports/xgboost/submission_candidates/submission_xgb_anchor511_plus_a7blend_groupfill_t0507.csv",
+  "metadata_path": "/Users/shenyijie/Desktop/MLWP project/reports/xgboost/submission_candidates/submission_xgb_anchor511_plus_a7blend_groupfill_t0507.json",
+  "source": "anchor-511 blend with tiny extra A7/groupfill weights",
+  "honest_oof_acc": 0.8222707925917405,
+  "threshold": 0.507,
+  "positive_rate": 0.5113397241056815,
+  "changed_vs_v2_best": 134,
+  "changed_vs_public_style": 380,
+  "changed_vs_groupfill": 381,
+  "details": {
+    "weights": {
+      "v2_opt": 0.38490445605177737,
+      "stepwise_balanced_te": 0.46093627311420354,
+      "public_style": 0.11026447231061248,
+      "legacy_public_style": 0.02311992005896517,
+      "stepwise_safe_te": 0.013140661866260665,
+      "A7_blend": 0.005755940836541332,
+      "groupfill": 0.001878275761639495,
+      "A6": 0.0
+    },
+    "rationale": "best local multi-family blend around the anchor-511 solution"
+  }
+}

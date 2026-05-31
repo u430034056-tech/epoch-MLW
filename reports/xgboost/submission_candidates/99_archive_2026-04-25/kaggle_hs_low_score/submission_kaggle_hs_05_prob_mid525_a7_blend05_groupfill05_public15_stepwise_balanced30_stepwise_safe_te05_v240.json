@@ -1,0 +1,24 @@
+{
+  "rank": 5,
+  "name": "submission_kaggle_hs_05_prob_mid525_a7_blend05_groupfill05_public15_stepwise_balanced30_stepwise_safe_te05_v240",
+  "file": "/Users/shenyijie/Desktop/MLWP project/01_本地副本_实验/reports/xgboost/submission_candidates/submission_kaggle_hs_05_prob_mid525_a7_blend05_groupfill05_public15_stepwise_balanced30_stepwise_safe_te05_v240.csv",
+  "metadata_path": "/Users/shenyijie/Desktop/MLWP project/01_本地副本_实验/reports/xgboost/submission_candidates/submission_kaggle_hs_05_prob_mid525_a7_blend05_groupfill05_public15_stepwise_balanced30_stepwise_safe_te05_v240.json",
+  "blend_kind": "prob",
+  "target_rate_name": "mid525",
+  "target_positive_rate": 0.525,
+  "threshold": 0.49174391228155045,
+  "honest_oof_acc": 0.8213505119061314,
+  "positive_rate": 0.5251344400280571,
+  "changed_vs_v2_best": 133,
+  "changed_vs_public_style": 349,
+  "changed_vs_anchor_a7": 141,
+  "weights": {
+    "v2": 0.4,
+    "stepwise_balanced": 0.3,
+    "public": 0.15,
+    "groupfill": 0.05,
+    "stepwise_safe_te": 0.05,
+    "a7_blend": 0.05
+  },
+  "source": "Kaggle high-score XGB blend: public-style raw CSV family + travel-group groupfill + fold-safe local XGB families"
+}

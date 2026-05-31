@@ -1,0 +1,9 @@
+file,rows,columns,true_count,passenger_id_aligned,transported_bool,valid
+submission_team_common_rawlike_raw_core_k3_multi3_public_oofbest_t0p496.csv,4277,"PassengerId,Transported",2294,True,True,True
+submission_team_common_rawlike_raw_core_k3_multi3_public_rate53519_seed2024.csv,4277,"PassengerId,Transported",2289,True,True,True
+submission_team_common_rawlike_raw_core_k3_multi3_public_rate53566_seed7.csv,4277,"PassengerId,Transported",2291,True,True,True
+submission_team_common_rawlike_raw_core_k3_multi3_public_rate5366_public.csv,4277,"PassengerId,Transported",2295,True,True,True
+submission_team_common_rawlike_raw_core_k3_multi3_public_t050.csv,4277,"PassengerId,Transported",2290,True,True,True
+submission_team_common_rawlike_raw_core_k5_multi3_public_rate53566_seed7.csv,4277,"PassengerId,Transported",2291,True,True,True
+submission_team_common_rawlike_raw_core_k5_multi3_public_rate5366_public.csv,4277,"PassengerId,Transported",2295,True,True,True
+submission_team_common_rawlike_raw_core_k5_multi5_rate53519_seed2024.csv,4277,"PassengerId,Transported",2289,True,True,True

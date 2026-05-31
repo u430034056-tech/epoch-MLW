@@ -1,0 +1,14 @@
+{
+  "file": "/Users/shenyijie/Desktop/MLWP project/reports/xgboost/submission_candidates/submission_legacy_pair_groupfix.csv",
+  "threshold": 0.485,
+  "positive_rate": 0.5265372924947394,
+  "source": "legacy pair + group mean replace",
+  "base_candidate": "submission_legacy_pair_revival.csv",
+  "rule": {
+    "group_key": "GroupID",
+    "size_min": 4,
+    "std_max": 0.12
+  },
+  "changed_rows_by_rule": 106,
+  "changed_vs_anchor": 93
+}

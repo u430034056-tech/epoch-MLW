@@ -1,0 +1,12 @@
+{
+  "name": "submission_umanglodaya_refine_smote_uncertain_05",
+  "file": "/Users/shenyijie/Desktop/MLWP project/01_本地副本_实验/reports/xgboost/submission_candidates/submission_umanglodaya_refine_smote_uncertain_05.csv",
+  "metadata_path": "/Users/shenyijie/Desktop/MLWP project/01_本地副本_实验/reports/xgboost/submission_candidates/submission_umanglodaya_refine_smote_uncertain_05.json",
+  "strategy": "smote_uncertain",
+  "n_flipped": 5,
+  "positive_rate": 0.5351882160392799,
+  "oof_accuracy": 0.8085816173933049,
+  "oof_delta_vs_smote": 0.00034510525710340634,
+  "changed_vs_smote": 5,
+  "changed_vs_public": 36
+}

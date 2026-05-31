@@ -1,0 +1,10 @@
+{
+  "file": "/Users/shenyijie/Desktop/MLWP project/01_本地副本_实验/reports/xgboost/submission_candidates/submission_umanglodaya_xgb_smote_seed11.csv",
+  "test_proba_path": "/Users/shenyijie/Desktop/MLWP project/01_本地副本_实验/reports/xgboost/logs/umanglodaya_xgb_smote_seed11_test_proba.csv",
+  "source": "umanglodaya exact-style XGB + SMOTE single seed",
+  "seed": 11,
+  "positive_rate": 0.5326163198503624,
+  "changed_vs_public_no_smote": 47,
+  "changed_vs_hs10": 328,
+  "changed_vs_anchor_a7_hi52_lo45": 435
+}

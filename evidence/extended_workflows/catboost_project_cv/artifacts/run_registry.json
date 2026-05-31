@@ -1,8 +1,0 @@
-{
-  "catboost": {
-    "train_runs": [
-      "train_001"
-    ],
-    "infer_runs": []
-  }
-}

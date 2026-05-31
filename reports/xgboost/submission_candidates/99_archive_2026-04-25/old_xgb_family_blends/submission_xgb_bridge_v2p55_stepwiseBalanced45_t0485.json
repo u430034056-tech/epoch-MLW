@@ -1,0 +1,17 @@
+{
+  "file": "/Users/shenyijie/Desktop/MLWP project/reports/xgboost/submission_candidates/submission_xgb_bridge_v2p55_stepwiseBalanced45_t0485.csv",
+  "metadata_path": "/Users/shenyijie/Desktop/MLWP project/reports/xgboost/submission_candidates/submission_xgb_bridge_v2p55_stepwiseBalanced45_t0485.json",
+  "source": "v2_opt 55% + fold-safe stepwise_balanced_te 45%",
+  "honest_oof_acc": 0.8203151961348211,
+  "threshold": 0.485,
+  "positive_rate": 0.524666822539163,
+  "changed_vs_v2_best": 115,
+  "changed_vs_public_style": 419,
+  "changed_vs_groupfill": 378,
+  "details": {
+    "weights": {
+      "v2_opt": 0.55,
+      "stepwise_balanced_te": 0.45
+    }
+  }
+}

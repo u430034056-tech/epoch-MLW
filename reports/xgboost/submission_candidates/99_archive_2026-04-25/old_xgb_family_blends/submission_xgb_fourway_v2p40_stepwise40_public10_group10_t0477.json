@@ -1,0 +1,20 @@
+{
+  "file": "/Users/shenyijie/Desktop/MLWP project/reports/xgboost/submission_candidates/submission_xgb_fourway_v2p40_stepwise40_public10_group10_t0477.csv",
+  "metadata_path": "/Users/shenyijie/Desktop/MLWP project/reports/xgboost/submission_candidates/submission_xgb_fourway_v2p40_stepwise40_public10_group10_t0477.json",
+  "source": "v2_opt 40% + fold-safe stepwise_balanced_te 40% + public_style 10% + groupfill 10%",
+  "honest_oof_acc": 0.8213505119061314,
+  "threshold": 0.477,
+  "positive_rate": 0.5337853635725976,
+  "changed_vs_v2_best": 160,
+  "changed_vs_public_style": 358,
+  "changed_vs_groupfill": 349,
+  "details": {
+    "weights": {
+      "v2_opt": 0.4,
+      "stepwise_balanced_te": 0.4,
+      "public_style": 0.1,
+      "groupfill": 0.1
+    },
+    "rationale": "current strongest honest OOF while keeping test positive rate around 0.534"
+  }
+}

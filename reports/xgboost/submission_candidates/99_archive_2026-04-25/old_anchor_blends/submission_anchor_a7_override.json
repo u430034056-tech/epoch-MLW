@@ -1,0 +1,13 @@
+{
+  "file": "/Users/shenyijie/Desktop/MLWP project/reports/xgboost/submission_candidates/submission_anchor_a7_override.csv",
+  "threshold": 0.5,
+  "positive_rate": 0.5295768061725509,
+  "source": "anchor conservative + A7 high-confidence override",
+  "rule": {
+    "flip_to_one_if_a7_ge": 0.55,
+    "flip_to_zero_if_a7_le": 0.45
+  },
+  "changed_vs_anchor": 22,
+  "n_to_one": 5,
+  "n_to_zero": 17
+}

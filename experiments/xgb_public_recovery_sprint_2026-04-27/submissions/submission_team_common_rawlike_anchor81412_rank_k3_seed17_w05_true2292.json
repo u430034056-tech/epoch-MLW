@@ -1,0 +1,20 @@
+{
+  "name": "submission_team_common_rawlike_anchor81412_rank_k3_seed17_w05_true2292",
+  "team_preprocessing_only": true,
+  "true_count": 2292,
+  "positive_rate": 0.535889642272621,
+  "diff_vs_81412_anchor": 1,
+  "diff_vs_81365_anchor": 3,
+  "diff_vs_raw_seed2024": 89,
+  "added_vs_81365_in_81412": [
+    "4381_01"
+  ],
+  "removed_vs_81365_in_81412": [
+    "7511_01"
+  ],
+  "public_anchor": "submission_team_common_rawlike_feedback_rank_k3_seed17_w05_true2291.csv public=0.81412",
+  "candidate_kind": "true_count_around_81412",
+  "blend_mode": "rank",
+  "alt_name": "k3_seed17",
+  "alt_weight": 0.05
+}

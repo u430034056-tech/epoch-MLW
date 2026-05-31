@@ -1,0 +1,20 @@
+{
+  "file": "/Users/shenyijie/Desktop/MLWP project/reports/xgboost/submission_candidates/submission_xgb_fourway_refined_v2p40_stepwise42_public10_group8_t0477.csv",
+  "metadata_path": "/Users/shenyijie/Desktop/MLWP project/reports/xgboost/submission_candidates/submission_xgb_fourway_refined_v2p40_stepwise42_public10_group8_t0477.json",
+  "source": "refined four-way blend around the strongest coarse XGB point",
+  "honest_oof_acc": 0.8214655469918325,
+  "threshold": 0.477,
+  "positive_rate": 0.5340191723170447,
+  "changed_vs_v2_best": 161,
+  "changed_vs_public_style": 355,
+  "changed_vs_groupfill": 356,
+  "details": {
+    "weights": {
+      "v2_opt": 0.4,
+      "stepwise_balanced_te": 0.42,
+      "public_style": 0.1,
+      "groupfill": 0.08
+    },
+    "rationale": "local refinement of the strongest four-way blend"
+  }
+}

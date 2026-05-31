@@ -1,0 +1,18 @@
+{
+  "file": "/Users/shenyijie/Desktop/MLWP project/01_本地副本_实验/reports/xgboost/submission_candidates/submission_blend_team_xgb107_smote_multi5_w30_team_A6_ensemble_w70_rate5352_umang.csv",
+  "team_preprocessing_only": true,
+  "source_bundles": {
+    "xgboost": "/Users/shenyijie/Desktop/MLWP project/01_本地副本_实验/processed/xgboost/preprocessed_xgboost.joblib",
+    "common": "/Users/shenyijie/Desktop/MLWP project/01_本地副本_实验/processed/common/preprocessed_common.joblib"
+  },
+  "probability_set": "blend_team_xgb107_smote_multi5_w30_team_A6_ensemble_w70",
+  "source": "blend(/Users/shenyijie/Desktop/MLWP project/01_本地副本_实验/processed/xgboost/preprocessed_xgboost.joblib + SMOTE seeds=[2024, 17, 7, 42, 88], /Users/shenyijie/Desktop/MLWP project/01_本地副本_实验/reports/xgboost/logs/A6_oof.csv + /Users/shenyijie/Desktop/MLWP project/01_本地副本_实验/reports/xgboost/logs/A6_test_proba.csv)",
+  "threshold": 0.4765130877494812,
+  "target_positive_rate": 0.5351882160392799,
+  "oof_best_threshold": 0.45500000000000007,
+  "oof_best_accuracy": 0.8184746347636029,
+  "oof_logloss": 0.3755834733038192,
+  "oof_auc": 0.9070475097493155,
+  "positive_rate": 0.5351882160392799,
+  "true_count": 2289
+}

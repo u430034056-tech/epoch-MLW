@@ -1,0 +1,21 @@
+{
+  "best_value": 0.8183595996779017,
+  "best_params": {
+    "learning_rate": 0.044605349532490325,
+    "max_depth": 4,
+    "min_child_weight": 2,
+    "subsample": 0.7070887944158195,
+    "colsample_bytree": 0.7558719207715136,
+    "colsample_bylevel": 0.8477152422243057,
+    "gamma": 0.8618915488631986,
+    "reg_alpha": 0.04938453562290928,
+    "reg_lambda": 0.011261693676125827,
+    "max_delta_step": 0
+  },
+  "best_trial_number": 51,
+  "n_trials": 60,
+  "elapsed_seconds": 226.7995654590195,
+  "logloss": 0.37969659646573306,
+  "auc": 0.9052171740404329,
+  "mean_best_iter": 321.2
+}

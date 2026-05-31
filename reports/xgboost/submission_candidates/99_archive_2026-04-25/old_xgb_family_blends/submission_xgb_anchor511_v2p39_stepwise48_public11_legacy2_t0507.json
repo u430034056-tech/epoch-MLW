@@ -1,0 +1,20 @@
+{
+  "file": "/Users/shenyijie/Desktop/MLWP project/reports/xgboost/submission_candidates/submission_xgb_anchor511_v2p39_stepwise48_public11_legacy2_t0507.csv",
+  "metadata_path": "/Users/shenyijie/Desktop/MLWP project/reports/xgboost/submission_candidates/submission_xgb_anchor511_v2p39_stepwise48_public11_legacy2_t0507.json",
+  "source": "anchor-511 blend: v2_opt 39% + stepwise_balanced_te 48% + public_style 11% + legacy_public 2%",
+  "honest_oof_acc": 0.8220407224203382,
+  "threshold": 0.507,
+  "positive_rate": 0.5113397241056815,
+  "changed_vs_v2_best": 134,
+  "changed_vs_public_style": 380,
+  "changed_vs_groupfill": 381,
+  "details": {
+    "weights": {
+      "v2_opt": 0.39,
+      "stepwise_balanced_te": 0.48,
+      "public_style": 0.11,
+      "legacy_public_style": 0.02
+    },
+    "rationale": "match the historical best submission positive rate (~0.51134) instead of chasing a 0.53x prior"
+  }
+}
